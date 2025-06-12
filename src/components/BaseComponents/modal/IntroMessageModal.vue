@@ -435,11 +435,11 @@ label{
 
 @media (max-width: 500px) {
   .welcome-modal {
-    width: 340px;
+    width: 350px;
     padding: 25px;
   }
   dialog {
-    top: 13vh;
+    top: 3vh;
     width: 25rem;
     height: 20rem;
     right: 30px;

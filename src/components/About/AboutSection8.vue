@@ -182,7 +182,7 @@ export default {
 .box {
   display: flex;
   flex-direction: column;
-  border: 1px solid #f7f7f7;
+  border: 0.5px solid #dfdfdf;
   padding: 35px;
   border-radius: 10px;
   color: #f7f7f7;
@@ -279,6 +279,19 @@ export default {
     margin-left: auto;
     margin-right: auto;
     width: 90%;
+  }
+
+  .box-text-1{
+    font-size: 24px;
+    line-height: 25px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .box-text-2{
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 15px;
   }
 
   .header{

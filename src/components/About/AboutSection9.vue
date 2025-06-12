@@ -138,7 +138,7 @@ export default {
 
 .box {
   display: block;
-  border: 1px solid #fff;
+  border: 0.5px solid #dfdfdf;
   padding: 20px;
   border-radius: 10px;
   color: #fff;
@@ -235,6 +235,14 @@ export default {
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .box-text-1{
+    margin-top: 20px;
+  }
+
+  .box-image{
+    margin-top: 5%;
   }
 }
 </style>
