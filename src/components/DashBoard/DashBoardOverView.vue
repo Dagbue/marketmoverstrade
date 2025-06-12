@@ -1,7 +1,7 @@
 <template>
   <div class="alpha">
 
-    <!--      <intro-message-modal  @close="hideDialog" v-if="isModalOpened === false && dialogIsVisible === true" />-->
+          <intro-message-modal  @close="hideDialog" v-if="isModalOpened === false && dialogIsVisible === true" />
 
     <div class="section-2">
 
@@ -34,9 +34,8 @@
 
 
     <p v-show="this.UserDetails.user.userStatus === 'unVerified'" class="text-2">Your account is not verified. Kindly
-      contact support to verify your account.
-      <!--      <a><router-link to="/update-account">Click here</router-link></a>-->
-    </p>
+      upload a valid government Id to verify your account.
+      <a><router-link to="/update-account">Click here</router-link></a></p>
 
 
     <div class="balance-section">
@@ -1475,7 +1474,7 @@
 import StoreUtils from "@/utility/StoreUtils";
 import TradeRequest from "@/model/request/TradeRequest";
 import {mapState} from "vuex";
-// import IntroMessageModal from "@/components/BaseComponents/modal/IntroMessageModal.vue";
+import IntroMessageModal from "@/components/BaseComponents/modal/IntroMessageModal.vue";
 import WatchListTable from "@/components/BaseComponents/tables/WatchListTable.vue";
 import BaseButton from "@/components/BaseComponents/buttons/BaseButton.vue";
 import WatchListTable2 from "@/components/BaseComponents/tables/WatchListTable2.vue";
@@ -1488,7 +1487,7 @@ export default {
     WatchListTable2,
     BaseButton,
     WatchListTable,
-    // IntroMessageModal
+    IntroMessageModal
   },
   data () {
     return {
@@ -1934,7 +1933,7 @@ export default {
 <style scoped>
 
 .last{
-  margin-top: 10px;
+  margin-top: 1%;
 }
 
 .balance-section{
@@ -2118,11 +2117,11 @@ i{
 }
 
 .trade-btn-1{
-  padding: 7px 12px;
+  padding: 7px 10px;
   text-align: center;
   font-size: 11px;
   width: 100px;
-  height: 30px;
+  height: 25px;
   background: #E50202;
   color: #ffffff;
   border: 1px solid #E50202;
@@ -2134,11 +2133,11 @@ i{
 }
 
 .trade-btn-2{
-  padding: 7px 12px;
+  padding: 7px 10px;
   text-align: center;
   font-size: 11px;
   width: 100px;
-  height: 30px;
+  height: 25px;
   background: #10d876;
   color: #ffffff;
   border: 1px solid #10d876;
@@ -2150,11 +2149,11 @@ i{
 }
 
 .trade-btn-3{
-  padding: 7px 12px;
+  padding: 7px 10px;
   text-align: center;
   font-size: 11px;
   width: 100px;
-  height: 30px;
+  height: 25px;
   background: #FE9431;
   color: #ffffff;
   border: 1px solid #FE9431;
@@ -2166,11 +2165,11 @@ i{
 }
 
 .trade-btn-4{
-  padding: 7px 12px;
+  padding: 7px 10px;
   text-align: center;
   font-size: 11px;
   width: 100px;
-  height: 30px;
+  height: 25px;
   background: #5d78ff;
   color: #ffffff;
   border: 1px solid #5d78ff;
@@ -2570,36 +2569,12 @@ td {
     display: none;
   }
 
-  .section-3{
-    display: flex;
-    align-content: center;
-    align-items: center;
-    padding: 15px 10px;
-    gap: 24px;
-    width: 100%;
-    height: 100%;
-    margin-left: unset;
-    margin-bottom: 2%;
-  }
 
   .form-part {
     max-width: 615px;
     width: 100%;
     padding: 22px 25px;
     margin-top: 5%;
-  }
-
-  .law{
-    margin-right: 1%;
-  }
-
-  .content-1-text-1{
-    font-size: 12px;
-    width: 100%;
-  }
-
-  .content-1-text-2{
-    font-size: 13px;
   }
 
   .separate{
@@ -2695,6 +2670,82 @@ td {
     font-weight: bold;
   }
 
+  .balance-section{
+    display: block;
+  }
+
+  .balance-section-1{
+    width: 95%;
+    height: 155px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 15px;
+  }
+
+  .balance-section-1-last{
+    width: 95%;
+    height: 155px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .navigation-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .navigation-bar-text-1 {
+    font-size: 17px;
+    padding: 8px 12px;
+  }
+
+  .active {
+    padding: 10px 16px;
+  }
+
+  .section-2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-right: unset;
+    margin-bottom: unset;
+    margin-top: 2.5%;
+  }
+
+  .section-2-part-1 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .section-2-part-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .trade-btn-1,
+  .trade-btn-2,
+  .trade-btn-3,
+  .trade-btn-4{
+    width: 105px;
+    font-size: 10px;
+    height: auto;
+    padding: 8px;
+  }
+
+  .trade-btn-5 {
+    width: 120px;
+    font-size: 10px;
+    height: auto;
+    padding: 8px;
+  }
+
 }
 
 @media (max-width: 500px) {
@@ -2720,37 +2771,6 @@ td {
     width: 90px;
     height: 30px;
     font-size: 9px;
-  }
-
-  .vl-2{
-    display: none;
-  }
-
-  .section-3{
-    display: block;
-    padding: 20px 20px;
-    gap: 30px;
-    width: 100%;
-    height: 100%;
-    margin-left: unset;
-  }
-
-  .section-3-content{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .content-1-text-1{
-    font-weight: 900;
-    font-size: 16px;
-  }
-
-  .content-1-text-2{
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 30px;
   }
 
   .form-part{
@@ -2782,6 +2802,28 @@ td {
 
   .empty-state{
     width: 30%;
+  }
+
+  .navigation-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 5px;
+  }
+
+  .navigation-bar-text-1 {
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .active {
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .text-2{
+    font-size: 15px;
   }
 
 }

@@ -69,7 +69,7 @@
           </div>
 
 
-          <div v-if="this.url === ''" class="separate">
+          <div v-if="!(url && url2)" class="separate">
             <div class="form-group">
               <label class="id">Identification Card (Upload front of ID card for verification)</label>
               <input
@@ -111,12 +111,10 @@
             </div>
           </div>
 
-
           <div class="btn-alpha">
 <!--            <p class="btn">Update Details</p>-->
             <base-button
-                :loading="loading"
-
+                :loading="loading || loading2"
                 style="background-color: #5d78ff; border: 1px solid #5d78ff;"
             >Update Details</base-button>
           </div>
@@ -199,7 +197,6 @@ export default {
       this.uploadmodel.base64 = this.base64;
       await StoreUtils.dispatch(StoreUtils.actions.sbucket.uploadEncodedFile, this.uploadmodel, { root: true });
       this.url = this.sbucket.s3bucketResponse.url;
-
     },
 
     uploadFile2() {
@@ -268,8 +265,8 @@ export default {
         phoneNumber: this.phoneNumber,
         country: this.country,
         address: this.address,
-        // frontId: this.url,
-        // backId: this.url2,
+        frontId: this.url,
+        backId: this.url2,
       })
     }
   },
@@ -352,9 +349,9 @@ export default {
   float: left;
   margin-left: 20px;
   background-color: #0f171c;
-  padding: 30px 40px;
+  padding: 25px 40px;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
 }
 .section-1-part-1{
   display: flex;
