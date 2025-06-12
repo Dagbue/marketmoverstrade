@@ -40,7 +40,7 @@
           <li>
             <a class="hover">
               <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
-              <span class="links-name">Fund Your Wallet</span>
+              <span class="links-name">Fund Wallet</span>
             </a>
           </li>
         </router-link>
@@ -224,7 +224,7 @@ export default {
   display: flex;
 }
 .afo-logo{
-  width: 90%;
+  width: 100%;
   background-color: #ffffff;
   padding: 10px 20px;
   border-radius: 5px;
@@ -264,7 +264,7 @@ body{
   top: 0;
   left: 0;
   height: 100vh;
-  width: 235px;
+  width: 210px;
   background-color: #0f171c;
   border-right: 1px solid #000;
   padding: 6px 20px 37px;

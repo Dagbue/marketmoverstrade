@@ -12,7 +12,7 @@
 
           <p class="topmost-header-text">
             <i class='bx bx-mail-send' style='color:#ffffff'></i>
-            support@earlywealthtrd.com
+            support@marketmoverstrade.com
           </p>
 
         <p class="topmost-header-text">
@@ -30,11 +30,15 @@
 
           <img alt="company logo" src="@/assets/logo.png" class="logo" @click="home" />
 
+          <div v-show="mobile" class="icon">
+            <i @click="toggleMobileNav" class='bx bx-menu' v-show="mobile" :class="{'icon-active' : mobileNav}"></i>
+          </div>
+
           <ul v-show="!mobile" class="menu-4" >
 
             <li class="link">
               <div class="dropdown-navigation">
-                <router-link  to="/about">Why EWT</router-link>
+                <router-link  to="/about">About Company</router-link>
               </div>
             </li>
 
@@ -84,7 +88,7 @@
               <div class="title">
                 <div class="title-content">
                   <router-link  to="/about">
-                    <p class="title-content-para" @click="toggleMobileNav2">Why EWT</p>
+                    <p class="title-content-para" @click="toggleMobileNav2">About Company</p>
                   </router-link>
                 </div>
               </div>
@@ -147,11 +151,8 @@
 
 
           </ul>
+        </div>
 
-        </div>
-        <div class="icon">
-          <i @click="toggleMobileNav" class='bx bx-menu' v-show="mobile" :class="{'icon-active' : mobileNav}"></i>
-        </div>
       </div>
 
     </div>
@@ -214,9 +215,11 @@ export default {
 </script>
 
 <style scoped>
+
 .button-part{
   display: flex;
 }
+
 .bx-bell{
   color: #191C1F;
   font-size: 30px;
@@ -226,17 +229,21 @@ export default {
   font-size: 30px;
   cursor: pointer;
   transition: .8s ease all;
-  color: #191C1F;
+  color: #070e20;
 }
 .icon-active{
   transform: rotate(180deg);
 }
 
+.icon{
+
+}
+
 .logo {
   width: 13%;
-  /*margin-left: 3%;*/
-  margin-top: 0.5%;
-  margin-bottom: 0.5%;
+  margin-left: 2%;
+  padding: 0 7px;
+  border-radius: 10px;
 }
 
 .style-4 {
@@ -244,8 +251,9 @@ export default {
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 6px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  background-color: #fff;
 }
 
 .link {
@@ -258,7 +266,6 @@ export default {
   align-items: center;
   align-content: center;
 }
-
 
 .menu-4{
   display: flex;
@@ -284,12 +291,10 @@ export default {
   font-size: 14px;
 }
 
-
-
 .auth{
   background-color: transparent;
   border: 1px solid #d0d0d0;
-  color: #191C1F;
+  color: #000021;
   padding: 0.6em 25px 0.5em 30px;
   border-radius: 12px;
   position: relative;
@@ -305,8 +310,8 @@ export default {
 
 
 .auth2{
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;
+  background: #000021;
+  border: 1px solid #000021;
   color: #ffffff;
   padding: 0.6em 30px 0.5em 30px;
   border-radius: 12px;
@@ -321,8 +326,6 @@ export default {
   font-size: 13px;
 }
 
-
-
 .topmost-header {
   /*background-color: #143159;*/
   padding-top: 10px;
@@ -330,8 +333,8 @@ export default {
   color: #FFFFFF;
   /*display: flex;*/
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  /*background-color: #070e20;*/
-  background-color: #0a1538;
+  background-color: #070e20;
+  display: none;
 }
 
 .topmost-header-1 {
@@ -396,7 +399,7 @@ i{
 }
 .dropdown-nav a {
   padding: 0.3em 0;
-  color: #ffffff;
+  color: #070e20;
   position: relative;
   display: inline-block;
   letter-spacing: 1px;
@@ -478,7 +481,7 @@ li {
 
 a {
   display: block;
-  color: #191C1F;
+  color: #070e20;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -635,7 +638,7 @@ a {
   }
 
   .logo {
-    width: 33%;
+    width: 35%;
     padding-left: unset;
     margin-left: 5px;
   }

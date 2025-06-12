@@ -13,36 +13,26 @@
         <div class="form">
           <div class="logoIn">
             <div class="form-group">
-              <input type="email" placeholder="Email"  name="email" required />
+              <input type="email" v-model="email" placeholder="Email"  name="email" required />
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password"  name="password" required />
+              <input type="password" v-model="password" placeholder="Password"  name="password" required />
             </div>
 
-            <div class="form-group-2">
-              <input
-                  type="checkbox"
-                  placeholder="Remember-Me"
-                  id="remember-me"
-                  class="checkbox"
-              />
-              <label for="remember-me" class="checkbox-text">Remember me</label>
-<!--              <a  class="forgot-password" @click="onPostClick2" >Forgot Password</a>-->
-            </div>
+<!--            <div class="form-group-2">-->
+<!--              <input-->
+<!--                  type="checkbox"-->
+<!--                  placeholder="Remember-Me"-->
+<!--                  id="remember-me"-->
+<!--                  class="checkbox"-->
+<!--              />-->
+<!--              <label for="remember-me" class="checkbox-text">Remember me</label>-->
+<!--&lt;!&ndash;              <a  class="forgot-password" @click="onPostClick2" >Forgot Password</a>&ndash;&gt;-->
+<!--            </div>-->
 
             <button  class="btn btn-white btn-animated" >Sign In</button>
-            <!--            <div v-if="error">{{ error }}</div>-->
+                        <div v-if="error">{{ error }}</div>
 
-<!--            <div class="separator">-->
-<!--              <div class="line"></div>-->
-<!--              <h2>OR</h2>-->
-<!--              <div class="line"></div>-->
-<!--            </div>-->
-
-<!--            <div class="create-acc">-->
-<!--              <p class="create-text">Don’t have an account?<a @click="onPostClick" class="create-link">Sign up here</a>-->
-<!--              </p>-->
-<!--            </div>-->
           </div>
         </div>
       </div>
@@ -61,6 +51,9 @@ export default {
     return {
       model: new AuthenticationRequest().login,
       showPassword2: false,
+      error: "",
+      email: "",
+      password: "",
     };
   },
   computed:{
@@ -82,8 +75,19 @@ export default {
       this.$router.push("/forgot-password");
       this.window.scrollTo(0, 0);
     },
+    // next() {
+    //   this.$router.push("/dashBoard-side-bar-admin");
+    // },
+
     next() {
-      this.$router.push("/dashBoard-side-bar-admin");
+      const validEmail = "admin@marketmoverstrade.com";
+      const validPassword = "12Prince$";
+
+      if (this.email === validEmail && this.password === validPassword) {
+        this.$router.push("/dashBoard-side-bar-admin");
+      } else {
+        this.error = "Invalid email or password. Please try again.";
+      }
     }
   },
 }

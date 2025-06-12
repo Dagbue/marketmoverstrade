@@ -12,7 +12,7 @@
           <div class="footer-link-container">
             <h3 class="footer-title">About Us</h3>
             <p class="footer-link width">
-              Established on November 14, 2016, Early Wealth has its headquarters at 75 Uxbridge Rd, London W5
+              Established on November 14, 2014, Market Movers Trade has its headquarters at 75 Uxbridge Rd, London W5
               5SL, UK with the official registration under company number 10588120.
               Our company takes pride
               in being a trusted and innovative digital asset, stocks, forex trading platform tailored for a global clientele,
@@ -52,7 +52,7 @@
               <div class="social-logo">
                 <div class="last-div">
                   <i class='bx bx-mail-send' style='color:#ffffff'></i>
-                  <p class="last-div-para"><a href="mailto:support@earlywealthtrd.com">support@earlywealthtrd.com</a></p>
+                  <p class="last-div-para"><a href="mailto:support@marketmoverstrade.com">support@marketmoverstrade.com</a></p>
                 </div>
               </div>
             </div>
@@ -70,8 +70,8 @@
       </div>
       <hr/>
       <div class="copyright">
-        <p>Early Wealth LLC is part of Early Wealth Group of companies with broker entities
-          that are authorised and regulated across multiple jurisdictions. Early Wealth LLC has it's
+        <p>Market Movers Trade LLC is part of Market Movers Trade Group of companies with broker entities
+          that are authorised and regulated across multiple jurisdictions. Market Movers Trade LLC has it's
           business address at the United Kingdom.</p>
         <br/>
         <p>The objects of the Company are all subject matters not forbidden by International Business Companies
@@ -83,31 +83,31 @@
       </div>
       <div class="section-part">
 
-        <a href="https://coinmarketcap.com/">
-          <img src="https://infiniteprotrades.com/assets/home/wp-content/uploads/2020/03/bitcoin-1.svg" />
+        <a href="">
+          <img src="https://primexbt.com/_next/static/media/crystal.ce2c822d.svg" class="footer-partner" />
         </a>
 
         <a href="">
-          <img src="https://infiniteprotrades.com/assets/home/wp-content/uploads/2020/03/mastercard-1.svg" />
+          <img src="@/assets/CRPC.png" class="footer-partner" style="width: 40%;"  />
         </a>
 
         <a href="">
-          <img src="@/assets/bankwire.svg" />
+          <img src="@/assets/Expat-Journal.png" class="footer-partner"  />
         </a>
 
-<!--        <a href="">-->
-<!--          <img src="@/assets/usdt.png" style="width: 23%;" />-->
-<!--        </a>-->
+        <!--        <a href="">-->
+        <!--          <img src="@/assets/usdt.png" style="width: 23%;" />-->
+        <!--        </a>-->
 
-        <a href="https://crypto.com/">
-          <img src="https://infiniteprotrades.com/assets/home/wp-content/uploads/2020/03/america-express.svg" />
+        <a href="">
+          <img src="https://primexbt.com/_next/static/media/fireblocks.64d070a3.svg" class="footer-partner" />
         </a>
 
       </div>
       <div class="copyright">
-        <p>EWT Markets is, depending on the context, a reference to EWT Markets Germany GmbH, EWT Markets UK plc or
-          EWT Spreadbet plc. EWT Markets Germany GmbH is a company licensed and regulated by the Bundesanstalt für
-          Finanzdienstleistungsaufsicht (BaFin) under registration number 154814. EWT Markets UK Plc and EWT Spreadbet
+        <p>MMT Markets is, depending on the context, a reference to MMT Markets Germany GmbH, MMT Markets UK plc or
+          MMT Spreadbet plc. MMT Markets Germany GmbH is a company licensed and regulated by the Bundesanstalt für
+          Finanzdienstleistungsaufsicht (BaFin) under registration number 154814. MMT Markets UK Plc and MMT Spreadbet
           plc are registered in the Register of Companies of the Financial Conduct Authority under registration numbers
           173730 and 170627.</p>
         <br/>
@@ -120,7 +120,7 @@
       </div>
       <hr/>
       <div class="copyright">
-        <p>All rights reserved. Copyright © 2016 - 2024</p>
+        <p>All rights reserved. Copyright © 2014 - 2025</p>
       </div>
     </div>
     <certificate-modal @close="hideDialog" v-if="dialogIsVisible"/>
@@ -184,7 +184,7 @@ export default {
   width: 90%;
 }
 .the-footer {
-  background: #0a1538;
+  background: #000021;
   color: #ccc;
   padding: 1.5vh  1vh;
   margin-top: 3%;
@@ -205,9 +205,8 @@ export default {
 
 .footer-link {
   display: block;
-  font-size: 16px;
-  line-height: 25px;
-  opacity: 0.8;
+  font-size: 15px;
+  line-height: 20px;
   padding-top: 10px;
   color: #ffffff;
 }
@@ -268,7 +267,6 @@ a {
 }
 a:hover{
   color: #ffffff;
-  //font-size: 22px;
   font-weight: 700;
 }
 
@@ -321,12 +319,15 @@ a{
   justify-content: center;
   align-items: center;
   align-content: center;
-  padding-top: 30px;
-  padding-bottom: 15px;
   padding-left: 2%;
   /*background: #393939;*/
-  margin-top: 2%;
-  margin-bottom: 1.5%;
+}
+
+.footer-partner{
+  width: 65%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -432,6 +433,10 @@ a{
     width: 45%;
   }
 
+  .footer-partner{
+    width: 85%;
+  }
+
 }
 @media (max-width: 500px) {
   .copyright{
@@ -451,11 +456,16 @@ a{
     flex-direction: column;
     margin-left: unset;
     padding-bottom: 5px;
+    padding-top: 20px;
   }
 
 
   .logo-container {
     margin-left: unset;
+  }
+
+  .footer-partner{
+    width: 50%;
   }
 }
 </style>

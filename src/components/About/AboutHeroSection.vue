@@ -9,9 +9,12 @@
       <div class="section-1">
 
         <div class="text-part">
-          <p class="text-3">Early Wealth</p>
-          <p class="text-1">Is a Digital Asset <span>Trading</span> and <span>Investment</span> Platform</p>
-          <p class="text-2">That provides access to a cutting edge trading infrastructure worldwide.</p>
+          <p class="text-3">Market Movers Trade</p>
+          <p class="text-1">Investing. Now available <br/> to everyone.</p>
+          <p class="text-2">we see investing differently. Today’s financial system is complex, exclusive and
+            expensive - making it hard for the typical person to start investing.So, we’re building a platform without
+            digital walls and complex barriers. A platform that empowers you to see new possibilities for your money
+            - and helps make them a reality.</p>
 
 <!--          <div class="button-part">-->
 <!--            <button class="btn1" @click="onPostClick2">Login Account</button>-->
@@ -23,7 +26,7 @@
 
       <div class="section-2">
 
-        <img src="https://margex.com/_next/image?url=%2Fimages%2Fabout_onboarding.png&w=1200&q=75" alt="image" class="image" />
+        <img src="@/assets/pick.webp" alt="image" class="image" />
 
       </div>
 
@@ -47,14 +50,8 @@ export default {
 </script>
 
 <style scoped>
-/*.alpha{*/
-/*  !*background-color: #f0f2f4;*!*/
-/*  padding-bottom: 3%;*/
-/*  padding-top: 3%;*/
-/*}*/
 .alpha{
-  background-image: url("https://margex.com/images/bg_desk.webp");
-  background-color: #cccccc;
+  background-color: #000021;
   height: 600px;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -79,7 +76,7 @@ span{
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  padding-top: 5.5%;
+  padding-top: 3.5%;
 }
 
 .image{
@@ -87,20 +84,19 @@ span{
   display: block;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .text-part{
-  width: 75%;
+  width: 80%;
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
 
 .text-1{
-  font-size: 50px;
-  line-height: 1.1;
-  font-weight: 500;
+  font-size: 40px;
+  line-height: 1;
   white-space: pre-line;
   margin-bottom: 10px;
   font-family: 'BR-Firma-Bold', sans-serif;
@@ -109,9 +105,9 @@ span{
 
 .text-2{
   margin: 0;
-  font-size: 20px;
+  font-size: 18px;
   white-space: pre-line;
-  line-height: 1.4;
+  line-height: 1.15;
   color: #7A849D;
 }
 
@@ -194,7 +190,7 @@ span{
   }
 
   .image{
-    width: 90%;
+    width: 80%;
   }
 
   .button-part{

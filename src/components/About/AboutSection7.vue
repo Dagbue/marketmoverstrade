@@ -1,6 +1,6 @@
 <template>
   <div class="alpha">
-    <p class="section-header-1">Trade on the world index market with Early Wealth.</p>
+    <p class="section-header-1">Trade on the world index market with Market Movers Trade.</p>
 <!--    <p class="section-header">You decide what to trade and when to trade it. We’re hard at work behind the scenes to-->
 <!--      minimize your costs and improve your execution.</p>-->
 
@@ -46,8 +46,7 @@ export default {
 
 <style scoped>
 .alpha{
-  background-image: url("@/assets/backgroungimage.png");
-  /*background-color: #000;*/
+  background-color: #ffffff;
   height: 100%;
   background-position: top;
   background-repeat: no-repeat;
@@ -75,7 +74,7 @@ export default {
   padding-bottom: 1%;
 }
 .section-header-1{
-  font-size: 30px;
+  font-size: 28px;
   color: #222222;
   font-weight: bold;
   text-align: center;
@@ -111,8 +110,8 @@ export default {
 }
 
 .text-1{
-  font-size: 28px;
-  line-height: 26px;
+  font-size: 26px;
+  line-height: 24px;
   font-weight: 500;
   white-space: pre-line;
   margin-bottom: 10px;

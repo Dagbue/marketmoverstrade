@@ -250,7 +250,6 @@ const routes = [
             import(/* webpackChunkName: "withdrawalRequests" */ "../views/Admin/WithdrawalRequests.vue"),
         meta: { hideNavigation: true }
       },
-
       {
         path: "/change-password-admin",
         name: "changePasswordAdmin",
@@ -262,28 +261,56 @@ const routes = [
         path: "/trade-request-admin",
         name: "tradeRequestAdmin",
         component: () =>
-            import(/* webpackChunkName: "ChangePasswordAdmin" */ "../views/Admin/TradeRequestAdmin.vue"),
+            import(/* webpackChunkName: "tradeRequestAdmin" */ "../views/Admin/TradeRequestAdmin.vue"),
+        meta: { hideNavigation: true }
+      },
+      {
+        path: "/buying-request-admin",
+        name: "buyingRequestAdmin",
+        component: () =>
+            import(/* webpackChunkName: "buyingRequestAdmin" */ "../views/Admin/BuyingRequestAdmin.vue"),
+        meta: { hideNavigation: true }
+      },
+      {
+        path: "/selling-request-admin",
+        name: "sellingRequestAdmin",
+        component: () =>
+            import(/* webpackChunkName: "buyingRequestAdmin" */ "../views/Admin/SellingRequestAdmin.vue"),
         meta: { hideNavigation: true }
       },
       {
         path: "/trade-request-admin-update",
         name: "tradeRequestAdminUpdate",
         component: () =>
-            import(/* webpackChunkName: "ChangePasswordAdmin" */ "../views/Admin/TradeRequestsAdminUpdate.vue"),
+            import(/* webpackChunkName: "tradeRequestAdminUpdate" */ "../views/Admin/TradeRequestsAdminUpdate.vue"),
+        meta: { hideNavigation: true }
+      },
+      {
+        path: "/buying-request-admin-update",
+        name: "buyingRequestAdminUpdate",
+        component: () =>
+            import(/* webpackChunkName: "buyingRequestAdminUpdate" */ "../views/Admin/BuyingRequestsAdminUpdate.vue"),
+        meta: { hideNavigation: true }
+      },
+      {
+        path: "/selling-request-admin-update",
+        name: "sellingRequestAdminUpdate",
+        component: () =>
+            import(/* webpackChunkName: "sellingRequestAdminUpdate" */ "../views/Admin/SellingRequestsAdminUpdate.vue"),
         meta: { hideNavigation: true }
       },
       {
         path: "/add-new-user",
         name: "addNewUser",
         component: () =>
-            import(/* webpackChunkName: "ChangePasswordAdmin" */ "../views/Admin/AddNewUser.vue"),
+            import(/* webpackChunkName: "addNewUser" */ "../views/Admin/AddNewUser.vue"),
         meta: { hideNavigation: true }
       },
       {
         path: "/payment-details",
         name: "paymentDetails",
         component: () =>
-            import(/* webpackChunkName: "ChangePasswordAdmin" */ "../views/Admin/PaymentDetails.vue"),
+            import(/* webpackChunkName: "paymentDetails" */ "../views/Admin/PaymentDetails.vue"),
         meta: { hideNavigation: true }
       },
       {
@@ -293,12 +320,18 @@ const routes = [
             import(/* webpackChunkName: "ChangePasswordAdmin" */ "../views/Admin/UploadedID.vue"),
         meta: { hideNavigation: true }
       },
-
       {
         path: "/add-trade",
         name: "AddTrade",
         component: () =>
             import(/* webpackChunkName: "ChangePasswordAdmin" */ "../views/Admin/AddTrade.vue"),
+        meta: { hideNavigation: true }
+      },
+      {
+        path: "/add-trading-pair",
+        name: "AddTradingPair",
+        component: () =>
+            import(/* webpackChunkName: "ChangePasswordAdmin" */ "../views/Admin/AddTradingPair.vue"),
         meta: { hideNavigation: true }
       },
     ]

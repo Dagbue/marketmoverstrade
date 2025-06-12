@@ -2,14 +2,14 @@
   <div class="alpha">
     <div class="section-alpha-1">
       <p class="section-header-1">Choose an Investment Plan</p>
-      <p class="section-header">You don't have an account yet? start trading with Early Wealth.</p>
+      <p class="section-header">You don't have an account yet? start trading with Market Movers Trade.</p>
     </div>
 
     <div class="section-alpha">
 
       <div class="third-section top">
         <p class="text-1">Silver</p>
-        <p class="text-2">10<span class="text-2-inner">%</span></p>
+        <p class="text-2">5<span class="text-2-inner">%</span></p>
         <!--        <p class="text-2">4 Months</p>-->
         <p class="text-3">4 Months</p>
 
@@ -45,7 +45,7 @@
 
       <div class="third-section top">
         <p class="text-1">Gold</p>
-        <p class="text-2">20<span class="text-2-inner">%</span></p>
+        <p class="text-2">10<span class="text-2-inner">%</span></p>
         <!--        <p class="text-2">4 Months</p>-->
         <p class="text-3">8 Months</p>
 
@@ -81,7 +81,7 @@
 
       <div class="third-section top">
         <p class="text-1">Diamond</p>
-        <p class="text-2">30<span class="text-2-inner">%</span></p>
+        <p class="text-2">15<span class="text-2-inner">%</span></p>
         <!--        <p class="text-2">4 Months</p>-->
         <p class="text-3">12 Months</p>
 
@@ -117,7 +117,7 @@
 
       <div class="third-section top">
         <p class="text-1">Platinum</p>
-        <p class="text-2">50<span class="text-2-inner">%</span></p>
+        <p class="text-2">20<span class="text-2-inner">%</span></p>
         <!--        <p class="text-2">4 Months</p>-->
         <p class="text-3">24 Months</p>
 
@@ -160,10 +160,10 @@
       <section>
         <details>
           <summary>
-            WHAT IS EARLY WEALTH
+            WHAT IS MARKET MOVERS TRADE
           </summary>
           <p>
-            Early Wealth is an officially registered company and conducts
+            Market Movers Trade is an officially registered company and conducts
             business under the laws of the UK Government. The company is involved
             in Stocks, options CFD , Forex and crypto. Also trading other valuable
             commodities/assets which we offer to our clients to earn from using a
@@ -186,7 +186,7 @@
             HOW CAN I MAKE SURE YOUR COMPANY IS A REAL AND NOT A FAKE ONE
           </summary>
           <p>
-            Early Wealth is officially incorporated with the UK
+            Market Movers Trade is officially incorporated with the UK
             Companies Office. verify registration: (click here)
 <!--            <a href="https://find-and-update.company-information.service.gov.uk/company/10477019">-->
 <!--              https://find-and-update.company-information.service.gov.uk/company/10477019-->
@@ -242,19 +242,8 @@ export default {
 <style scoped>
 
 .alpha{
-  /*padding-top: 5%;*/
-  /*!*padding-bottom: 3%;*!*/
-  /*!*background-image: url("@/assets/background.png");*!*/
-  /*!*background-color: #000;*!*/
-  /*height: 100%;*/
-  /*background-position: center;*/
-  /*background-repeat: no-repeat;*/
-  /*background-size: cover;*/
-  /*position: relative;*/
-  /*padding-bottom: 5%;*/
+  background-color: #f7f7f7;
 
-  background-image: url("@/assets/backgroungimage.png");
-  /*background-color: #000;*/
   height: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -344,8 +333,8 @@ export default {
   gap: 8px;
   width: 180px;
   height: 44px;
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;
+  background: #000021;
+  border: 1px solid #000021;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 10px;
   font-weight: 500;
@@ -392,7 +381,7 @@ export default {
 
 
 .bx{
-  color: #1450C8;
+  color: #000021;
 }
 
 .section-1{
@@ -414,6 +403,7 @@ export default {
   width: 25%;
   font-family: 'BR-Firma-Bold', sans-serif;
 }
+
 .lawrence{
   padding-left: 5%;
 }

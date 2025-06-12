@@ -33,7 +33,6 @@
         <!--        </p>-->
       </div>
 
-
       <div class="table" v-if="this.allUsers.length > 0" >
         <table>
           <tr>
@@ -102,20 +101,6 @@
           </div>
           <button @click="nextPage" :disabled="currentPage === totalPages" class="previous">Next</button>
         </div>
-
-
-<!--          <div class="fields-alpha-2">-->
-<!--            <label class="fields-alpha-2-label">Select Email</label>-->
-<!--            <select class="select-form" v-model="SelectEmail" aria-placeholder="Select Value" required>-->
-<!--              <option v-for="option in contacts" :key="option" :value="option.email" >-->
-<!--                {{ option.email }}-->
-<!--              </option>-->
-<!--            </select>-->
-<!--            <p class="btn" @click="update1">Update User</p>-->
-<!--            <p class="btn" @click="update">Delete User</p>-->
-<!--          </div>-->
-
-
       </div>
 
     </div>
@@ -576,7 +561,9 @@ select {
 
 @media (max-width: 700px) {
   .table{
-    margin-left: unset;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 10px;
   }
   th {
     display: none;

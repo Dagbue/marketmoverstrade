@@ -7,7 +7,7 @@
             <img src="@/assets/logo.png" alt="logo" class="company-logo">
           </router-link>
           <h2>
-            Create New Early Wealth Account
+            Create New Market Movers Trade Account
           </h2>
 <!--          <p>-->
 <!--            NB: Investors are not allowed to keep their trade account dormant 2-->
@@ -342,14 +342,14 @@
                   required
               />
               <label for="remember-me" class="checkbox-text"
-              >I Agree to Early Wealth
+              >I Agree to Market Movers Trade
                 <a  class="terms" @click="showDialog">Terms And Conditions</a></label
               >
             </div>
             <base-button
                 style="
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;
+  background: #000021;
+  border: 1px solid #000021;
   color: white;
 "
                 :loading="loading" >Create Account</base-button>
@@ -567,9 +567,9 @@ form {
 
 
 .company-logo{
-  width: 25%;
-  margin-top: 5%;
-  margin-bottom: 2%;
+  width: 30%;
+  margin-top: 4%;
+  margin-bottom: 1%;
 }
 
 :root {

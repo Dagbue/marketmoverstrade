@@ -7,7 +7,7 @@
           <img src="@/assets/logo.png" alt="logo" class="company-logo">
           </router-link>
           <h2>
-            Sign In With Your <br/> <span class="header-span">Early Wealth</span> Account
+            Sign In With Your <br/> <span class="header-span">Market Movers Trade</span> Account
           </h2>
         </div>
 
@@ -46,8 +46,8 @@
 
             <base-button
                 style="
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;
+  background: #000021;
+  border: 1px solid #000021;
   color: white;
 "
                 :loading="loading"
@@ -137,7 +137,7 @@ form {
 }
 
 .company-logo{
-  width: 35%;
+  width: 40%;
   margin-top: 8%;
   margin-bottom: 2%;
 }

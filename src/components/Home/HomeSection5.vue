@@ -2,9 +2,9 @@
   <div class="alpha">
     <div class="section-1-alpha">
       <div class="section-1">
-        <p class="text-1">Join Early Wealth and experience greatness</p>
+        <p class="text-1">Join Market Movers Trade and experience greatness</p>
         <p class="text-2">
-          Discover the power of Early Wealth, a cutting-edge platform that integrates cryptocurrency, stocks, and
+          Discover the power of Market Movers Trade, a cutting-edge platform that integrates cryptocurrency, stocks, and
           forex trading. Seamlessly manage and trade across these markets from a single platform, offering both
           convenience and control for your financial portfolio.</p>
 <!--        <p class="text-2">Download the Rubies app</p>-->
@@ -55,11 +55,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  /*padding-bottom: 1%;*/
-  /*padding-top: 1%;*/
-
-  background-image: url("https://margex.com/images/bg_desk.webp");
-  background-color: #cccccc;
+  background-color: #070e20;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;

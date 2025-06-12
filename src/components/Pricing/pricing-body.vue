@@ -3,14 +3,14 @@
 
   <div class="section-alpha-1">
     <p class="section-header-1">Choose an Investment Plan</p>
-    <p class="section-header">You don't have an account yet? start trading with Early Wealth. </p>
+    <p class="section-header">You don't have an account yet? start trading with Market Movers Trade. </p>
   </div>
 
   <div class="section-alpha">
 
     <div class="third-section top">
       <p class="text-1">Silver</p>
-      <p class="text-2">10<span class="text-2-inner">%</span></p>
+      <p class="text-2">5<span class="text-2-inner">%</span></p>
       <!--        <p class="text-2">4 Months</p>-->
       <p class="text-3">4 Months</p>
 
@@ -46,7 +46,7 @@
 
     <div class="third-section top">
       <p class="text-1">Gold</p>
-      <p class="text-2">20<span class="text-2-inner">%</span></p>
+      <p class="text-2">10<span class="text-2-inner">%</span></p>
       <!--        <p class="text-2">4 Months</p>-->
       <p class="text-3">8 Months</p>
 
@@ -82,7 +82,7 @@
 
     <div class="third-section top">
       <p class="text-1">Diamond</p>
-      <p class="text-2">30<span class="text-2-inner">%</span></p>
+      <p class="text-2">15<span class="text-2-inner">%</span></p>
       <!--        <p class="text-2">4 Months</p>-->
       <p class="text-3">12 Months</p>
 
@@ -118,7 +118,7 @@
 
     <div class="third-section top">
       <p class="text-1">Platinum</p>
-      <p class="text-2">50<span class="text-2-inner">%</span></p>
+      <p class="text-2">20<span class="text-2-inner">%</span></p>
       <!--        <p class="text-2">4 Months</p>-->
       <p class="text-3">24 Months</p>
 
@@ -172,8 +172,8 @@ export default {
 <style scoped>
 
 .alpha{
-  background-image: url("@/assets/backgroungimage.png");
-  /*background-color: #000;*/
+  background-color: #ffffff;
+
   height: 100%;
   background-position: top;
   background-repeat: no-repeat;
@@ -184,7 +184,7 @@ export default {
 }
 .section-header{
   font-size: 17px;
-  color: #0a1538;
+  color: #070e20;
   text-align: center;
   font-weight: 300;
   margin-left: 23%;
@@ -263,8 +263,8 @@ export default {
   gap: 8px;
   width: 180px;
   height: 44px;
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;
+  background: #000021;
+  border: 1px solid #000021;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 12px;
   font-weight: 500;
@@ -318,7 +318,7 @@ export default {
 
 
 .bx{
-  color: #1450C8;
+  color: #000021;
 }
 @media (max-width: 990px) {
 

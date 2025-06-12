@@ -2,7 +2,7 @@
   <div class="alpha">
 
     <div class="section-1">
-      <h2 class="text-1" style="text-align: center;"> Early Wealth is More than Just a Trading Platform</h2>
+      <h2 class="text-1" style="text-align: center;"> Market Movers Trade is More than Just <br/> a Trading Platform</h2>
       <p class="text-2">Give your trading strategy the advantage with our better-than-market conditions.</p>
     </div>
 
@@ -61,7 +61,8 @@ export default {
 .alpha{
   padding-top: 5%;
   padding-bottom: 5%;
-  background: #f4f5f6;
+  background: #070e20;
+
 }
 
 .section-1-inner{
@@ -74,9 +75,10 @@ export default {
   width: 46%;
 }
 .section-1-inner-content h1{
-  font-size: 17px;
+  font-size: 18px;
   font-family: 'BR-Firma-Bold', sans-serif;
   padding-bottom: 5px;
+  color: #FFFFFF;
 }
 
 .description{
@@ -84,6 +86,7 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  color: #7A849D;
 }
 
 .description-2{
@@ -113,15 +116,16 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
-  font-size: 24px;
+  font-size: 28px;
   padding-bottom: 10px;
   font-family: 'BR-Firma-Bold', sans-serif;
+  color: #FFFFFF;
 }
 .text-2{
   font-size: 18px;
   text-align: center;
   padding-bottom: 1%;
+  color: #7A849D;
 }
 .bx{
   font-size: 30px;
@@ -153,7 +157,7 @@ export default {
   gap: 8px;
   background-color: transparent;
   border: 1px solid #d0d0d0;
-  color: #191C1F;
+  color: #d0d0d0;
   width: 180px;
 }
 
@@ -229,8 +233,6 @@ export default {
     object-fit: cover;
     width: 180px;
   }
-
-
 
   .text-2{
     display: block;

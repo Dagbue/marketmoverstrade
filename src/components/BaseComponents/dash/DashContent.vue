@@ -106,9 +106,9 @@ export default {
 /*}*/
 .home-content{
   position: fixed;
-  left: 225px;
+  left: 200px;
   background-color: #000000;
-  width: calc(100% - 215px);
+  width: calc(100% - 200px);
   height: 100vh;
   transition: all 0.5s ease;
   margin: 0 10px;
@@ -120,8 +120,8 @@ export default {
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
+  padding-top: 0.25%;
+  padding-bottom: 0.25%;
   /*padding-right: 3%;*/
   background-color: #0f171c;
 }
@@ -158,6 +158,10 @@ export default {
   border-radius: 100%;
   margin-right: 0;
   padding-right: 0;
+}
+
+.avatar{
+  width: 5%;
 }
 
 

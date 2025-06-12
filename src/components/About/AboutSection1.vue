@@ -77,8 +77,8 @@ export default {
 }
 
 .section-alpha{
-  /*background-image: url("@/assets/background.png");*/
-  /*background-color: #000;*/
+  background-color: #f7f7f7;
+
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -289,12 +289,13 @@ export default {
   }
 
   .section-2-content{
-    padding-bottom: 5%;
+    padding-bottom: 7%;
   }
 
   .section-img{
     width: 22%;
   }
+
 }
 
 

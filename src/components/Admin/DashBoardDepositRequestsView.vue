@@ -51,6 +51,7 @@
             <th>Payment Mode</th>
             <th>Date Applied</th>
             <th>Description</th>
+            <th>Destination</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -76,6 +77,13 @@
             <td data-label="Payment Mode">{{child.transactionMethod}}</td>
             <td data-label="Date Applied">{{child.createdAt | formatDate}}</td>
             <td data-label="Description">{{child.additionalComment}}</td>
+            <td data-label="Destination">
+              <select class="destination">
+                <option value="" >Choose Destination</option>
+                <option value="accountBalance">Account Balance</option>
+                <option value="walletBalance">Wallet Balance</option>
+              </select>
+            </td>
             <td data-label="Status">
               <div>
                 <p v-if="child.depositStatus === 'approved'" class="status-approved">{{child.depositStatus | lowercase}}</p>
@@ -252,6 +260,9 @@ export default {
 </script>
 
 <style scoped>
+.destination{
+  width: 100%;
+}
 .status-pending{
   background-color: #FE9431;
   border-radius: 5px;
@@ -646,7 +657,9 @@ label{
 
 @media (max-width: 700px) {
   .table{
-    margin-left: unset;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 10px;
   }
   th {
     display: none;

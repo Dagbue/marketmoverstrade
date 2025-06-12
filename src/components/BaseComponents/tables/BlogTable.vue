@@ -41,6 +41,8 @@ export default {
 .tradingview-widget-container{
   padding-top: 5%;
   padding-bottom: 5%;
+  background-color: #ffffff;
+
 }
 
 .tradingview-widget {

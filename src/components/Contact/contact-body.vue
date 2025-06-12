@@ -124,8 +124,8 @@ export default {
 <style scoped>
 
 .alpha{
-  background-image: url("@/assets/backgroungimage.png");
-  /*background-color: #000;*/
+  background-color: #ffffff;
+
   height: 100%;
   background-position: top;
   background-repeat: no-repeat;
@@ -184,7 +184,7 @@ export default {
   font-size: 36px;
   line-height: 44px;
   padding-bottom: 10px;
-  color: #101828;
+  color: #000021;
   font-family: 'BR-Firma-Bold', sans-serif;
 }
 
@@ -212,8 +212,8 @@ export default {
 }
 
 .contact-form .button {
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;
+  background: #000021;
+  border: 1px solid #000021;
   color: white;
   cursor: pointer;
   padding: 15px 16px;
@@ -290,8 +290,8 @@ export default {
   background-repeat: no-repeat;
   background-position-y: -600%;
   /*background-color: #070e20;*/
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;
+  background: #000021;
+  border: 1px solid #000021;
   border-radius: 4px;
   color: #FFF;
   box-shadow: 0 0 10px 2.5px rgba(0, 0, 0, 0.25);
@@ -327,7 +327,7 @@ export default {
   height: 0;
   border-left: 0 solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #3179FF;
+  border-bottom: 10px solid #000021;
 }
 
 .subscribe-wrapper h4 {
@@ -353,14 +353,14 @@ export default {
 
 .subscribe-wrapper input:focus {
   outline: none;
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
+  background: #000021;
 }
 
 .subscribe-wrapper .submit-btn {
   position: absolute;
   border-radius: 20px 0 0 20px;
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1.5px solid #3179FF;
+  background: #000021;
+  border: 1.5px solid #000021;
   color: #FFF;
   padding: 12px 25px;
   display: inline-block;
@@ -375,7 +375,7 @@ export default {
 }
 
 .subscribe-wrapper .submit-btn:hover {
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
+  background: #000021;
 }
 
 

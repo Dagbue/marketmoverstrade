@@ -84,7 +84,7 @@ export default {
 .text-2{
   font-size: 18px;
   text-align: center;
-  padding-bottom: 4%;
+  padding-bottom: 2.5%;
 }
 .bx{
   font-size: 30px;
@@ -94,7 +94,6 @@ export default {
 .image-part{
   display: flex;
   justify-content: center;
-  margin-top: 15px;
   gap: 20px;
 }
 

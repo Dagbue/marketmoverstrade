@@ -171,7 +171,6 @@ p{
 .btn:visited {
   text-decoration: none;
   padding: 10px 40px;
-  //display: inline-block;
   border-radius: 100px;
   transition: all 0.2s;
   position: relative;
@@ -185,8 +184,8 @@ p{
 /*  transition: 4ms ease-in;*/
 /*}*/
 .btn-white {
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;
+  background: #000021;
+  border: 1px solid #000021;
   color: white;
   font-size: 15px;
 }

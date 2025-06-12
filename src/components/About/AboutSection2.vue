@@ -1,7 +1,7 @@
 <template>
   <div class="alpha">
     <p class="section-header-1">There’s a time and a place for risk</p>
-    <p class="section-header">Your funds and data are always secure. With Early Wealth you’re protected
+    <p class="section-header">Your funds and data are always secure. With Market Movers Trade you’re protected
       by industry-leading protocols.</p>
 
 
@@ -11,7 +11,7 @@
 
         <div class="text-part">
           <p class="text-1">Setting New Standards in Global Finance Technology</p>
-          <p class="text-2">Early Wealth is set on a mission to provide a fair, secure, and easy-to-use
+          <p class="text-2">Market Movers Trade is set on a mission to provide a fair, secure, and easy-to-use
             platform with the highest class of financial technologies globally.</p>
         </div>
 
@@ -34,7 +34,7 @@
 
       <div class="section-2">
 
-        <img src="https://margex.com/_next/image?url=%2Fimages%2Fabout_belief.png&w=1920&q=75" alt="image" class="image" />
+        <img src="@/assets/security-device-hidden.png" alt="image" class="image" />
 
       </div>
 
@@ -50,15 +50,11 @@ export default {
 </script>
 
 <style scoped>
-/*.alpha{*/
-/*  !*background-color: #f0f2f4;*!*/
-/*  padding-bottom: 3%;*/
-/*  padding-top: 3%;*/
-/*}*/
+
 .alpha{
   padding-top: 5%;
   padding-bottom: 5%;
-  background: #f4f5f6;
+  background-color: #f7f7f7;
 }
 
 .section-1{
@@ -95,7 +91,7 @@ export default {
 }
 
 .image{
-  width: 100%;
+  width: 40%;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -111,7 +107,7 @@ export default {
 
 .text-1{
   font-size: 26px;
-  line-height: 24px;
+  line-height: 26px;
   font-weight: 500;
   white-space: pre-line;
   margin-bottom: 10px;
@@ -156,7 +152,7 @@ export default {
     line-height: 1.3;
   }
   .image{
-    width: 90%;
+    width: 50%;
   }
 }
 

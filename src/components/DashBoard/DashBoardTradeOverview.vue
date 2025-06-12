@@ -12,7 +12,7 @@
         <div class="row filter_group">
           <!--          <div class="blue">Download transactions</div>-->
           <div class="action-content">
-<!--            <img src="@/assets/Filterslines.svg"  alt="Export"/>-->
+            <img src="@/assets/Filterslines.svg"  alt="Export"/>
             <p>Filter</p>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 .alpha{
-  background-color: #0a1538 !important;
+  background-color: #000021 !important;
   padding-top: 6%;
   padding-bottom: 6%;
 }

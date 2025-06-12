@@ -103,16 +103,16 @@ export default {
       testimonials: [
         {
           id: 1,
-          text: "Early Wealth has created a quality platform for trading cryptocurrency derivatives. We were most impressed " +
+          text: "Market Movers Trade has created a quality platform for trading cryptocurrency derivatives. We were most impressed " +
               "by the exchange’s design and overall user experience, which is truly first-class.",
           author: "Emma Avon",
           source: "Investor",
           cite: "Emma Avon",
-          image: "https://margex.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fuser_avatar.8b1c8174.png&w=128&q=75"
+          image: "https://img.freepik.com/free-photo/portrait-young-pretty-redhead-girl-with-buns-smiling_176420-9784.jpg?ga=GA1.1.928247853.1742024277&semt=ais_hybrid"
         },
         {
           id: 2,
-          text: "Early Wealth is gradually taking over the crypto,Forex,and stocks derivatives market through its " +
+          text: "Market Movers Trade is gradually taking over the crypto,Forex,and stocks derivatives market through its " +
               "unique and user-friendly platform.",
           author: "Casper Brown",
           source: "Trader",
@@ -121,7 +121,7 @@ export default {
         },
         {
           id: 3,
-          text: "Early Wealth is a true refreshment in the crypto derivatives space. The platform offers low fees, high " +
+          text: "Market Movers Trade is a true refreshment in the crypto derivatives space. The platform offers low fees, high " +
               "leverage and security standards.",
           author: "Rene Peters",
           source: "Doctor",
@@ -130,12 +130,12 @@ export default {
         },
         {
           id: 4,
-          text: "Early Wealth is a solid broker for beginners that want to learn how to trade with leverage." +
+          text: "Market Movers Trade is a solid broker for beginners that want to learn how to trade with leverage." +
               " There are no complicated features or distractions.",
-          author: "Kevin",
+          author: "Jessica",
           source: "Student",
-          cite: "Kevin",
-          image: "https://img.freepik.com/free-photo/portrait-hispanic-college-student-carrying-backpack-standing-school-hallway_662251-1109.jpg?t=st=1716809973~exp=1716813573~hmac=27d9a285461ac02cd6cae91b6bcb73f9d93cced3288e25af3afeed6917cc8635&w=1060"
+          cite: "Jessica",
+          image: "https://img.freepik.com/premium-photo/stylish-brunette-smiling-camera_13339-113594.jpg?ga=GA1.1.928247853.1742024277&semt=ais_hybrid"
         },
         // Add other testimonials here
       ],
@@ -179,14 +179,14 @@ main {
 .alpha{
   padding-top: 5%;
   padding-bottom: 5%;
-  background: #f4f5f6;
+  background: #000021;
   height: 100%;
 }
 
 main h1 {
   text-align: center;
   font-size: clamp(2rem, 4vw, 2.4rem);
-  color: #000000;
+  color: #ffffff;
   font-family: 'BR-Firma-Bold', sans-serif;
 }
 
@@ -195,7 +195,7 @@ main h1 {
   line-height: 24px;
   letter-spacing: -0.015em;
   text-align: center;
-  color: #697582;
+  color: #7A849D;
   margin-bottom: 24px;
 }
 
@@ -213,7 +213,7 @@ body {
   margin-top: 60px;
   padding: 0;
   line-height: 1.68em;
-  color: #333333;
+  color: #ffffff;
   background: #fafafa;
 }
 
@@ -485,6 +485,7 @@ main{
   flex-basis: 100%;
   padding-right: 15px;
   line-height: 1.38em;
+  color: #FFFFFF;
 }
 
 .t-bq-quote-jenny .t-bq-quote-jenny-meta .t-bq-quote-jenny-author cite {

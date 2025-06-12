@@ -640,7 +640,9 @@ select {
 
 @media (max-width: 700px) {
   .table{
-    margin-left: unset;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 10px;
   }
   th {
     display: none;

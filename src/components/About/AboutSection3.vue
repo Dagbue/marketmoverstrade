@@ -38,12 +38,12 @@
         <div class="box">
           <img src="https://margex.com/images/products_crypto.svg" class="about-image" alt="assets-image"/>
           <h3>Buy Crypto</h3>
-          <p>Purchase cryptocurrency through Early Wealth trusted partners.</p>
+          <p>Purchase cryptocurrency through Market Movers Trade trusted partners.</p>
         </div>
         <div class="box">
           <img src="https://margex.com/images/products_mobile.svg" class="about-image" alt="assets-image"/>
           <h3>Two Mobile Apps</h3>
-          <p>"Early Wealth app" - For Traders "Copy trading app" - For Followers</p>
+          <p>"Market Movers Trade app" - For Traders "Copy trading app" - For Followers</p>
         </div>
       </div>
 
@@ -62,8 +62,8 @@ export default {
 <style scoped>
 
 .section-alpha{
-  background-image: url("@/assets/backgroungimage.png");
-  /*background-color: #000;*/
+  background-color: #f7f7f7;
+
   height: 100%;
   background-position: top;
   background-repeat: no-repeat;
@@ -101,10 +101,8 @@ export default {
   margin-top: 4%;
   width: 330px;
   height: 330px;
-  border: 1px solid #d9d9d9;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-
-
 
 .section-content-1{
   display: flex;

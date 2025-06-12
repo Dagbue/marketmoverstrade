@@ -5,7 +5,7 @@
       <div class="seperate mobile">
         <p class="download-sub"><a
             style="color: #000000;"
-            href="mailto:support@earlywealthtrd.com">support@earlywealthtrd.com</a></p>
+            href="mailto:support@marketmoverstrade.com">support@marketmoverstrade.com</a></p>
       </div>
       <div class="seperate mobile">
         <p class="download-sub">75 Uxbridge Rd, London W5 5SL, England UK</p>
@@ -88,8 +88,8 @@ export default {
 }
 
 .button {
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;
+  background: #000021;
+  border: 1px solid #000021;
   color: white;
   cursor: pointer;
   padding: 12px 40px;

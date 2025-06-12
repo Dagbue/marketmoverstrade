@@ -45,11 +45,38 @@
           </li>
         </router-link>
 
+        <router-link to="/buying-request-admin">
+          <li>
+            <a class="hover">
+              <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
+              <span class="links-name">Buying Request</span>
+            </a>
+          </li>
+        </router-link>
+
+        <router-link to="/selling-request-admin">
+          <li>
+            <a class="hover">
+              <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
+              <span class="links-name">Selling Request</span>
+            </a>
+          </li>
+        </router-link>
+
         <router-link to="/add-trade">
           <li>
             <a class="hover">
               <img src="@/assets/send.svg" alt="logo" class="link-img" />
               <span class="links-name">Add Trade</span>
+            </a>
+          </li>
+        </router-link>
+
+        <router-link to="/add-trading-pair">
+          <li>
+            <a class="hover">
+              <img src="@/assets/send.svg" alt="logo" class="link-img" />
+              <span class="links-name">Add Trading Pair</span>
             </a>
           </li>
         </router-link>
@@ -134,12 +161,35 @@
             <router-link to="/trade-request-admin" class="">Trade Request</router-link>
           </a>
         </li>
+
+        <li @click="toggleMobileNav2">
+          <a>
+            <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
+            <router-link to="/buying-request-admin" class="">Buying Request</router-link>
+          </a>
+        </li>
+
+        <li @click="toggleMobileNav2">
+          <a>
+            <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
+            <router-link to="/selling-request-admin" class="">Selling Request</router-link>
+          </a>
+        </li>
+
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
             <router-link to="/add-trade" class="">Add Trade</router-link>
           </a>
         </li>
+
+        <li @click="toggleMobileNav2">
+          <a>
+            <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
+            <router-link to="/add-trading-pair" class="">Add pair</router-link>
+          </a>
+        </li>
+
         <li @click="toggleMobileNav2">
           <a>
             <img src="@/assets/pie-chart.svg" alt="logo" class="link-img" />
@@ -423,7 +473,7 @@ body{
   margin-left: auto;
 }
 .dropdown-nav-2 a {
-  padding: 0.55em 0;
+  padding: 0.40em 0;
   color: #ffffff;
   position: relative;
   display: flex;

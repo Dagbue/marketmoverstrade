@@ -5,7 +5,7 @@
 
       <form @submit.prevent="showDialog" id="InteracFundingCard" class="dashboard-body-wrapper align-center">
 
-        <h4 class="header">Follow the instructions below to fund your wallet</h4>
+        <h4 class="header">Follow the instructions below to fund your wallet {{userId}}</h4>
 
         <hr/>
 
@@ -175,7 +175,7 @@
 
               <p class="text-3">Contact support to proceed with this Deposit Method
                 <span class="note-span">
-              <a style="color: rgba(219,101,123,0.6);" href="mailto:support@earlywealthtrd.com" class="para-last">support@earlywealthtrd.com</a>
+              <a style="color: rgba(219,101,123,0.6);" href="mailto:support@marketmoverstrade.com" class="para-last">support@marketmoverstrade.com</a>
             </span>
               </p>
             </div>
@@ -223,7 +223,7 @@
           this.depositMethod === 'TRC20'"
               class="text-3">Note: After making your deposit,kindly send a screenshot/proof of deposit to
             <span class="note-span">
-              <a style="color: rgba(219,101,123,0.6);" href="mailto:support@earlywealthtrd.com" class="para-last">support@earlywealthtrd.com</a>
+              <a style="color: rgba(219,101,123,0.6);" href="mailto:support@marketmoverstrade.com" class="para-last">support@marketmoverstrade.com</a>
             </span> for documentation and to boost the funding process
           </p>
 
@@ -302,7 +302,7 @@
         </div>
 
         <p class="text-block-51" style="padding-top: 10px; color: #6c757d;" >
-          Note: Deposits will be credited to your Early Wealth Account after 2 network confirmations.
+          Note: Deposits will be credited to your Market Movers Trade Account after 2 network confirmations.
         </p>
 
       </form>
@@ -486,7 +486,7 @@ export default {
 
     async getList() {
       await StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
-        walletId: 2,
+        walletId: 1,
       });
 
       await StoreUtils.rootGetters(StoreUtils.getters.paymentWallet.getReadPaymentWalletById)
@@ -502,7 +502,7 @@ export default {
     this.populateForm()
 
     StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
-      walletId: 2,
+      walletId: 1,
     })
     StoreUtils.rootGetters(StoreUtils.getters.paymentWallet.getReadPaymentWalletById)
 
@@ -522,7 +522,7 @@ export default {
     this.populateForm()
 
     StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
-      walletId: 2,
+      walletId: 1,
     })
     StoreUtils.rootGetters(StoreUtils.getters.paymentWallet.getReadPaymentWalletById)
 
@@ -542,7 +542,7 @@ export default {
     this.populateForm()
 
     StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
-      walletId: 2,
+      walletId: 1,
     })
     StoreUtils.rootGetters(StoreUtils.getters.paymentWallet.getReadPaymentWalletById)
 

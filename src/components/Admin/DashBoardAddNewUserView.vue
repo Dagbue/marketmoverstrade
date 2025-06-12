@@ -617,15 +617,6 @@ label{
     height: 500px;
   }
 }
-@media (max-width: 767px) {
-  .wrapper {
-    max-width: 550px;
-  }
-  .wrapper .headline h1 {
-    font-size: 22px;
-    line-height: 25px;
-  }
-}
 @media (max-width: 990px) {
   .wrapper .headline h1  {
     font-size: 32px;
@@ -634,23 +625,31 @@ label{
     font-size: 28px;
   }
 }
+@media (max-width: 767px) {
+  .wrapper {
+    width: 85%;
+  }
+  .wrapper .headline h1 {
+    font-size: 22px;
+    line-height: 20px;
+  }
+}
 @media (max-width: 500px) {
   .wrapper {
-    padding: 10px 25px 0;
+    padding: 10px 25px 25px 25px;
+    width: 100%;
   }
   form {
     margin: 1rem;
-    max-width: 50rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    max-width: 60rem;
+    border-radius: 10px;
     padding: 1rem;
-    /*background-color: #ffffff;*/
   }
   .wrapper .headline h1  {
-    font-size: 25px;
+    font-size: 24px;
   }
   .wrapper .headline h2  {
-    font-size: 23px;
+    font-size: 22px;
   }
 
 }

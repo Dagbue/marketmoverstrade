@@ -47,8 +47,7 @@ export default {
 <style scoped>
 
 .alpha{
-  background-image: url("@/assets/backgroungimage.png");
-  /*background-color: #000;*/
+  background-color: #ffffff;
   height: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -67,7 +66,7 @@ export default {
 }
 
 .section-header{
-  font-size: 17px;
+  font-size: 16px;
   color: #0f171c;
   text-align: center;
   font-weight: 300;
@@ -76,7 +75,7 @@ export default {
   padding-bottom: 1%;
 }
 .section-header-1{
-  font-size: 30px;
+  font-size: 28px;
   color: #222222;
   font-weight: bold;
   text-align: center;

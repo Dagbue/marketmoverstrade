@@ -9,7 +9,7 @@
     <div class="text-area">
       <h3>Login success🥳</h3>
       <p>You have successfully Logged in to your<br/>
-        Early Wealth account</p>
+        Market Movers Trade account</p>
     </div>
 
     <div class="submit">
@@ -18,8 +18,8 @@
           :loading="loading"
           style="
             width: 400px;
-   background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;"
+   background: #000021;
+  border: 1px solid #000021;"
       >
         Proceed to DashBoard
       </base-button>
@@ -87,18 +87,14 @@ export default {
     },
 
     fetchBitcoinRate() {
-      // Set loading to true when the request starts
       this.loading = true;
-
-      axios.get('https://api.coindesk.com/v1/bpi/currentprice/BTC.json')
+      axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
           .then(response => {
-            this.bitcoinRate = response.data.bpi.USD.rate_float;
-            // Set loading to false when the data is successfully fetched
+            this.bitcoinRate = response.data.bitcoin.usd;
             this.loading = false;
           })
           .catch(error => {
             console.error(error);
-            // Set loading to false also if there is an error
             this.loading = false;
           });
     }

@@ -62,8 +62,8 @@
           <base-button
               :loading="loading"
               style="
-  background: linear-gradient(180deg, #3179FF 0%, #1450C8 100%);
-  border: 1px solid #3179FF;
+  background: #000021;
+  border: 1px solid #000021;
   color: white;
 "
           >Verify email</base-button>
