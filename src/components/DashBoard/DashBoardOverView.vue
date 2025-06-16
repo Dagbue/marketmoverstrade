@@ -44,7 +44,7 @@
         <p class="balance-text-2">$ {{UserDetails.user.totalDepositedAmount - UserDetails.user.totalWithdrawals | formatAmount2}}</p>
         <div class="balance-section-1-inner">
           <p class="balance-text-3">Realized Profit</p>
-          <p class="balance-text-4">$19,757,490</p>
+          <p class="balance-text-4">$0</p>
         </div>
         <div class="balance-section-1-inner">
           <p class="balance-text-5">BTC Balance</p>
@@ -57,7 +57,7 @@
         <p class="balance-text-2">$ {{UserDetails.user.totalDepositedAmount | formatAmount2}}</p>
         <div class="balance-section-1-inner">
           <p class="balance-text-3">Realized Profit</p>
-          <p class="balance-text-4">127.28%</p>
+          <p class="balance-text-4">0.00%</p>
         </div>
         <div class="balance-section-1-inner">
           <p class="balance-text-5">Withdrawal</p>
@@ -70,11 +70,11 @@
         <p class="balance-text-2">$ {{UserDetails.user.btcBalance | formatAmount2}}</p>
         <div class="balance-section-1-inner">
           <p class="balance-text-3">Profit</p>
-          <p class="balance-text-4">$10,000</p>
+          <p class="balance-text-4">$0</p>
         </div>
         <div class="balance-section-1-inner">
           <p class="balance-text-5">Loss</p>
-          <p class="balance-text-6">- $2,000</p>
+          <p class="balance-text-6">- $0</p>
         </div>
       </div>
 
@@ -108,20 +108,20 @@
       >
         Trading history
       </p>
-      <p
-          class="navigation-bar-text-1"
-          :class="{ active: screen5 === 'Buying' }"
-          @click="changeScreen('Buying')"
-      >
-        Buying
-      </p>
-      <p
-          class="navigation-bar-text-1"
-          :class="{ active: screen5 === 'Selling' }"
-          @click="changeScreen('Selling')"
-      >
-        Selling
-      </p>
+<!--      <p-->
+<!--          class="navigation-bar-text-1"-->
+<!--          :class="{ active: screen5 === 'Buying' }"-->
+<!--          @click="changeScreen('Buying')"-->
+<!--      >-->
+<!--        Buying-->
+<!--      </p>-->
+<!--      <p-->
+<!--          class="navigation-bar-text-1"-->
+<!--          :class="{ active: screen5 === 'Selling' }"-->
+<!--          @click="changeScreen('Selling')"-->
+<!--      >-->
+<!--        Selling-->
+<!--      </p>-->
       <p
           class="navigation-bar-text-1"
           :class="{ active: screen5 === 'watchList' }"

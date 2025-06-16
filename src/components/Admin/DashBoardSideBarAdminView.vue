@@ -45,23 +45,23 @@
           </li>
         </router-link>
 
-        <router-link to="/buying-request-admin">
-          <li>
-            <a class="hover">
-              <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
-              <span class="links-name">Buying Request</span>
-            </a>
-          </li>
-        </router-link>
+<!--        <router-link to="/buying-request-admin">-->
+<!--          <li>-->
+<!--            <a class="hover">-->
+<!--              <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />-->
+<!--              <span class="links-name">Buying Request</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </router-link>-->
 
-        <router-link to="/selling-request-admin">
-          <li>
-            <a class="hover">
-              <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
-              <span class="links-name">Selling Request</span>
-            </a>
-          </li>
-        </router-link>
+<!--        <router-link to="/selling-request-admin">-->
+<!--          <li>-->
+<!--            <a class="hover">-->
+<!--              <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />-->
+<!--              <span class="links-name">Selling Request</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </router-link>-->
 
         <router-link to="/add-trade">
           <li>
@@ -302,7 +302,7 @@ export default {
 .afo-logo{
   width: 90%;
   background-color: #ffffff;
-  padding: 10px 20px;
+  padding: 10px 5px;
   border-radius: 5px;
 }
 .afo-logo-2{

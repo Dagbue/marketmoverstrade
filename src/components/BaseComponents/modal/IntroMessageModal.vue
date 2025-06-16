@@ -49,6 +49,7 @@
               style="color: #FFFFFF;"
           />
         </div>
+<!--          <p style="color: #FFFFFF;">{{this.url}}</p>-->
 
         <div class="form-group">
           <label class="id">Identification Card (Upload back of ID card for verification)</label>
@@ -64,6 +65,7 @@
               style="color: #FFFFFF;"
           />
         </div>
+<!--          <p style="color: #FFFFFF;">{{this.url2}}</p>-->
 
         <base-button style="
                     border: 0.5px solid #5d78ff;
@@ -124,22 +126,52 @@ export default {
       StoreUtils.commit(StoreUtils.mutations.auth.updateIsModalOpened, true)
       this.$emit('close');
     },
-    uploadFile() {
-      let input = this.$refs.file;
-      let files = input.files;
-      //console.log(size);
+    // uploadFile() {
+    //   let input = this.$refs.file;
+    //   let files = input.files;
+    //   //console.log(size);
+    //   const reader = new FileReader();
+    //   try {
+    //     reader.onload = (e) => {
+    //       this.base64 = e.target.result;
+    //       this.uploadOfficerImage();
+    //     };
+    //     reader.readAsDataURL(files[0]);
+    //     this.$emit("input", files[0]);
+    //   } catch (e) {
+    //     console.warn(e.message);
+    //   }
+    // },
+
+    async uploadFile() {
+      const files = this.$refs.file.files;
       const reader = new FileReader();
-      try {
-        reader.onload = (e) => {
-          this.base64 = e.target.result;
-          this.uploadOfficerImage();
-        };
-        reader.readAsDataURL(files[0]);
-        this.$emit("input", files[0]);
-      } catch (e) {
-        console.warn(e.message);
-      }
+
+      const readPromise = new Promise((resolve, reject) => {
+        reader.onload = (e) => resolve(e.target.result);
+        reader.onerror = reject;
+      });
+
+      reader.readAsDataURL(files[0]);
+      this.base64 = await readPromise;
+      await this.uploadOfficerImage(); // Wait until upload finishes
     },
+
+    async uploadFile2() {
+      const files = this.$refs.file2.files;
+      const reader = new FileReader();
+
+      const readPromise = new Promise((resolve, reject) => {
+        reader.onload = (e) => resolve(e.target.result);
+        reader.onerror = reject;
+      });
+
+      reader.readAsDataURL(files[0]);
+      this.base642 = await readPromise;
+      await this.uploadOfficerImage2(); // Wait until upload finishes
+    },
+
+
     async uploadOfficerImage() {
 
       this.uploadmodel.username = `${
@@ -151,22 +183,22 @@ export default {
 
     },
 
-    uploadFile2() {
-      let input = this.$refs.file2;
-      let files = input.files;
-      //console.log(size);
-      const reader = new FileReader();
-      try {
-        reader.onload = (e) => {
-          this.base642 = e.target.result;
-          this.uploadOfficerImage2();
-        };
-        reader.readAsDataURL(files[0]);
-        this.$emit("input", files[0]);
-      } catch (e) {
-        console.warn(e.message);
-      }
-    },
+    // uploadFile2() {
+    //   let input = this.$refs.file2;
+    //   let files = input.files;
+    //   //console.log(size);
+    //   const reader = new FileReader();
+    //   try {
+    //     reader.onload = (e) => {
+    //       this.base642 = e.target.result;
+    //       this.uploadOfficerImage2();
+    //     };
+    //     reader.readAsDataURL(files[0]);
+    //     this.$emit("input", files[0]);
+    //   } catch (e) {
+    //     console.warn(e.message);
+    //   }
+    // },
     async uploadOfficerImage2() {
       // this.showLoader = true;
       this.uploadmodel2.username = `${

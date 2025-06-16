@@ -117,7 +117,7 @@
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
-            <router-link to="/fund-wallet" style="font-size: 12.5px;">Fund Your Wallet</router-link>
+            <router-link to="/fund-wallet" style="font-size: 12.5px;">Fund Wallet</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">
@@ -226,7 +226,7 @@ export default {
 .afo-logo{
   width: 100%;
   background-color: #ffffff;
-  padding: 10px 20px;
+  padding: 5px 5px;
   border-radius: 5px;
 }
 .afo-logo-2{
