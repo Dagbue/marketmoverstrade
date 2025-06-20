@@ -113,7 +113,7 @@ export default {
 
 @media (max-width: 500px) {
   .alpha{
-    margin-top: 7%;
+    margin-top: 3%;
   }
 
   .section-1{

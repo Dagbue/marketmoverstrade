@@ -642,6 +642,12 @@ a {
     padding-left: unset;
     margin-left: 5px;
   }
+
+  .logo2{
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
 }
 
 </style>

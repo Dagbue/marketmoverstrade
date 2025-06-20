@@ -169,5 +169,9 @@ export default {
     margin-right: auto;
   }
 
+  .alpha{
+    padding-top: unset;
+  }
+
 }
 </style>

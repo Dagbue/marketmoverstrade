@@ -303,7 +303,7 @@ export default {
 @media (max-width: 500px) {
   .section-2-alpha{
     margin-top: 7%;
-    margin-bottom: 8%;
+    margin-bottom: 2%;
     margin-left: 2%;
     margin-right: 2%;
   }

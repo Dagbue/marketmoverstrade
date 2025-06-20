@@ -75,4 +75,12 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media (max-width: 700px) {
+  .header{
+    width: 85%;
+    margin-top: 3%;
+    margin-bottom: 7%;
+  }
+}
 </style>

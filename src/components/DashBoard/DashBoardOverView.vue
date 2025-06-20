@@ -298,17 +298,17 @@
 
           <div class="form-group">
             <label class="label">Stop Loss</label>
-            <input type="number" placeholder="Enter Stop Loss"  name="Stop Loss"  required/>
+            <input type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Take Profit</label>
-            <input type="number" placeholder="Enter Take Profit"  name="Take Profit"  required/>
+            <input type="number" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Entry Price</label>
-            <input type="number" placeholder="Enter Entry Price"  name="Entry Price"  required/>
+            <input type="number" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
           </div>
 
           <div class="form-group">
@@ -533,17 +533,17 @@
 
           <div class="form-group">
             <label class="label">Stop Loss</label>
-            <input type="number" placeholder="Enter Stop Loss"  name="Stop Loss"  required/>
+            <input type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Take Profit</label>
-            <input type="number" placeholder="Enter Take Profit"  name="Take Profit"  required/>
+            <input type="number" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Entry Price</label>
-            <input type="number" placeholder="Enter Entry Price"  name="Entry Price"  required/>
+            <input type="number" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
           </div>
 
           <div class="form-group">
@@ -747,17 +747,17 @@
 
           <div class="form-group">
             <label class="label">Stop Loss</label>
-            <input type="number" placeholder="Enter Stop Loss"  name="Stop Loss"  required/>
+            <input type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Take Profit</label>
-            <input type="number" placeholder="Enter Take Profit"  name="Take Profit"  required/>
+            <input type="number" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Entry Price</label>
-            <input type="number" placeholder="Enter Entry Price"  name="Entry Price"  required/>
+            <input type="number" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
           </div>
 
           <div class="form-group">
@@ -975,17 +975,17 @@
 
           <div class="form-group">
             <label class="label">Stop Loss</label>
-            <input type="number" placeholder="Enter Stop Loss"  name="Stop Loss"  required/>
+            <input type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Take Profit</label>
-            <input type="number" placeholder="Enter Take Profit"  name="Take Profit"  required/>
+            <input type="number" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Entry Price</label>
-            <input type="number" placeholder="Enter Entry Price"  name="Entry Price"  required/>
+            <input type="number" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
           </div>
 
           <div class="form-group">
@@ -1109,17 +1109,17 @@
 
           <div class="form-group">
             <label class="label">Stop Loss</label>
-            <input type="number" placeholder="Enter Stop Loss"  name="Stop Loss"  required/>
+            <input type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Take Profit</label>
-            <input type="number" placeholder="Enter Take Profit"  name="Take Profit"  required/>
+            <input type="number" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Entry Price</label>
-            <input type="number" placeholder="Enter Entry Price"  name="Entry Price"  required/>
+            <input type="number" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
           </div>
 
           <div class="form-group">
@@ -1512,6 +1512,11 @@ export default {
       tradeTime: "",
       tradeType: "",
       leverage: "",
+
+      stopLoss: "",
+      takeProfit: "",
+      entryPrice: "",
+
       dollars: 0,
       // bitcoin: null,
       bitcoinRate: null,
@@ -1735,7 +1740,10 @@ export default {
         endTime: this.currentDate2,
         tradeStatus: "pending",
         tradeReference: this.randomString,
-        tradeType: this.tradeType
+        tradeType: this.tradeType,
+        stopLoss: this.stopLoss,
+        takeProfit: this.takeProfit,
+        entryPrice: this.entryPrice
       });
 
       // Refresh trade history after the trade is placed
@@ -1767,6 +1775,10 @@ export default {
       this.randomString2 = "";
       this.currentDate2 = "";
       this.currentDate = "";
+
+      this.stopLoss = "";
+      this.takeProfit = "";
+      this.entryPrice = "";
     },
 
     // Function to get current date (YYYY-MM-DD format)

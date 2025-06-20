@@ -101,6 +101,25 @@
           <div class="separate">
 
             <div class="space">
+              <label>Realized Profit</label>
+              <input type="number"   class="form-input"/>
+            </div>
+
+            <div class="space">
+              <label>Profit</label>
+              <input type="text"   class="form-input"/>
+            </div>
+
+          </div>
+
+          <div style="margin-left: 3%;" class="space">
+            <label>Loss</label>
+            <input type="text"  class="form-input"/>
+          </div>
+
+          <div class="separate">
+
+            <div class="space">
               <label>status</label>
               <p class="edit">current status {{userStatus}}</p>
 <!--              <input type="text" v-model="userStatus" required="required" class="form-input"/>-->
