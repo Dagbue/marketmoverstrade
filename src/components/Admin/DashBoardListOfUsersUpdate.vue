@@ -102,19 +102,19 @@
 
             <div class="space">
               <label>Realized Profit</label>
-              <input type="number"   class="form-input"/>
+              <input type="number" v-model="realizedProfit"   class="form-input"/>
             </div>
 
             <div class="space">
               <label>Profit</label>
-              <input type="text"   class="form-input"/>
+              <input type="text" v-model="profit"  class="form-input"/>
             </div>
 
           </div>
 
           <div style="margin-left: 3%;" class="space">
             <label>Loss</label>
-            <input type="text"  class="form-input"/>
+            <input type="text" v-model="loss"  class="form-input"/>
           </div>
 
           <div class="separate">
@@ -188,6 +188,10 @@ export default {
       twoFactorAuthenticationCode: "",
       createdAt: "",
       userStatus: "",
+
+      realizedProfit: "",
+      profit: "",
+      loss: "",
     }
   },
   computed:{
@@ -229,6 +233,10 @@ export default {
       this.twoFactorAuthenticationCode = this.readUserById.user.twoFactorAuthenticationCode;
       this.createdAt = this.readUserById.user.createdAt;
       this.userStatus = this.readUserById.user.userStatus;
+
+      this.realizedProfit = this.readUserById.user.realizedProfit;
+      this.profit = this.readUserById.user.profit;
+      this.loss = this.readUserById.user.loss;
     },
 
     async updateDetails() {
@@ -246,6 +254,10 @@ export default {
         twoFactorAuthenticationCode: this.twoFactorAuthenticationCode,
         // createdAt: this.createdAt,
         userStatus: this.userStatus,
+
+        realizedProfit: this.realizedProfit,
+        profit: this.profit,
+        loss: this.loss,
       })
       await StoreUtils.dispatch(StoreUtils.actions.auth.allUsers)
       await StoreUtils.dispatch(StoreUtils.actions.auth.readReadUserById, {

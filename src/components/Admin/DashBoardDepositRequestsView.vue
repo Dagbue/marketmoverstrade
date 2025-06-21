@@ -51,7 +51,7 @@
             <th>Payment Mode</th>
             <th>Date Applied</th>
             <th>Description</th>
-            <th>Destination</th>
+<!--            <th>Destination</th>-->
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -77,13 +77,13 @@
             <td data-label="Payment Mode">{{child.transactionMethod}}</td>
             <td data-label="Date Applied">{{child.createdAt | formatDate}}</td>
             <td data-label="Description">{{child.additionalComment}}</td>
-            <td data-label="Destination">
-              <select class="destination">
-                <option value="" >Choose Destination</option>
-                <option value="accountBalance">Account Balance</option>
-                <option value="walletBalance">Wallet Balance</option>
-              </select>
-            </td>
+<!--            <td data-label="Destination">-->
+<!--              <select class="destination">-->
+<!--                <option value="" >Choose Destination</option>-->
+<!--                <option value="accountBalance">Account Balance</option>-->
+<!--                <option value="walletBalance">Wallet Balance</option>-->
+<!--              </select>-->
+<!--            </td>-->
             <td data-label="Status">
               <div>
                 <p v-if="child.depositStatus === 'approved'" class="status-approved">{{child.depositStatus | lowercase}}</p>

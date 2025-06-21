@@ -64,4 +64,11 @@ Vue.filter('formatDate2', function (value) {
 });
 
 
+Vue.filter('toPercentage', function (value, decimals = 2) {
+    if (value == null || isNaN(value)) return '0%';
+    let percentage = (parseFloat(value) * 100).toFixed(decimals);
+    return `${percentage}%`;
+});
+
+
 
