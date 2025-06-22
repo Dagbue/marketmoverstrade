@@ -73,7 +73,7 @@
         </div>
         <div class="balance-section-1-inner">
           <p class="balance-text-5">Loss</p>
-          <p class="balance-text-6">- $ {{UserDetails.user.realizedProfit | formatAmount2}}</p>
+          <p class="balance-text-6">- $ {{UserDetails.user.loss | formatAmount2}}</p>
         </div>
       </div>
 

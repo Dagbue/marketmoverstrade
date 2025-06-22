@@ -111,7 +111,7 @@ dialog {
   left: calc(50% - 17rem);
   margin: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 2rem;
   background-color: white;
   color: black;
@@ -143,10 +143,10 @@ p{
 }
 @media (max-width: 500px) {
   dialog {
-    top: 18vh;
-    width: 20rem;
-    height: 20rem;
-    left: unset;
+    top: 10vh;
+    width: 25rem;
+    height: 32rem;
+    left: calc(50% - 12.5rem);
     right: 30px;
   }
   h3{

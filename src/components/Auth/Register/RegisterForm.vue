@@ -451,6 +451,11 @@ export default {
         phoneNumber: this.model.phoneNumber,
         totalWithdrawals: 0.00,
         btcBalance: 0.00,
+
+        realizedProfit: 0.00,
+        profit: 0.00,
+        loss: 0.00,
+
         displayPicture: "",
         walletAddress: "",
         walletName: "",
