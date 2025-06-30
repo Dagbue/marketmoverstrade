@@ -1,7 +1,7 @@
 <template>
   <div class="alpha">
 
-          <intro-message-modal  @close="hideDialog" v-if="isModalOpened === false && dialogIsVisible === true" />
+<!--          <intro-message-modal  @close="hideDialog" v-if="isModalOpened === false && dialogIsVisible === true" />-->
 
     <div class="section-2">
 
@@ -41,10 +41,10 @@
       <div class="balance-section-1">
         <p class="balance-text-1">Account Balance</p>
         <p class="balance-text-2">$ {{UserDetails.user.totalDepositedAmount - UserDetails.user.totalWithdrawals | formatAmount2}}</p>
-        <div class="balance-section-1-inner">
-          <p class="balance-text-3">Realized Profit</p>
-          <p class="balance-text-4">$ {{UserDetails.user.realizedProfit | formatAmount2}}</p>
-        </div>
+<!--        <div class="balance-section-1-inner">-->
+<!--          <p class="balance-text-3">Realized Profit</p>-->
+<!--          <p class="balance-text-4">$ {{UserDetails.user.realizedProfit | formatAmount2}}</p>-->
+<!--        </div>-->
         <div class="balance-section-1-inner">
           <p class="balance-text-5">BTC Balance</p>
           <p class="balance-text-6">{{bitcoin}}</p>
@@ -54,12 +54,12 @@
       <div class="balance-section-1">
         <p class="balance-text-1">Invested Amount </p>
         <p class="balance-text-2">$ {{UserDetails.user.totalDepositedAmount | formatAmount2}}</p>
+<!--        <div class="balance-section-1-inner">-->
+<!--          <p class="balance-text-3">Realized Profit</p>-->
+<!--          <p class="balance-text-4">{{UserDetails.user.realizedProfit | toPercentage(1)}}%</p>-->
+<!--        </div>-->
         <div class="balance-section-1-inner">
-          <p class="balance-text-3">Realized Profit</p>
-          <p class="balance-text-4">{{UserDetails.user.realizedProfit | toPercentage(1)}}%</p>
-        </div>
-        <div class="balance-section-1-inner">
-          <p class="balance-text-5">Withdrawal</p>
+          <p class="balance-text-5">withdrawals</p>
           <p class="balance-text-6">$ {{UserDetails.user.totalWithdrawals | formatAmount2}}</p>
         </div>
       </div>
@@ -77,12 +77,12 @@
         </div>
       </div>
 
-      <div class="balance-section-1-last">
-        <p class="balance-text-7">Balance</p>
-        <p class="balance-text-7">Trading Volume</p>
-        <p class="balance-text-7">Trades</p>
-        <p class="balance-text-7">Avg. Trade Size</p>
-      </div>
+<!--      <div class="balance-section-1-last">-->
+<!--        <p class="balance-text-7">Balance</p>-->
+<!--        <p class="balance-text-7">Trading Volume</p>-->
+<!--        <p class="balance-text-7">Trades</p>-->
+<!--        <p class="balance-text-7">Avg. Trade Size</p>-->
+<!--      </div>-->
     </div>
 
     <div class="navigation-bar">
@@ -1473,7 +1473,7 @@
 import StoreUtils from "@/utility/StoreUtils";
 import TradeRequest from "@/model/request/TradeRequest";
 import {mapState} from "vuex";
-import IntroMessageModal from "@/components/BaseComponents/modal/IntroMessageModal.vue";
+// import IntroMessageModal from "@/components/BaseComponents/modal/IntroMessageModal.vue";
 import WatchListTable from "@/components/BaseComponents/tables/WatchListTable.vue";
 import BaseButton from "@/components/BaseComponents/buttons/BaseButton.vue";
 import WatchListTable2 from "@/components/BaseComponents/tables/WatchListTable2.vue";
@@ -1486,7 +1486,7 @@ export default {
     WatchListTable2,
     BaseButton,
     WatchListTable,
-    IntroMessageModal
+    // IntroMessageModal
   },
   data () {
     return {
@@ -1942,6 +1942,9 @@ export default {
 </script>
 
 <style scoped>
+.alpha{
+  height: 100%;
+}
 
 .last{
   margin-top: 1%;
@@ -1955,7 +1958,7 @@ export default {
 .balance-section-1{
   background-color: #0f171c;
   padding: 1.2rem;
-  width: 320px;
+  width: 32%;
   height: 155px;
   border-radius: 7px;
 }

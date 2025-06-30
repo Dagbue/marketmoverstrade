@@ -100,6 +100,9 @@ export default {
   font-size: 25px;
   display: none;
 }
+.home-section{
+  height: 100%;
+}
 
 /*.avatar{*/
 /*  width: 2.2%;*/
