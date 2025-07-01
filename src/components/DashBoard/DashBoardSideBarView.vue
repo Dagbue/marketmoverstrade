@@ -40,7 +40,7 @@
           <li>
             <a class="hover">
               <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
-              <span class="links-name">Fund Wallet</span>
+              <span class="links-name">Fund Your Wallet</span>
             </a>
           </li>
         </router-link>

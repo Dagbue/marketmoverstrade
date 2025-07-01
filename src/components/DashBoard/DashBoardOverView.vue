@@ -14,9 +14,9 @@
           <p @click="toggleScreen3" class="trade-btn-3">Trade CFD</p>
           <p @click="toggleScreen4" class="trade-btn-4">Trade Stocks</p>
         </div>
-        <div class="lawrence">
-          <p @click="toggleScreen5" class="trade-btn-5">Trade Real Estate</p>
-        </div>
+<!--        <div class="lawrence">-->
+<!--          <p @click="toggleScreen5" class="trade-btn-5">Trade Real Estate</p>-->
+<!--        </div>-->
       </div>
 
       <div class="section-2-part-2">
@@ -40,7 +40,7 @@
     <div class="balance-section">
       <div class="balance-section-1">
         <p class="balance-text-1">Account Balance</p>
-        <p class="balance-text-2">$ {{UserDetails.user.totalDepositedAmount - UserDetails.user.totalWithdrawals | formatAmount2}}</p>
+        <p class="balance-text-2">$ {{UserDetails.user.realizedProfit | formatAmount2}}</p>
 <!--        <div class="balance-section-1-inner">-->
 <!--          <p class="balance-text-3">Realized Profit</p>-->
 <!--          <p class="balance-text-4">$ {{UserDetails.user.realizedProfit | formatAmount2}}</p>-->
@@ -65,8 +65,8 @@
       </div>
 
       <div class="balance-section-1">
-        <p class="balance-text-1">Wallet Balance</p>
-        <p class="balance-text-2">$ {{UserDetails.user.btcBalance | formatAmount2}}</p>
+        <p class="balance-text-1">Ethereum Balance</p>
+        <p class="balance-text-2">{{ethereum}} ETH</p>
         <div class="balance-section-1-inner">
           <p class="balance-text-3">Profit</p>
           <p class="balance-text-4">$ {{UserDetails.user.profit | formatAmount2}}</p>
@@ -1519,6 +1519,7 @@ export default {
       dollars: 0,
       // bitcoin: null,
       bitcoinRate: null,
+      ethereumRate: null,
       dialogIsVisible: false,
       searchQuery: "", // Data property to hold the search input
     }
@@ -1571,7 +1572,14 @@ export default {
         return (this.UserDetails.user.totalDepositedAmount / this.bitcoinRate).toFixed(8);
       }
       return 'Loading...'; // or any default value when data isn't available yet
+    },
+    ethereum() {
+      if (this.UserDetails.user && this.ethereumRate) {
+        return (this.UserDetails.user.realizedProfit / this.ethereumRate).toFixed(8);
+      }
+      return 'Loading...';
     }
+
   },
 
   watch: {
@@ -1580,11 +1588,15 @@ export default {
       deep: true, // Ensure that nested changes in UserDetails are also tracked
       handler() {
         this.convertToBitcoin();
-      }
+        this.convertToEthereum();
+      },
     },
     bitcoinRate() {
       this.convertToBitcoin();
-    }
+    },
+    ethereumRate() {
+      this.convertToEthereum();
+    },
   },
 
   methods: {
@@ -1629,6 +1641,13 @@ export default {
         console.log('Bitcoin rate not found, please reload or check the storage.');
       }
     },
+    loadEthereumRate() {
+      this.ethereumRate = localStorage.getItem('ETHRate') || null;
+      if (!this.ethereumRate) {
+        console.log('Ethereum rate not found, please reload or check the storage.');
+      }
+    },
+
     getUserDetails() {
       // Call your Store dispatch or API to get the user details
       StoreUtils.dispatch(StoreUtils.actions.auth.readReadUserById, {
@@ -1648,6 +1667,19 @@ export default {
         console.log('User details are not available.');
       }
     },
+
+    convertToEthereum() {
+      if (!this.ethereumRate) {
+        console.log('Ethereum rate not loaded. Please wait or try reloading the page.');
+        return;
+      }
+      if (this.UserDetails.user && this.UserDetails.user.realizedProfit) {
+        this.ethereum = (this.UserDetails.user.realizedProfit / this.ethereumRate).toFixed(8);
+      } else {
+        console.log('User details are not available.');
+      }
+    },
+
 
     onPostClick() {
       this.$router.push("/fund-wallet");
@@ -1833,6 +1865,9 @@ export default {
     this.checkId();
     this.loadBitcoinRate(); // Ensure bitcoinRate is loaded when the component is created
     this.getUserDetails();
+    this.loadEthereumRate();
+    this.fetchEthereumRate();
+    this.convertToEthereum();
 
 
     StoreUtils.rootGetters(StoreUtils.getters.auth.getBitcoinRate)
@@ -1872,6 +1907,9 @@ export default {
     this.checkId();
     this.loadBitcoinRate(); // Ensure bitcoinRate is loaded when the component is created
     this.getUserDetails();
+    this.loadEthereumRate();
+    this.fetchEthereumRate();
+    this.convertToEthereum();
 
 
     StoreUtils.rootGetters(StoreUtils.getters.auth.getBitcoinRate)
@@ -1909,6 +1947,9 @@ export default {
     this.generateRandomString2();
     this.convertToBitcoin();
     this.checkId();
+    this.loadEthereumRate();
+    this.fetchEthereumRate();
+    this.convertToEthereum();
 
     this.loadBitcoinRate();
     if (this.UserDetails.user && this.bitcoinRate) {

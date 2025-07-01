@@ -47,6 +47,7 @@ export default {
       userId: "",
       userInfo: "",
       bitcoinRate: null,
+      ETHRate: null,
       loading: "false"
     };
   },
@@ -81,6 +82,7 @@ export default {
       localStorage.userFirstName = this.userDetails.user.firstName
       localStorage.userLastName = this.userDetails.user.lastName
       localStorage.bitcoinRate = this.bitcoinRate
+      localStorage.ETHRate = this.ETHRate
       localStorage.setItem('userInfo', JSON.stringify(this.userDetails.user));
       localStorage.setItem('userTrade', JSON.stringify(this.userTrade.trades));
       // console.log(localStorage)
@@ -97,11 +99,26 @@ export default {
             console.error(error);
             this.loading = false;
           });
+    },
+
+    fetchEthereumRate() {
+      this.loading = true;
+      axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
+          .then(response => {
+            this.ETHRate = response.data.ethereum.usd;
+            this.loading = false;
+          })
+          .catch(error => {
+            console.error(error);
+            this.loading = false;
+          });
     }
+
 
   },
   created() {
     this.fetchBitcoinRate()
+    this.fetchEthereumRate()
     this.userId = localStorage.getItem('userId')
 
     // Retrieve the object from local storage
@@ -115,6 +132,7 @@ export default {
   },
   mounted() {
     this.fetchBitcoinRate()
+    this.fetchEthereumRate()
     this.userId = localStorage.getItem('userId')
 
     // Retrieve the object from local storage

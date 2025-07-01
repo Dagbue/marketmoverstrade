@@ -3,9 +3,9 @@
     <div class="body">
       <fund-wallet-modal @close="hideDialog" v-if="dialogIsVisible" :selected-item="selectedItem" />
 
-      <form @submit.prevent="showDialog" id="InteracFundingCard" class="dashboard-body-wrapper align-center">
+      <form  @submit.prevent="showDialog" id="InteracFundingCard" class="dashboard-body-wrapper align-center">
 
-        <h4 class="header">Follow the instructions below to fund your wallet {{userId}}</h4>
+        <h4 class="header">Follow the instructions below to fund your wallet</h4>
 
         <hr/>
 
@@ -307,6 +307,227 @@
 
       </form>
 
+      <div style="display: none" id="InteracFundingCard" class="dashboard-body-wrapper align-center" >
+
+        <h4 class="header">Select a Cryptocurrency</h4>
+
+        <div class="section-container">
+          <div class="section-container-1">
+            <div class="section-container-inner-1">
+              <img width="40" height="40" src="@/assets/bitcoin-btc-logo.svg" alt="bitcoin"/>
+              <p class="section-container-text-1">BTC (Bitcoin)</p>
+            </div>
+            <div class="section-container-inner-2">
+              <i class='bx bx-chevron-right'/>
+            </div>
+          </div>
+          <div class="section-container-2">
+            <div class="section-container-inner-1">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+              <p class="section-container-text-2">Lightning Network</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <div class="section-container-1">
+            <div class="section-container-inner-1">
+              <img width="40" height="40" src="https://img.icons8.com/color/48/ethereum.png" alt="ethereum"/>
+              <p class="section-container-text-1">ETH (Ether)</p>
+            </div>
+            <div class="section-container-inner-2">
+              <i class='bx bx-chevron-right'/>
+            </div>
+          </div>
+          <div class="section-container-2">
+            <div class="section-container-inner-1">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+              <p class="section-container-text-2">Lightning Network</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <div class="section-container-1">
+            <div class="section-container-inner-1">
+              <img width="40" height="40" src="@/assets/tether-usdt-logo.svg" alt="tether--v1"/>
+              <p class="section-container-text-1">USDT (Tether)</p>
+            </div>
+            <div class="section-container-inner-2">
+              <i class='bx bx-chevron-right'/>
+            </div>
+          </div>
+          <div class="section-container-2">
+            <div class="section-container-inner-1">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+              <p class="section-container-text-2">ERC20 Network</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <div class="section-container-1">
+            <div class="section-container-inner-1">
+              <img width="40" height="40" src="@/assets/dogecoin-doge-logo.svg" alt="tether--v1"/>
+              <p class="section-container-text-1">Dogecoin</p>
+            </div>
+            <div class="section-container-inner-2">
+              <i class='bx bx-chevron-right'/>
+            </div>
+          </div>
+          <div class="section-container-2">
+            <div class="section-container-inner-1">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+              <p class="section-container-text-2">Lightning Network</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <div class="section-container-1">
+            <div class="section-container-inner-1">
+              <img width="40" height="40" src="@/assets/litecoin-ltc-logo.svg" alt="tether--v1"/>
+              <p class="section-container-text-1">Litecoin</p>
+            </div>
+            <div class="section-container-inner-2">
+              <i class='bx bx-chevron-right'/>
+            </div>
+          </div>
+          <div class="section-container-2">
+            <div class="section-container-inner-1">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+              <p class="section-container-text-2">Lightning Network</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <div class="section-container-1">
+            <div class="section-container-inner-1">
+              <img width="40" height="40" src="@/assets/xrp-xrp-logo.svg" alt="tether--v1"/>
+              <p class="section-container-text-1">Xrp</p>
+            </div>
+            <div class="section-container-inner-2">
+              <i class='bx bx-chevron-right'/>
+            </div>
+          </div>
+          <div class="section-container-2">
+            <div class="section-container-inner-1">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+              <p class="section-container-text-2">Lightning Network</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <div class="section-container-1">
+            <div class="section-container-inner-1">
+              <img width="40" height="40" src="@/assets/tether-usdt-logo.svg" alt="tether--v1"/>
+              <p class="section-container-text-1">USDT (Tether)</p>
+            </div>
+            <div class="section-container-inner-2">
+              <i class='bx bx-chevron-right'/>
+            </div>
+          </div>
+          <div class="section-container-2">
+            <div class="section-container-inner-1">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+              <p class="section-container-text-2">TRC20 Network</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-block-51" style="padding-top: 10px; color: #6c757d;" >
+          Note : Deposits will be credited to your Market Movers Trade Account after 2 network confirmations.
+        </p>
+
+      </div>
+
+      <div style="display: none" id="InteracFundingCard" class="dashboard-body-wrapper align-center" >
+
+<!--        <h4 class="header">Please send to address : </h4>-->
+
+        <div class="interac-funding-steps">
+          <div class="margin-bottom margin-small">
+            <div class="text-block-60">STEP 1</div>
+          </div>
+
+          <div >
+            <a class="">
+              <br/>
+              <div class="setup-title-wrapper">
+                <img src="@/assets/bank.svg" loading="lazy" alt="">
+                <div class="setup-title">
+                  <div class="text-block-51">
+                    Enter Amount Below
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="input-form-2">
+          <input type="number" class="input-form-3" placeholder="Amount" required name="Amount" v-model="btcBalance"/>
+        </div>
+
+        <div class="interac-funding-steps">
+          <div class="margin-bottom margin-small">
+            <div class="text-block-60">STEP 2</div>
+          </div>
+
+          <div >
+            <a class="">
+              <br/>
+              <div class="setup-title-wrapper">
+                <img src="@/assets/bank.svg" loading="lazy" alt="">
+                <div class="setup-title">
+                  <div class="text-block-51">
+                    Please send to address
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="transaction-container">
+          <div>
+            <p></p>
+          </div>
+        </div>
+
+        <p class="text-block-51" style="padding-top: 10px; color: #6c757d;" >
+          Note : Deposits will be credited to your Market Movers Trade Account after 2 network confirmations.
+        </p>
+
+      </div>
+
+
     </div>
   </div>
 </template>
@@ -314,20 +535,20 @@
 <script>
 import FundWalletModal from "@/components/BaseComponents/modal/FundWalletModal.vue";
 import router from "@/router";
-import BaseButton from "@/components/BaseComponents/buttons/BaseButton.vue";
+// import BaseButton from "@/components/BaseComponents/buttons/BaseButton.vue";
 import DepositRequest from "@/model/request/DepositRequest";
 import {mapState} from "vuex";
 import StoreUtils from "@/utility/StoreUtils";
-import VueQrcode from '@xkeshi/vue-qrcode';
+// import VueQrcode from '@xkeshi/vue-qrcode';
 import Swal from "sweetalert2";
 
 
 export default {
   name: "DashBoardFundWallet",
   components: {
-    BaseButton,
+    // BaseButton,
     FundWalletModal,
-    VueQrcode // Register the component
+    // VueQrcode // Register the component
   },
   computed:{
     readPaymentWalletById() {
@@ -572,10 +793,94 @@ export default {
 
 .header{
   font-weight: 700;
-  font-size: 19px;
+  font-size: 17px;
   /*line-height: 25px;*/
   color: #ffffff;
   text-align: left;
+  margin-bottom: 3%;
+}
+
+.section-container{
+  border: 0.5px solid rgba(241, 241, 241, 0.7);
+  padding: 20px;
+  border-radius: 7px;
+  margin-bottom: 5%;
+}
+
+.section-container-inner-1{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 5px;
+}
+
+.section-container-1{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  gap: 5px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.section-container-text-1{
+  color: #FFFFFF;
+  font-size: 13px;
+}
+
+.section-container-text-2{
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+.bx-chevron-right{
+  color: #FFFFFF;
+  font-size: 20px;
 }
 
 
@@ -622,7 +927,7 @@ export default {
 
 .text-block-51 {
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .w-inline-block {

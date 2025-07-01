@@ -101,7 +101,7 @@
           <div class="separate">
 
             <div class="space">
-              <label>Realized Profit</label>
+              <label>Account Balance</label>
               <input type="number" v-model="realizedProfit"   class="form-input"/>
             </div>
 

@@ -45,7 +45,7 @@
             <th>Wallet Balance</th>
             <th>Invested Amount</th>
             <th>Withdrawn Amount</th>
-            <th>RealizedProfit</th>
+            <th>Account Balance</th>
             <th>Profit</th>
             <th>loss</th>
             <th>Date Created</th>
