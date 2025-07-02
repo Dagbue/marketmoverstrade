@@ -348,7 +348,7 @@
                 <input type="checkbox">
                 <span class="slider"></span>
               </label>
-              <p class="section-container-text-2">Lightning Network</p>
+              <p class="section-container-text-2">Ethereum Network</p>
             </div>
           </div>
         </div>
@@ -390,7 +390,7 @@
                 <input type="checkbox">
                 <span class="slider"></span>
               </label>
-              <p class="section-container-text-2">Lightning Network</p>
+              <p class="section-container-text-2">Dogecoin Network</p>
             </div>
           </div>
         </div>
@@ -411,7 +411,7 @@
                 <input type="checkbox">
                 <span class="slider"></span>
               </label>
-              <p class="section-container-text-2">Lightning Network</p>
+              <p class="section-container-text-2">Litecoin Network</p>
             </div>
           </div>
         </div>
@@ -432,7 +432,7 @@
                 <input type="checkbox">
                 <span class="slider"></span>
               </label>
-              <p class="section-container-text-2">Lightning Network</p>
+              <p class="section-container-text-2">XRP Ledger Network</p>
             </div>
           </div>
         </div>
@@ -516,10 +516,46 @@
 
 
         <div class="transaction-container">
-          <div>
-            <p></p>
+          <div class="transaction-container-header">
+            <p>Ethereum Network only</p>
+          </div>
+          <div class="transaction-container-body">
+            <div class="transaction-container-body-1">
+              <p>0xf7fe93668cf7b4b494ff73fe22c7b0xf7fe93668cf7b4b494ff73fe22c7b</p>
+            </div>
+            <div class="transaction-container-body-2">
+              <i class='bx bx-copy'></i>
+            </div>
           </div>
         </div>
+
+        <p class="text-block-51" style="padding-top: 10px; color: #6c757d;" >
+          Only send USDT on Ethereum network. Using other networks will result in loss oof funds.
+        </p>
+
+        <div class="interac-funding-steps">
+          <div class="margin-bottom margin-small">
+            <div class="text-block-60">or scan the QR code :</div>
+          </div>
+        </div>
+
+
+        <vue-qrcode
+            :value="bitcoinAddress"
+            style="width: 200px;margin-left: auto;margin-right: auto;display: block;">
+
+        </vue-qrcode>
+
+
+        <base-button
+            style="
+                    border: 0.5px solid #5d78ff;
+                    background-color: #5d78ff;"
+            class="button"
+            :loading="loading || loading2"
+        >Proceed</base-button>
+
+
 
         <p class="text-block-51" style="padding-top: 10px; color: #6c757d;" >
           Note : Deposits will be credited to your Market Movers Trade Account after 2 network confirmations.
@@ -535,20 +571,20 @@
 <script>
 import FundWalletModal from "@/components/BaseComponents/modal/FundWalletModal.vue";
 import router from "@/router";
-// import BaseButton from "@/components/BaseComponents/buttons/BaseButton.vue";
+import BaseButton from "@/components/BaseComponents/buttons/BaseButton.vue";
 import DepositRequest from "@/model/request/DepositRequest";
 import {mapState} from "vuex";
 import StoreUtils from "@/utility/StoreUtils";
-// import VueQrcode from '@xkeshi/vue-qrcode';
+import VueQrcode from '@xkeshi/vue-qrcode';
 import Swal from "sweetalert2";
 
 
 export default {
   name: "DashBoardFundWallet",
   components: {
-    // BaseButton,
+    BaseButton,
     FundWalletModal,
-    // VueQrcode // Register the component
+    VueQrcode // Register the component
   },
   computed:{
     readPaymentWalletById() {
@@ -785,6 +821,53 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.transaction-container-header{
+  background-color: #000000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.transaction-container-header p{
+  text-align: center;
+  color: #E3EBF6;
+  font-size: 15px;
+}
+
+.transaction-container-body{
+  display: flex;
+  width: 100%;
+}
+
+.transaction-container-body-1{
+  width: 90%;
+  border: 1.5px dashed #000000;
+  padding: 10px;
+  border-right: none;
+  border-top: none;
+}
+
+.transaction-container-body-1 p{
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal; /* This allows wrapping */
+  overflow-wrap: anywhere; /* Ensures breaking mid-word if necessary */
+  color: #E3EBF6;
+}
+
+.transaction-container-body-2{
+  width: 10%;
+  border: 1.5px dashed #000000;
+  border-top: none;
+  display: flex;
+  align-items: center;   /* vertical centering */
+  justify-content: center; /* horizontal centering */
+}
+
+.bx-copy{
+  color: #E3EBF6;
+  font-size: 18px;
 }
 
 .body{
@@ -1067,11 +1150,12 @@ option{
   padding: 8px 14px;
   gap: 8px;
   font-size: 17px;
-  width: 150px;
+
   height: 42px;
   border: 0.5px solid #5d78ff;
   background-color: #5d78ff;
   border-radius: 6px;
+  margin-top: 3%;
 }
 
 .button:hover{

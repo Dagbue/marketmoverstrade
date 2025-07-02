@@ -39,16 +39,16 @@
 
     <div class="balance-section">
       <div class="balance-section-1">
-        <p class="balance-text-1">Account Balance</p>
-        <p class="balance-text-2">$ {{UserDetails.user.realizedProfit | formatAmount2}}</p>
+        <p class="balance-text-1-i">Account Balance</p>
+        <p class="balance-text-2-i">$ {{UserDetails.user.realizedProfit | formatAmount2}}</p>
 <!--        <div class="balance-section-1-inner">-->
 <!--          <p class="balance-text-3">Realized Profit</p>-->
 <!--          <p class="balance-text-4">$ {{UserDetails.user.realizedProfit | formatAmount2}}</p>-->
 <!--        </div>-->
-        <div class="balance-section-1-inner">
-          <p class="balance-text-5">BTC Balance</p>
-          <p class="balance-text-6">{{bitcoin}}</p>
-        </div>
+<!--        <div class="balance-section-1-inner">-->
+<!--          <p class="balance-text-5">BTC Balance</p>-->
+<!--          <p class="balance-text-6">{{bitcoin}}</p>-->
+<!--        </div>-->
       </div>
 
       <div class="balance-section-1">
@@ -1856,7 +1856,9 @@ export default {
     }
 
     this.bitcoinRate = localStorage.getItem('bitcoinRate')
+    this.ethereumRate = localStorage.getItem('ETHRate')
     this.bitcoin = (this.UserDetails.user.totalDepositedAmount / this.bitcoinRate).toFixed(8);
+    this.ethereum = (this.UserDetails.user.realizedProfit / this.ethereumRate).toFixed(8);
     this.getCurrentDate();
     this.getCurrentDateTime();
     this.generateRandomString();
@@ -1898,7 +1900,9 @@ export default {
   created() {
     this.beforeAction();
     this.bitcoinRate = localStorage.getItem('bitcoinRate')
+    this.ethereumRate = localStorage.getItem('ETHRate')
     this.bitcoin = (this.UserDetails.user.totalDepositedAmount / this.bitcoinRate).toFixed(8);
+    this.ethereum = (this.UserDetails.user.realizedProfit / this.ethereumRate).toFixed(8);
     this.getCurrentDate();
     this.getCurrentDateTime();
     this.generateRandomString();
@@ -1940,7 +1944,9 @@ export default {
   mounted() {
     this.beforeAction();
     this.bitcoinRate = localStorage.getItem('bitcoinRate')
+    this.ethereumRate = localStorage.getItem('ETHRate')
     this.bitcoin = (this.UserDetails.user.totalDepositedAmount / this.bitcoinRate).toFixed(8);
+    this.ethereum = (this.UserDetails.user.realizedProfit / this.ethereumRate).toFixed(8);
     this.getCurrentDate();
     this.getCurrentDateTime();
     this.generateRandomString();
@@ -2019,8 +2025,21 @@ export default {
   padding-bottom: 10px;
 }
 
+.balance-text-1-i{
+  font-size: 20px;
+  color: #FFFFFF;
+  padding-bottom: 10px;
+}
+
 .balance-text-2{
   font-size: 1.3rem;
+  line-height: 2rem;
+  color: rgb(0 228 146);
+  padding-bottom: 15px;
+}
+
+.balance-text-2-i{
+  font-size: 1.38rem;
   line-height: 2rem;
   color: rgb(0 228 146);
   padding-bottom: 15px;

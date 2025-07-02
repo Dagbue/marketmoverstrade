@@ -396,6 +396,10 @@ td {
   font-weight: 200;
   font-size: 15px;
   /*border-bottom: 1px solid #E3EBF6;*/
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal; /* This allows wrapping */
+  overflow-wrap: anywhere; /* Ensures breaking mid-word if necessary */
 }
 
 .empty-state-container{
