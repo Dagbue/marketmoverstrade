@@ -220,14 +220,14 @@ export default {
         return;
       }
 
-      if (this.UserDetails.user.btcBalance > (this.UserDetails.user.totalDepositedAmount - this.UserDetails.user.totalWithdrawals)) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Insufficient Balance',
-          text: 'Your Wallet balance is greater than your Account Balance.',
-        });
-        return;
-      }
+      // if (this.UserDetails.user.btcBalance > (this.UserDetails.user.totalDepositedAmount - this.UserDetails.user.totalWithdrawals)) {
+      //   Swal.fire({
+      //     icon: 'error',
+      //     title: 'Insufficient Balance',
+      //     text: 'Your Wallet balance is greater than your Account Balance.',
+      //   });
+      //   return;
+      // }
 
       if (this.model.amount > (this.UserDetails.user.totalDepositedAmount - this.UserDetails.user.totalWithdrawals)) {
         Swal.fire({
