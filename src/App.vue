@@ -1126,9 +1126,11 @@ a{
 }
 input{
   font-family: 'BR-Firma-Regular', sans-serif;
+  font-size: 16px;
 }
 textarea{
   font-family: 'BR-Firma-Regular', sans-serif;
+  font-size: 16px;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

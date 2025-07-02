@@ -3,7 +3,7 @@
     <div class="body">
       <fund-wallet-modal @close="hideDialog" v-if="dialogIsVisible" :selected-item="selectedItem" />
 
-      <form  @submit.prevent="showDialog" id="InteracFundingCard" class="dashboard-body-wrapper align-center">
+      <form style="display: none"  @submit.prevent="showDialog" id="InteracFundingCard" class="dashboard-body-wrapper align-center">
 
         <h4 class="header">Follow the instructions below to fund your wallet</h4>
 
@@ -307,30 +307,9 @@
 
       </form>
 
-      <div style="display: none" id="InteracFundingCard" class="dashboard-body-wrapper align-center" >
+      <div v-if="this.transactionScreen === 'screen1'"  id="InteracFundingCard" class="dashboard-body-wrapper align-center" >
 
-        <h4 class="header">Select a Cryptocurrency</h4>
-
-        <div class="section-container">
-          <div class="section-container-1">
-            <div class="section-container-inner-1">
-              <img width="40" height="40" src="@/assets/bitcoin-btc-logo.svg" alt="bitcoin"/>
-              <p class="section-container-text-1">BTC (Bitcoin)</p>
-            </div>
-            <div class="section-container-inner-2">
-              <i class='bx bx-chevron-right'/>
-            </div>
-          </div>
-          <div class="section-container-2">
-            <div class="section-container-inner-1">
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-              </label>
-              <p class="section-container-text-2">Lightning Network</p>
-            </div>
-          </div>
-        </div>
+        <h4 class="header">Select Deposit Method below</h4>
 
         <div class="section-container">
           <div class="section-container-1">
@@ -338,14 +317,14 @@
               <img width="40" height="40" src="https://img.icons8.com/color/48/ethereum.png" alt="ethereum"/>
               <p class="section-container-text-1">ETH (Ether)</p>
             </div>
-            <div class="section-container-inner-2">
+            <div @click="selectTransaction2" class="section-container-inner-2">
               <i class='bx bx-chevron-right'/>
             </div>
           </div>
           <div class="section-container-2">
             <div class="section-container-inner-1">
               <label class="switch">
-                <input type="checkbox">
+                <input v-model="ethereumChecked" type="checkbox">
                 <span class="slider"></span>
               </label>
               <p class="section-container-text-2">Ethereum Network</p>
@@ -359,14 +338,14 @@
               <img width="40" height="40" src="@/assets/tether-usdt-logo.svg" alt="tether--v1"/>
               <p class="section-container-text-1">USDT (Tether)</p>
             </div>
-            <div class="section-container-inner-2">
+            <div @click="selectTransaction6" class="section-container-inner-2">
               <i class='bx bx-chevron-right'/>
             </div>
           </div>
           <div class="section-container-2">
             <div class="section-container-inner-1">
               <label class="switch">
-                <input type="checkbox">
+                <input v-model="erc20Checked" type="checkbox">
                 <span class="slider"></span>
               </label>
               <p class="section-container-text-2">ERC20 Network</p>
@@ -377,17 +356,38 @@
         <div class="section-container">
           <div class="section-container-1">
             <div class="section-container-inner-1">
-              <img width="40" height="40" src="@/assets/dogecoin-doge-logo.svg" alt="tether--v1"/>
-              <p class="section-container-text-1">Dogecoin</p>
+              <img width="40" height="40" src="@/assets/tether-usdt-logo.svg" alt="tether--v1"/>
+              <p class="section-container-text-1">USDT (Tether)</p>
             </div>
-            <div class="section-container-inner-2">
+            <div @click="selectTransaction7" class="section-container-inner-2">
               <i class='bx bx-chevron-right'/>
             </div>
           </div>
           <div class="section-container-2">
             <div class="section-container-inner-1">
               <label class="switch">
-                <input type="checkbox">
+                <input v-model="trc20Checked" type="checkbox">
+                <span class="slider"></span>
+              </label>
+              <p class="section-container-text-2">TRC20 Network</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <div class="section-container-1">
+            <div class="section-container-inner-1">
+              <img width="40" height="40" src="@/assets/dogecoin-doge-logo.svg" alt="tether--v1"/>
+              <p class="section-container-text-1">Dogecoin</p>
+            </div>
+            <div @click="selectTransaction3" class="section-container-inner-2">
+              <i class='bx bx-chevron-right'/>
+            </div>
+          </div>
+          <div class="section-container-2">
+            <div class="section-container-inner-1">
+              <label class="switch">
+                <input v-model="dogecoinChecked" type="checkbox">
                 <span class="slider"></span>
               </label>
               <p class="section-container-text-2">Dogecoin Network</p>
@@ -401,14 +401,14 @@
               <img width="40" height="40" src="@/assets/litecoin-ltc-logo.svg" alt="tether--v1"/>
               <p class="section-container-text-1">Litecoin</p>
             </div>
-            <div class="section-container-inner-2">
+            <div @click="selectTransaction4" class="section-container-inner-2">
               <i class='bx bx-chevron-right'/>
             </div>
           </div>
           <div class="section-container-2">
             <div class="section-container-inner-1">
               <label class="switch">
-                <input type="checkbox">
+                <input v-model="litecoinChecked" type="checkbox">
                 <span class="slider"></span>
               </label>
               <p class="section-container-text-2">Litecoin Network</p>
@@ -422,14 +422,14 @@
               <img width="40" height="40" src="@/assets/xrp-xrp-logo.svg" alt="tether--v1"/>
               <p class="section-container-text-1">Xrp</p>
             </div>
-            <div class="section-container-inner-2">
+            <div @click="selectTransaction5" class="section-container-inner-2">
               <i class='bx bx-chevron-right'/>
             </div>
           </div>
           <div class="section-container-2">
             <div class="section-container-inner-1">
               <label class="switch">
-                <input type="checkbox">
+                <input v-model="xrpChecked" type="checkbox">
                 <span class="slider"></span>
               </label>
               <p class="section-container-text-2">XRP Ledger Network</p>
@@ -440,20 +440,20 @@
         <div class="section-container">
           <div class="section-container-1">
             <div class="section-container-inner-1">
-              <img width="40" height="40" src="@/assets/tether-usdt-logo.svg" alt="tether--v1"/>
-              <p class="section-container-text-1">USDT (Tether)</p>
+              <img width="40" height="40" src="@/assets/bitcoin-btc-logo.svg" alt="bitcoin"/>
+              <p class="section-container-text-1">BTC (Bitcoin)</p>
             </div>
-            <div class="section-container-inner-2">
+            <div @click="selectTransaction" class="section-container-inner-2">
               <i class='bx bx-chevron-right'/>
             </div>
           </div>
           <div class="section-container-2">
             <div class="section-container-inner-1">
               <label class="switch">
-                <input type="checkbox">
+                <input v-model="lightningChecked"  type="checkbox">
                 <span class="slider"></span>
               </label>
-              <p class="section-container-text-2">TRC20 Network</p>
+              <p class="section-container-text-2">Lightning Network</p>
             </div>
           </div>
         </div>
@@ -464,14 +464,15 @@
 
       </div>
 
-      <div style="display: none" id="InteracFundingCard" class="dashboard-body-wrapper align-center" >
+      <form @submit.prevent="handleShowDialog" v-if="this.transactionScreen === 'screen2'" id="InteracFundingCard" class="dashboard-body-wrapper align-center" >
 
 <!--        <h4 class="header">Please send to address : </h4>-->
+        <p @click="back" class="back">Back</p>
 
         <div class="interac-funding-steps">
-          <div class="margin-bottom margin-small">
-            <div class="text-block-60">STEP 1</div>
-          </div>
+<!--          <div class="margin-bottom margin-small">-->
+<!--            <div class="text-block-60">STEP 1</div>-->
+<!--          </div>-->
 
           <div >
             <a class="">
@@ -494,9 +495,9 @@
         </div>
 
         <div class="interac-funding-steps">
-          <div class="margin-bottom margin-small">
-            <div class="text-block-60">STEP 2</div>
-          </div>
+<!--          <div class="margin-bottom margin-small">-->
+<!--            <div class="text-block-60">STEP 2</div>-->
+<!--          </div>-->
 
           <div >
             <a class="">
@@ -517,20 +518,41 @@
 
         <div class="transaction-container">
           <div class="transaction-container-header">
-            <p>Ethereum Network only</p>
+            <p>{{transactionNetwork}} Network only</p>
           </div>
           <div class="transaction-container-body">
             <div class="transaction-container-body-1">
-              <p>0xf7fe93668cf7b4b494ff73fe22c7b0xf7fe93668cf7b4b494ff73fe22c7b</p>
+              <p v-if="this.depositMethod === 'Bitcoin'" >{{this.bitcoinAddress}}</p>
+              <p v-if="this.depositMethod === 'Ethereum'" >{{this.ethereumAddress}}</p>
+
+              <p v-if="this.depositMethod === 'ERC20'" >{{this.ERC20}}</p>
+              <p v-if="this.depositMethod === 'TRC20'" >{{this.TRC20}}</p>
+
+              <p v-if="this.depositMethod === 'Dogecoin'" >{{this.dogecoinAddress}}</p>
+              <p v-if="this.depositMethod === 'Litecoin'" >{{this.litecoinAddress}}</p>
+
+              <p v-if="this.depositMethod === 'Xrp'" >{{this.xrpAddress }}</p>
             </div>
             <div class="transaction-container-body-2">
-              <i class='bx bx-copy'></i>
+              <i v-if="this.depositMethod === 'Bitcoin'" @click="copyText" class='bx bx-copy'></i>
+
+              <i v-if="this.depositMethod === 'Ethereum'" @click="copyText2" class='bx bx-copy'></i>
+
+              <i v-if="this.depositMethod === 'ERC20'" @click="copyText3" class='bx bx-copy'></i>
+
+              <i v-if="this.depositMethod === 'TRC20'" @click="copyText4" class='bx bx-copy'></i>
+
+              <i v-if="this.depositMethod === 'Dogecoin'" @click="copyText5" class='bx bx-copy'></i>
+
+              <i  v-if="this.depositMethod === 'Litecoin'" @click="copyText6" class='bx bx-copy'></i>
+
+              <i  v-if="this.depositMethod === 'Xrp'" @click="copyText7" class='bx bx-copy'></i>
             </div>
           </div>
         </div>
 
         <p class="text-block-51" style="padding-top: 10px; color: #6c757d;" >
-          Only send USDT on Ethereum network. Using other networks will result in loss oof funds.
+          Only send {{depositMethod}} on {{transactionNetwork}} network.
         </p>
 
         <div class="interac-funding-steps">
@@ -540,20 +562,64 @@
         </div>
 
 
-        <vue-qrcode
-            :value="bitcoinAddress"
-            style="width: 200px;margin-left: auto;margin-right: auto;display: block;">
+        <div v-if="this.depositMethod === 'Bitcoin' " class="qr-code">
+          <vue-qrcode class="qr-code" :value="bitcoinAddress"></vue-qrcode>
+        </div>
 
-        </vue-qrcode>
+        <div v-if="this.depositMethod === 'Ethereum'" class="qr-code">
+          <vue-qrcode class="qr-code" :value="ethereumAddress"></vue-qrcode>
+        </div>
 
+        <div v-if="this.depositMethod === 'Dogecoin'" class="qr-code">
+          <vue-qrcode class="qr-code" :value="dogecoinAddress"></vue-qrcode>
+        </div>
+
+        <div v-if="this.depositMethod === 'Litecoin'" class="qr-code">
+          <vue-qrcode class="qr-code" :value="litecoinAddress"></vue-qrcode>
+        </div>
+
+        <div v-if="this.depositMethod === 'Xrp'" class="qr-code">
+          <vue-qrcode class="qr-code" :value="xrpAddress"></vue-qrcode>
+        </div>
+
+        <div v-if="this.depositMethod === 'TRC20' " class="qr-code">
+          <vue-qrcode class="qr-code" :value="TRC20"></vue-qrcode>
+        </div>
+
+        <div v-if="this.depositMethod === 'ERC20'" class="qr-code">
+          <vue-qrcode class="qr-code" :value="ERC20"></vue-qrcode>
+        </div>
+
+        <p
+            v-if="this.depositMethod === 'Bitcoin' ||
+          this.depositMethod === 'Ethereum' ||
+          this.depositMethod === 'BankTransfer'||
+          this.depositMethod === 'BankTransfer'||
+          this.depositMethod === 'Dogecoin' ||
+          this.depositMethod === 'Litecoin'||
+          this.depositMethod === 'Xrp'||
+          this.depositMethod === 'ERC20' ||
+          this.depositMethod === 'TRC20'"
+            class="text-3">Note: After making your deposit,kindly send a screenshot/proof of deposit to
+          <span class="note-span">
+              <a style="color: rgba(219,101,123,0.6);" href="mailto:support@marketmoverstrade.com" class="para-last">support@marketmoverstrade.com</a>
+            </span> for documentation and to boost the funding process
+        </p>
+
+
+        <div v-if="!showButton" class="scanning">
+          <span class="loader"></span>
+          <p>Scanning blockchain network</p>
+        </div>
 
         <base-button
-            style="
-                    border: 0.5px solid #5d78ff;
-                    background-color: #5d78ff;"
+            v-if="showButton"
+            style="border: 0.5px solid #5d78ff; background-color: #5d78ff;"
             class="button"
             :loading="loading || loading2"
-        >Proceed</base-button>
+        >
+          Proceed
+        </base-button>
 
 
 
@@ -561,7 +627,7 @@
           Note : Deposits will be credited to your Market Movers Trade Account after 2 network confirmations.
         </p>
 
-      </div>
+      </form>
 
 
     </div>
@@ -598,6 +664,7 @@ export default {
   },
   data() {
     return {
+      showButton: false, // Initially false
       model: new DepositRequest().createDeposit,
       dialogIsVisible: false,
       btcBalance: "",
@@ -618,13 +685,146 @@ export default {
       routingNumber: '',
       ERC20: '',
       TRC20: '',
-
       litecoinAddress: '',
       dogecoinAddress: '',
       xrpAddress: '',
+
+      transactionScreen: 'screen1',
+      transactionNetwork: '',
+      lightningChecked: false,
+      ethereumChecked: false,
+      erc20Checked: false,
+      dogecoinChecked: false,
+      litecoinChecked: false,
+      xrpChecked: false,
+      trc20Checked: false,
     };
   },
   methods: {
+
+    back() {
+      this.transactionScreen = 'screen1'
+    },
+
+    selectTransaction() {
+      if (!this.lightningChecked) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Network Required',
+          text: 'Please enable Lightning Network before proceeding.',
+        });
+        return;
+      }
+
+      this.depositMethod = 'Bitcoin';
+      this.transactionScreen = 'screen2';
+      this.transactionNetwork = 'Lightning';
+      this.getList();
+    },
+
+
+    selectTransaction2() {
+      if (!this.ethereumChecked) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Network Required',
+          text: 'Please enable Ethereum Network before proceeding.',
+        });
+        return;
+      }
+
+      this.depositMethod = 'Ethereum';
+      this.transactionScreen = 'screen2';
+      this.transactionNetwork = 'Ethereum';
+      this.getList();
+    },
+
+
+    selectTransaction3() {
+      if (!this.dogecoinChecked) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Network Required',
+          text: 'Please enable Dogecoin Network before proceeding.',
+        });
+        return;
+      }
+
+      this.depositMethod = 'Dogecoin';
+      this.transactionScreen = 'screen2';
+      this.transactionNetwork = 'Dogecoin';
+      this.getList();
+    },
+
+
+    selectTransaction4() {
+      if (!this.litecoinChecked) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Network Required',
+          text: 'Please enable Litecoin Network before proceeding.',
+        });
+        return;
+      }
+
+      this.depositMethod = 'Litecoin';
+      this.transactionScreen = 'screen2';
+      this.transactionNetwork = 'Litecoin';
+      this.getList();
+    },
+
+
+    selectTransaction5() {
+      if (!this.xrpChecked) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Network Required',
+          text: 'Please enable XRP Ledger Network before proceeding.',
+        });
+        return;
+      }
+
+      this.depositMethod = 'XRP';
+      this.transactionScreen = 'screen2';
+      this.transactionNetwork = 'XRP Ledger';
+      this.getList();
+    },
+
+
+    selectTransaction6() {
+      if (!this.erc20Checked) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Network Required',
+          text: 'Please enable ERC20 Network before proceeding.',
+        });
+        return;
+      }
+
+      this.depositMethod = 'USDT';
+      this.transactionScreen = 'screen2';
+      this.transactionNetwork = 'ERC20';
+      this.getList();
+    },
+
+
+    selectTransaction7() {
+      if (!this.trc20Checked) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Network Required',
+          text: 'Please enable TRC20 Network before proceeding.',
+        });
+        return;
+      }
+
+      this.depositMethod = 'USDT';
+      this.transactionScreen = 'screen2';
+      this.transactionNetwork = 'TRC20';
+      this.getList();
+    },
+
+
     async copyText() {
       await this.$copyText(this.bitcoinAddress)
       await Swal.fire({
@@ -693,29 +893,63 @@ export default {
       await router.push('/over-view')
     },
 
+    handleShowDialog() {
+      if (!this.btcBalance || this.btcBalance <= 0) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Invalid Amount',
+          text: 'Please enter a valid amount before proceeding.',
+        });
+        return;
+      }
+
+      this.showDialog();
+    },
+
     async showDialog() {
       await StoreUtils.dispatch(StoreUtils.actions.deposit.depositCreate, {
-        userId : this.userId,
-        amount : this.btcBalance,
-        transactionMethod : this.depositMethod,
-        transactionType : "deposit",
-        transactionReference : this.randomString,
+        userId: this.userId,
+        amount: this.btcBalance,
+        transactionMethod: this.depositMethod,
+        transactionType: "deposit",
+        transactionReference: this.randomString,
         depositStatus: "pending",
-        additionalComment : this.model.additionalComment
-      })
-      // await StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
-      //   walletId: 1,
-      // })
-      // StoreUtils.rootGetters(StoreUtils.getters.paymentWallet.getReadPaymentWalletById)
-      // this.selectedItem = this.depositMethod;
-      // this.dialogIsVisible = true;
+        additionalComment: "deposit"
+      });
+
       await Swal.fire({
         icon: 'success',
         title: 'Pending',
         text: 'Deposit Request Pending',
       });
-      await router.push('/over-view')
+
+      await router.push('/over-view');
     },
+
+
+    // async showDialog() {
+    //   await StoreUtils.dispatch(StoreUtils.actions.deposit.depositCreate, {
+    //     userId : this.userId,
+    //     amount : this.btcBalance,
+    //     transactionMethod : this.depositMethod,
+    //     transactionType : "deposit",
+    //     transactionReference : this.randomString,
+    //     depositStatus: "pending",
+    //     additionalComment : "deposit"
+    //   })
+    //   // await StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
+    //   //   walletId: 1,
+    //   // })
+    //   // StoreUtils.rootGetters(StoreUtils.getters.paymentWallet.getReadPaymentWalletById)
+    //   // this.selectedItem = this.depositMethod;
+    //   // this.dialogIsVisible = true;
+    //   await Swal.fire({
+    //     icon: 'success',
+    //     title: 'Pending',
+    //     text: 'Deposit Request Pending',
+    //   });
+    //   await router.push('/over-view')
+    // },
 
     generateRandomString() {
       const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -798,6 +1032,11 @@ export default {
     this.generateRandomString()
     this.populateForm()
 
+    // Show button after 1 minute
+    setTimeout(() => {
+      this.showButton = true;
+    }, 20000); // 20,000 ms = 20 seconds
+
     StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
       walletId: 1,
     })
@@ -821,6 +1060,53 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.scanning{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 1%;
+}
+
+.scanning p{
+  color: #E3EBF6;
+  font-size: 13px;
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #FFF;
+  border-bottom-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.qr-code{
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.back{
+  float: right;
+  color: #E3EBF6;
+  text-decoration: underline;
 }
 
 .transaction-container-header{
@@ -1173,8 +1459,8 @@ hr {
 
 .text-3{
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 20px;
   color: #6c757d;
   padding-top: 1.5%;
   padding-bottom: 2%;
@@ -1209,7 +1495,6 @@ hr {
   .button{
     padding: 5px 14px;
     font-size: 13px;
-    width: 140px;
     height: 36px;
   }
 

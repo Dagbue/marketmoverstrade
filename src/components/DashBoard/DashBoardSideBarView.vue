@@ -39,7 +39,10 @@
         <router-link to="/fund-wallet">
           <li>
             <a class="hover">
-              <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
+<!--              <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />-->
+              <svg class="link-img-2"  viewBox="0 0 24 24" style="transform: rotate(var(--r, 0deg)) scale(var(--sx, 1), var(--sy, 1)); --sx: 1; --sy: 1; --r: 0deg;">
+                <path d="M15 15V17H18V20H20V17H23V15H20V12H18V15M14.97 11.61C14.85 10.28 13.59 8.97 12 9C10.3 9.03 9 10.3 9 12C9 13.7 10.3 14.94 12 15C12.38 15 12.77 14.92 13.14 14.77C13.41 13.67 13.86 12.63 14.97 11.61M13 16H7C7 14.9 6.11 14 5 14V10C6.11 10 7 9.11 7 8H17C17 9.11 17.9 10 19 10V10.06C19.67 10.06 20.34 10.18 21 10.4V6H3V18H13.32C13.1 17.33 13 16.66 13 16Z" style="fill: currentcolor;"></path>
+              </svg>
               <span class="links-name">Fund Your Wallet</span>
             </a>
           </li>
@@ -117,7 +120,10 @@
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
-            <router-link to="/fund-wallet" style="font-size: 12.5px;">Fund Wallet</router-link>
+<!--            <svg class="link-img-2"  viewBox="0 0 24 24" style="transform: rotate(var(&#45;&#45;r, 0deg)) scale(var(&#45;&#45;sx, 1), var(&#45;&#45;sy, 1)); &#45;&#45;sx: 1; &#45;&#45;sy: 1; &#45;&#45;r: 0deg;">-->
+<!--              <path d="M15 15V17H18V20H20V17H23V15H20V12H18V15M14.97 11.61C14.85 10.28 13.59 8.97 12 9C10.3 9.03 9 10.3 9 12C9 13.7 10.3 14.94 12 15C12.38 15 12.77 14.92 13.14 14.77C13.41 13.67 13.86 12.63 14.97 11.61M13 16H7C7 14.9 6.11 14 5 14V10C6.11 10 7 9.11 7 8H17C17 9.11 17.9 10 19 10V10.06C19.67 10.06 20.34 10.18 21 10.4V6H3V18H13.32C13.1 17.33 13 16.66 13 16Z" style="fill: currentcolor;"></path>-->
+<!--            </svg>-->
+            <router-link to="/fund-wallet" style="font-size: 12.5px;">Fund Your Wallet</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">
@@ -267,7 +273,7 @@ body{
   width: 210px;
   background-color: #0f171c;
   border-right: 1px solid #000;
-  padding: 6px 20px 37px;
+  padding: 6px 12px;
 }
 .sidebar ul li{
   position: relative;
@@ -289,12 +295,18 @@ body{
 .hover:hover{
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(3.5px);
-  padding: 8px;
+  padding: 7px;
   border-radius: 4px;
 }
 .link-img{
   margin-right: 5%;
   width: 12%;
+  color: #ffffff;
+}
+.link-img-2{
+  margin-right: 2.5%;
+  width: 15%;
+  color: #ffffff;
 }
 .links-name{
   font-size: 16px;
