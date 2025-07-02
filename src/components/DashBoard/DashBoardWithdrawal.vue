@@ -249,7 +249,7 @@ export default {
       // });
       await Swal.fire({
         icon: 'error',
-        text: 'Funds are still Unsettled due to trading bonus.',
+        text: 'Funds are Unsettled due to trading account.',
       });
       // this.dialogIsVisible = true;
     },
