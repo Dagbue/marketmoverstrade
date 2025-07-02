@@ -607,13 +607,12 @@
         </p>
 
 
-        <div v-if="!showButton" class="scanning">
-          <span class="loader"></span>
-          <p>Scanning blockchain network</p>
-        </div>
+<!--        <div v-if="this.showButton === true" class="scanning">-->
+<!--          <span class="loader"></span>-->
+<!--          <p>Scanning blockchain network</p>-->
+<!--        </div>-->
 
         <base-button
-            v-if="showButton"
             style="border: 0.5px solid #5d78ff; background-color: #5d78ff;"
             class="button"
             :loading="loading || loading2"
@@ -702,8 +701,9 @@ export default {
   },
   methods: {
 
-    back() {
+    async back() {
       this.transactionScreen = 'screen1'
+      await router.push('/over-view');
     },
 
     selectTransaction() {
@@ -1011,6 +1011,7 @@ export default {
   created() {
     this.generateRandomString()
     this.populateForm()
+    this.getList()
 
     StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
       walletId: 1,
@@ -1031,11 +1032,13 @@ export default {
   mounted() {
     this.generateRandomString()
     this.populateForm()
+    this.getList()
 
-    // Show button after 1 minute
+    // Show button after 20 seconds (20000ms)
     setTimeout(() => {
       this.showButton = true;
-    }, 20000); // 20,000 ms = 20 seconds
+      console.log("Button is now visible"); // optional debug
+    }, 20000);
 
     StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
       walletId: 1,

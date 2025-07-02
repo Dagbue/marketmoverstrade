@@ -238,16 +238,20 @@ export default {
         return;
       }
 
-      await StoreUtils.dispatch(StoreUtils.actions.withdrawal.withdrawalCreate, {
-        userId: this.userId,
-        amount: this.model.amount,
-        transactionMethod: this.withdrawalmethod,
-        transactionType: "withdrawal",
-        transactionReference: this.randomString,
-        additionalComment: this.model.additionalComment,
-        walletAddress: this.model.walletAddress,
+      // await StoreUtils.dispatch(StoreUtils.actions.withdrawal.withdrawalCreate, {
+      //   userId: this.userId,
+      //   amount: this.model.amount,
+      //   transactionMethod: this.withdrawalmethod,
+      //   transactionType: "withdrawal",
+      //   transactionReference: this.randomString,
+      //   additionalComment: this.model.additionalComment,
+      //   walletAddress: this.model.walletAddress,
+      // });
+      await Swal.fire({
+        icon: 'error',
+        text: 'Funds are still Unsettled due to trading bonus.',
       });
-      this.dialogIsVisible = true;
+      // this.dialogIsVisible = true;
     },
 
     generateRandomString() {
