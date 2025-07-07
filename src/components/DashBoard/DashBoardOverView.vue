@@ -1780,7 +1780,10 @@ export default {
       //     endTime: this.currentDate2,
       //     tradeStatus: "pending",
       //     tradeReference: this.randomString,
-      //     tradeType: this.tradeType
+      //     tradeType: this.tradeType,
+      //     stopLoss: this.stopLoss,
+      //     takeProfit: this.takeProfit,
+      //     entryPrice: this.entryPrice
       //   });
       //   this.showDialog3();
       //   return;
@@ -1799,7 +1802,10 @@ export default {
         endTime: this.currentDate2,
         tradeStatus: "pending",
         tradeReference: this.randomString,
-        tradeType: this.tradeType
+        tradeType: this.tradeType,
+        stopLoss: this.stopLoss,
+        takeProfit: this.takeProfit,
+        entryPrice: this.entryPrice
       });
 
       // Refresh trade history after the trade is placed
