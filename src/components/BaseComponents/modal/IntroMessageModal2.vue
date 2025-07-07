@@ -6,14 +6,11 @@
       <div class="welcome-modal">
         <p style="float: right;color: #FFFFFF;" @click="close">x</p>
 
+<!--          <p class="text-1">Alert</p>-->
 
-          <p class="text-1">Alert; Execution error</p>
+        <img class="image"  src="https://img.icons8.com/emoji/48/warning-emoji.png" alt="warning-emoji"/>
 
-<!--          <p class="text-2">(Driving License or Government ID card)</p>-->
-
-          <p class="text-3">PDT protection is enabled so you are not able to open new position since you already
-            exceed the day trade within 5 business days. Please, note, if you execute another day trade , Your account
-            is flagged as PDT(Pattern Day Trader)</p>
+          <p class="text-3">Execution Error !</p>
 
 
           <div class="button-group">
@@ -251,13 +248,18 @@ li {display: inline-block; margin: 0 10px; }
   text-align: left;
 }
 
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
 .button-group{
   display: flex;
   justify-content: center;
-  position: fixed;
-  bottom: 0;
-  left: auto;
   width: 100%;
+  padding-top: 15%;
 }
 
 .text-1{
@@ -277,16 +279,15 @@ li {display: inline-block; margin: 0 10px; }
 }
 
 .text-3{
-  text-align: left;
-  color: #FFFFFF;
-  font-size: 15px;
+  text-align: center;
+  color: rgba(255 85 116);
+  font-size: 20px;
   padding-top: 5px;
-  padding-bottom: 5px;
   display: block;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 2%;
   line-height: 1.5;
+  opacity: 0.5;
 }
 
 .backdrop {
@@ -308,7 +309,7 @@ dialog {
   top: 13vh;
   width: 32rem;
   height: 20rem;
-  left: calc(50% - 17rem);
+  left: calc(50% - 11rem);
   margin: 0;
   background-color: transparent;
   z-index: 100;
@@ -320,8 +321,8 @@ dialog {
   position: relative;
   display: block;
   overflow: hidden;
-  width: 550px;
-  height: 380px;
+  width: 400px;
+  height: 300px;
   padding: 24px;
   border-style: solid;
   border-width: 1px;
@@ -431,7 +432,7 @@ label{
 }
 
 .btn{
-  width: 100%;
+  width: 170px;
   border-radius: 5px;
   background-color: #5d78ff;
   border: 1px solid #5d78ff;
@@ -440,7 +441,7 @@ label{
 }
 
 .btn-2{
-  width: 100%;
+  width: 170px;
   border-radius: 5px;
   background-color: transparent;
   border: 1px solid #fff;
@@ -480,17 +481,16 @@ label{
   }
 
   .text-3{
-    font-size: 13px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    font-size: 15px;
+    padding-top: 5px;
   }
 
   .button-group{
-    display: block;
-    position: unset;
-    bottom: unset;
-    left: unset;
-    width: unset;
+
+  }
+
+  .image {
+    width: 35%;
   }
 }
 </style>
