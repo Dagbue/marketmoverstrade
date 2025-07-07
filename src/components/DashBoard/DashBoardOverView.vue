@@ -2,6 +2,7 @@
   <div class="alpha">
 
 <!--          <intro-message-modal  @close="hideDialog" v-if="isModalOpened === false && dialogIsVisible === true" />-->
+    <intro-message-modal2 v-if="dialogIsVisible2" @close="hideDialog2"  />
 
     <div class="section-2">
 
@@ -1478,11 +1479,13 @@ import WatchListTable from "@/components/BaseComponents/tables/WatchListTable.vu
 import BaseButton from "@/components/BaseComponents/buttons/BaseButton.vue";
 import WatchListTable2 from "@/components/BaseComponents/tables/WatchListTable2.vue";
 import Swal from "sweetalert2";
+import IntroMessageModal2 from "@/components/BaseComponents/modal/IntroMessageModal2.vue";
 
 
 export default {
   name: "DashBoardOverView",
   components: {
+    IntroMessageModal2,
     WatchListTable2,
     BaseButton,
     WatchListTable,
@@ -1521,6 +1524,7 @@ export default {
       bitcoinRate: null,
       ethereumRate: null,
       dialogIsVisible: false,
+      dialogIsVisible2: false,
       searchQuery: "", // Data property to hold the search input
     }
   },
@@ -1600,6 +1604,13 @@ export default {
   },
 
   methods: {
+
+    hideDialog2() {
+      this.dialogIsVisible2 = false;
+    },
+    showDialog2() {
+      this.dialogIsVisible2 = true;
+    },
 
     changeScreen(screen) {
       this.screen5 = screen;
@@ -1749,12 +1760,29 @@ export default {
         return;
       }
 
-      // if (this.UserDetails.user.btcBalance === 0) {
-      //   await Swal.fire({
-      //     icon: 'error',
-      //     title: 'Cannot Perform Action',
-      //     text: 'You cannot place a trade because your Wallet Balance is zero.',
+      // Check if user is logged into
+      if (this.UserDetails.user.email === "johndoe@yopmail.com" ) {
+        this.showDialog2();
+        return;
+      }
+
+      // Check if user is logged into
+      // if (this.UserDetails.user.email === "KCarroll_93@yahoo.com" || this.UserDetails.user.email === "johndoe@yopmail.com" ) {
+      //   await StoreUtils.commit(StoreUtils.mutations.auth.updateIsModalOpened2, {
+      //     userId: localStorage.getItem('userId'),
+      //     tradeTime: this.currentDate,
+      //     symbolTraded: this.symbolTraded,
+      //     amountTrade: this.amountTrade,
+      //     expectedPayout: 0,
+      //     leverage: this.leverage,
+      //     endPrice: this.randomString2,
+      //     marketType: this.screen1,
+      //     endTime: this.currentDate2,
+      //     tradeStatus: "pending",
+      //     tradeReference: this.randomString,
+      //     tradeType: this.tradeType
       //   });
+      //   this.showDialog3();
       //   return;
       // }
 
@@ -1771,10 +1799,7 @@ export default {
         endTime: this.currentDate2,
         tradeStatus: "pending",
         tradeReference: this.randomString,
-        tradeType: this.tradeType,
-        stopLoss: this.stopLoss,
-        takeProfit: this.takeProfit,
-        entryPrice: this.entryPrice
+        tradeType: this.tradeType
       });
 
       // Refresh trade history after the trade is placed
@@ -1789,6 +1814,8 @@ export default {
       this.generateRandomString();
       this.generateRandomString2();
     },
+
+
 
     clearForm(){
       this.tradeTime = "";
