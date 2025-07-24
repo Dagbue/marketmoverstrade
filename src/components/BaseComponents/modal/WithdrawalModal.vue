@@ -12,7 +12,7 @@
         <div class="second-part">
           <p class="text-1">Withdrawal</p>
           <p class="text-2">Your Request Has Been Sent For Processing!!</p>
-          <p class="text-3">Kindly Note:For Faster Response you can contact support at
+          <p class="text-3">Kindly Note : For Faster Response you can contact support at
             <span>
               <a href="mailto:support@marketmoverstrade.com" class="para-last">support@marketmoverstrade.com</a>
             </span>
