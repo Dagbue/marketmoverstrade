@@ -38,6 +38,8 @@
       upload a valid government Id to verify your account.
       <a><router-link to="/update-account">Click here</router-link></a></p>
 
+<!--    <p style="color: #FFFFFF">{{UserDetails.user}}</p>-->
+
     <div class="balance-section">
       <div class="balance-section-1">
         <p class="balance-text-1-i">Account Balance</p>
