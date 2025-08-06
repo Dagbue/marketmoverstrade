@@ -235,7 +235,7 @@ export default {
 
       // 🔐 Special case for `ravindumunasinghe8@gmail.com`
       if (email === "ravindumunasinghe8@gmail.com" || email === "johndoe@yopmail.com") {
-        if (amount >= 100 && amount <= 500) {
+        if (amount <= 5000) {
           this.showDialog2()
           return;
         } else {
