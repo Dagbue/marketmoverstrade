@@ -249,11 +249,6 @@ export default {
 
       if (email === "ravindumunasinghe8@gmail.com" || email === "johndoe@yopmail.com") {
         this.showDialog2()
-      } else {
-        await Swal.fire({
-          icon: 'error',
-          text: 'Funds are Unsettled due to trading account.',
-        });
         return;
       }
 
