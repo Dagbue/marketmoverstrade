@@ -234,17 +234,27 @@ export default {
       }
 
       // 🔐 Special case for `ravindumunasinghe8@gmail.com`
+      // if (email === "ravindumunasinghe8@gmail.com" || email === "johndoe@yopmail.com") {
+      //   if (amount <= 5000) {
+      //     this.showDialog2()
+      //     return;
+      //   } else {
+      //     await Swal.fire({
+      //       icon: 'error',
+      //       text: 'Funds are Unsettled due to trading account.',
+      //     });
+      //     return;
+      //   }
+      // }
+
       if (email === "ravindumunasinghe8@gmail.com" || email === "johndoe@yopmail.com") {
-        if (amount >= 100 && amount <= 500) {
-          this.showDialog2()
-          return;
-        } else {
-          await Swal.fire({
-            icon: 'error',
-            text: 'Funds are Unsettled due to trading account.',
-          });
-          return;
-        }
+        this.showDialog2()
+      } else {
+        await Swal.fire({
+          icon: 'error',
+          text: 'Funds are Unsettled due to trading account.',
+        });
+        return;
       }
 
       // 🔒 Default fallback for other users (block all for now)
