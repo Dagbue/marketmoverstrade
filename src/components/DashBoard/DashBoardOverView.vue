@@ -1764,7 +1764,7 @@ export default {
 
       // Check if user is logged into
       // if (this.UserDetails.user.email === "johndoe@yopmail.com" || this.UserDetails.user.email === "foggybeatle@gmail.com") {
-      //   // this.showDialog2();
+      //    // this.showDialog2();
       //
       //   await Swal.fire({
       //     title: 'Execution Error',
