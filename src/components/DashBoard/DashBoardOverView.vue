@@ -159,7 +159,7 @@
 
           <div class="form-group">
             <label class="label">Amount</label>
-            <input type="number" placeholder="Enter Amount"  name="Amount" v-model="amountTrade" required/>
+            <input type="number" @input="onlyInteger" step="1" placeholder="Enter Amount"  name="Amount" v-model="amountTrade" required/>
           </div>
 
           <div class="form-group">
@@ -300,17 +300,17 @@
 
           <div class="form-group">
             <label class="label">Stop Loss</label>
-            <input type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
+            <input step="any" type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Take Profit</label>
-            <input type="number" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
+            <input type="number" step="any" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Entry Price</label>
-            <input type="number" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
+            <input type="number" step="any" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
           </div>
 
           <div class="form-group">
@@ -383,7 +383,7 @@
 
           <div class="form-group">
             <label class="label">Amount</label>
-            <input type="number" placeholder="Enter Amount"  name="Amount" v-model="amountTrade"  required/>
+            <input type="number" @input="onlyInteger" step="1" placeholder="Enter Amount"  name="Amount" v-model="amountTrade"  required/>
           </div>
 
           <div class="form-group">
@@ -535,17 +535,17 @@
 
           <div class="form-group">
             <label class="label">Stop Loss</label>
-            <input type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
+            <input type="number" step="any" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Take Profit</label>
-            <input type="number" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
+            <input type="number" step="any" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Entry Price</label>
-            <input type="number" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
+            <input type="number" step="any" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
           </div>
 
           <div class="form-group">
@@ -615,7 +615,7 @@
 
           <div class="form-group">
             <label class="label">Amount</label>
-            <input type="number" placeholder="Enter Amount"  name="Amount" v-model="amountTrade" required/>
+            <input type="number" @input="onlyInteger" step="1" placeholder="Enter Amount"  name="Amount" v-model="amountTrade" required/>
           </div>
 
           <div class="form-group">
@@ -749,17 +749,17 @@
 
           <div class="form-group">
             <label class="label">Stop Loss</label>
-            <input type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
+            <input type="number" step="any" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Take Profit</label>
-            <input type="number" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
+            <input type="number" step="any" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Entry Price</label>
-            <input type="number" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
+            <input type="number" step="any" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
           </div>
 
           <div class="form-group">
@@ -828,7 +828,7 @@
 
           <div class="form-group">
             <label class="label">Amount</label>
-            <input type="number" placeholder="Enter Amount"  name="Amount" v-model="amountTrade" required/>
+            <input type="number" @input="onlyInteger" step="1" placeholder="Enter Amount"  name="Amount" v-model="amountTrade" required/>
           </div>
 
           <div class="form-group">
@@ -977,17 +977,17 @@
 
           <div class="form-group">
             <label class="label">Stop Loss</label>
-            <input type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
+            <input type="number" step="any" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Take Profit</label>
-            <input type="number" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
+            <input type="number" step="any" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Entry Price</label>
-            <input type="number" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
+            <input type="number" step="any" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
           </div>
 
           <div class="form-group">
@@ -1056,7 +1056,7 @@
 
           <div class="form-group">
             <label class="label">Amount</label>
-            <input type="number" placeholder="Enter Amount"  name="Amount" v-model="amountTrade" required/>
+            <input type="number" @input="onlyInteger" step="1" placeholder="Enter Amount"  name="Amount" v-model="amountTrade" required/>
           </div>
 
           <div class="form-group">
@@ -1111,17 +1111,17 @@
 
           <div class="form-group">
             <label class="label">Stop Loss</label>
-            <input type="number" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
+            <input type="number" step="any" placeholder="Enter Stop Loss" v-model="stopLoss"  name="Stop Loss"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Take Profit</label>
-            <input type="number" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
+            <input type="number" step="any" placeholder="Enter Take Profit" v-model="takeProfit" name="Take Profit"  required/>
           </div>
 
           <div class="form-group">
             <label class="label">Entry Price</label>
-            <input type="number" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
+            <input type="number" step="any" placeholder="Enter Entry Price" v-model="entryPrice"  name="Entry Price"  required/>
           </div>
 
           <div class="form-group">
@@ -1618,6 +1618,11 @@ export default {
   },
 
   methods: {
+
+    onlyInteger(event) {
+      const val = Number(event.target.value);
+      this.amountTrade = Number.isInteger(val) ? val : Math.floor(val);
+    },
 
     hideDialog2() {
       this.dialogIsVisible2 = false;
