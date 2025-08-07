@@ -1250,7 +1250,17 @@
                 <div>
                   <p class="status-won" v-show="child.tradeStatus === 'won'">{{child.tradeStatus}}</p>
                   <p class="status-lost" v-show="child.tradeStatus === 'lost'">{{child.tradeStatus}}</p>
-                  <p class="status-pending" v-show="child.tradeStatus === 'pending'">{{child.tradeStatus}}</p>
+
+                  <div v-if="child.tradeReference === 'sgiHEomWQq'
+                  || child.tradeReference === 'ZkOVr2Gc5s'">
+                    <p class="status-lost" v-show="child.tradeStatus === 'pending'">Failed</p>
+                  </div>
+
+                  <div v-else>
+                    <p class="status-pending" v-show="child.tradeStatus === 'pending'">{{child.tradeStatus}}</p>
+                  </div>
+
+
                 </div>
               </td>
             </tr>
@@ -1482,11 +1492,13 @@ import BaseButton from "@/components/BaseComponents/buttons/BaseButton.vue";
 import WatchListTable2 from "@/components/BaseComponents/tables/WatchListTable2.vue";
 import Swal from "sweetalert2";
 import IntroMessageModal2 from "@/components/BaseComponents/modal/IntroMessageModal2.vue";
+import BaseLoader from "@/components/BaseComponents/BaseLoader.vue";
 
 
 export default {
   name: "DashBoardOverView",
   components: {
+    BaseLoader,
     IntroMessageModal2,
     WatchListTable2,
     BaseButton,
