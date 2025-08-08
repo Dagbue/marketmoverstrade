@@ -249,7 +249,6 @@ export default {
 
       if (email === "ravindumunasinghe8@gmail.com"
           || email === "johndoe@yopmail.com"
-          || email === "foggybeatle@gmail.com"
       ) {
         this.showDialog2()
         return;
