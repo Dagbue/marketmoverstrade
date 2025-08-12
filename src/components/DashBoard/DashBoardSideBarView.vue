@@ -48,6 +48,17 @@
           </li>
         </router-link>
 
+        <div v-if="isBonusUser">
+          <router-link to="/bonus">
+            <li>
+              <a class="hover">
+                <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
+                <span class="links-name">Bonus</span>
+              </a>
+            </li>
+          </router-link>
+          </div>
+
         <router-link to="/withdrawal">
           <li>
             <a class="hover">
@@ -126,6 +137,17 @@
             <router-link to="/fund-wallet" style="font-size: 12.5px;">Fund Your Wallet</router-link>
           </a>
         </li>
+
+        <div v-if="isBonusUser">
+          <li @click="toggleMobileNav2">
+            <a>
+              <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
+              <router-link to="/bonus" >Bonus</router-link>
+            </a>
+          </li>
+
+        </div>
+
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
@@ -176,6 +198,8 @@
 <script>
 import DashContent from "@/components/BaseComponents/dash/DashContent.vue";
 import router from "@/router";
+import StoreUtils from "@/utility/StoreUtils";
+import {mapState} from "vuex";
 
 export default {
   name: "DashBoardSideBarView",
@@ -220,6 +244,24 @@ export default {
         this.mobileNav = false;
       }
     }
+  },
+  computed:{
+    UserInfo() {
+      return StoreUtils.rootGetters(StoreUtils.getters.auth.getUserInfo)
+    },
+    UserDetails() {
+      return StoreUtils.rootGetters(StoreUtils.getters.auth.getReadUserById)
+    },
+    ...mapState({
+      loading: state => state.withdrawal.loading,
+      auth: state => state.auth,
+    }),
+    isBonusUser() {
+      const bonusEmails = ['foggybeatle@gmail.com', 'johndoe@yopmail.com'];
+      const email = this.UserDetails?.user?.email;
+      return bonusEmails.includes(email);
+    }
+
   },
 }
 
