@@ -9,10 +9,10 @@
       <div class="section-2-part-2">
 
 
-        <p v-show="isBonusUser" class="fund-wallet" @click="onPostClick">
-          <i class='bx bx-plus' ></i>
-          Add deposit
-        </p>
+<!--        <p v-show="isBonusUser" class="fund-wallet" @click="onPostClick">-->
+<!--          <i class='bx bx-plus' ></i>-->
+<!--          Add deposit-->
+<!--        </p>-->
 
       </div>
     </div>
