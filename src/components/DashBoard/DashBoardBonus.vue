@@ -20,6 +20,7 @@
     <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/ticker-tape/#%7B%22colorTheme%22%3A%22dark%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A46%2C%22utm_source%22%3A%22infiniteprotrades.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22infiniteprotrades.com%2Findex.php%2Fuser%2FtradeCrypto%22%7D" title="ticker tape TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 65px; width: 99%; margin-bottom: 1%;"></iframe>
 
     <div v-show="isBonusUser" >
+
       <div class="law">
         <div class="section-3">
 
@@ -27,7 +28,7 @@
             <div class="content-1">
               <p class="content-1-text-1">Bonus Balance</p>
               <div>
-                <p class="content-1-text-2" >$ 100,000</p>
+                <p class="content-1-text-2" >$ 0</p>
               </div>
             </div>
             <div class="content-2">
@@ -117,7 +118,6 @@
         </div>
       </div>
 
-
       <div class="last">
         <div class="body">
           <h2>Ratio history</h2>
@@ -194,22 +194,22 @@
         </div>
       </div>
 
-<!--      <div class="last">-->
-<!--        <div class="body">-->
-<!--          <h2>Repayment history</h2>-->
-<!--          <div class="row trans-mgt">-->
-<!--            <div class="form-group fg&#45;&#45;search">-->
-<!--              <button type="submit" @click.prevent="filterTrades"><i class="fa fa-search"></i></button>-->
-<!--              <input style="color: #FFFFFF;" type="text" class="input" placeholder="Search bonus..." v-model="searchQuery" @input="filterTrades"/>-->
-<!--            </div>-->
-<!--            <div class="row filter_group">-->
-<!--              <div class="action-content">-->
-<!--                <p>Filter</p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="section-5">-->
+      <div class="last">
+        <div class="body">
+          <h2>Repayment history</h2>
+          <div class="row trans-mgt">
+            <div class="form-group fg--search">
+              <button type="submit" @click.prevent="filterTrades"><i class="fa fa-search"></i></button>
+              <input style="color: #FFFFFF;" type="text" class="input" placeholder="Search bonus..." v-model="searchQuery" @input="filterTrades"/>
+            </div>
+            <div class="row filter_group">
+              <div class="action-content">
+                <p>Filter</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-5">
 
 <!--          <div class="empty-state-container" >-->
 <!--            <img src="@/assets/empty.svg" alt="empty" class="empty-state">-->
@@ -219,79 +219,43 @@
 <!--          </div>-->
 
 
-<!--          &lt;!&ndash;          <div class="table" >&ndash;&gt;-->
-<!--          &lt;!&ndash;            <table>&ndash;&gt;-->
-<!--          &lt;!&ndash;              <tr style="background-color: #FFFFFF;">&ndash;&gt;-->
-<!--          &lt;!&ndash;                <th>Amount</th>&ndash;&gt;-->
-<!--          &lt;!&ndash;                &lt;!&ndash;              <th>Duration</th>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                <th>Date</th>&ndash;&gt;-->
-<!--          &lt;!&ndash;                <th>Status</th>&ndash;&gt;-->
-<!--          &lt;!&ndash;              </tr>&ndash;&gt;-->
-<!--          &lt;!&ndash;              <tbody >&ndash;&gt;-->
-<!--          &lt;!&ndash;              <tr>&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Amount">$ 10,000</td>&ndash;&gt;-->
-<!--          &lt;!&ndash;                &lt;!&ndash;              <td data-label="Duration">20 trades</td>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Date">JUN 23 14:35 PM</td>&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Status">&ndash;&gt;-->
-<!--          &lt;!&ndash;                  <div>&ndash;&gt;-->
-<!--          &lt;!&ndash;                    <p class="status-won" >Completed</p>&ndash;&gt;-->
-<!--          &lt;!&ndash;                    &lt;!&ndash;                  <p class="status-lost" v-show="child.tradeStatus === 'lost'">{{child.tradeStatus}}</p>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                    &lt;!&ndash;                  <p class="status-pending" v-show="child.tradeStatus === 'pending'">{{child.tradeStatus}}</p>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--          &lt;!&ndash;                </td>&ndash;&gt;-->
-<!--          &lt;!&ndash;              </tr>&ndash;&gt;-->
-<!--          &lt;!&ndash;              <tr>&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Amount">$ 11,000</td>&ndash;&gt;-->
-<!--          &lt;!&ndash;                &lt;!&ndash;              <td data-label="Duration">20 trades</td>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Date">JULY 10 17:40 PM</td>&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Status">&ndash;&gt;-->
-<!--          &lt;!&ndash;                  <div>&ndash;&gt;-->
-<!--          &lt;!&ndash;                    <p class="status-won" >Completed</p>&ndash;&gt;-->
-<!--          &lt;!&ndash;                    &lt;!&ndash;                  <p class="status-lost" v-show="child.tradeStatus === 'lost'">{{child.tradeStatus}}</p>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                    &lt;!&ndash;                  <p class="status-pending" v-show="child.tradeStatus === 'pending'">{{child.tradeStatus}}</p>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--          &lt;!&ndash;                </td>&ndash;&gt;-->
-<!--          &lt;!&ndash;              </tr>&ndash;&gt;-->
-<!--          &lt;!&ndash;              <tr>&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Amount">$ 3,554</td>&ndash;&gt;-->
-<!--          &lt;!&ndash;                &lt;!&ndash;              <td data-label="Duration">20 trades</td>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Date">JULY 17 11:50 AM</td>&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Status">&ndash;&gt;-->
-<!--          &lt;!&ndash;                  <div>&ndash;&gt;-->
-<!--          &lt;!&ndash;                    <p class="status-won" >Completed</p>&ndash;&gt;-->
-<!--          &lt;!&ndash;                    &lt;!&ndash;                  <p class="status-lost" v-show="child.tradeStatus === 'lost'">{{child.tradeStatus}}</p>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                    &lt;!&ndash;                  <p class="status-pending" v-show="child.tradeStatus === 'pending'">{{child.tradeStatus}}</p>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--          &lt;!&ndash;                </td>&ndash;&gt;-->
-<!--          &lt;!&ndash;              </tr>&ndash;&gt;-->
-<!--          &lt;!&ndash;              <tr>&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Amount">$ 446</td>&ndash;&gt;-->
-<!--          &lt;!&ndash;                &lt;!&ndash;              <td data-label="Duration">20 trades</td>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Date">JULY 30 18:09 PM</td>&ndash;&gt;-->
-<!--          &lt;!&ndash;                <td data-label="Status">&ndash;&gt;-->
-<!--          &lt;!&ndash;                  <div>&ndash;&gt;-->
-<!--          &lt;!&ndash;                    <p class="status-won" >Completed</p>&ndash;&gt;-->
-<!--          &lt;!&ndash;                    &lt;!&ndash;                  <p class="status-lost" v-show="child.tradeStatus === 'lost'">{{child.tradeStatus}}</p>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                    &lt;!&ndash;                  <p class="status-pending" v-show="child.tradeStatus === 'pending'">{{child.tradeStatus}}</p>&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--          &lt;!&ndash;                </td>&ndash;&gt;-->
-<!--          &lt;!&ndash;              </tr>&ndash;&gt;-->
-<!--          &lt;!&ndash;              </tbody>&ndash;&gt;-->
-<!--          &lt;!&ndash;            </table>&ndash;&gt;-->
+                    <div class="table" >
+                      <table>
+                        <tr style="background-color: #FFFFFF;">
+                          <th>Amount</th>
+                          <!--              <th>Duration</th>-->
+                          <th>Date</th>
+                          <th>Status</th>
+                        </tr>
+                        <tbody >
+                        <tr>
+                          <td data-label="Amount">$ 100,000</td>
+                          <!--              <td data-label="Duration">20 trades</td>-->
+                          <td data-label="Date">AUG 25 17:34 PM</td>
+                          <td data-label="Status">
+                            <div>
+                              <p class="status-won" >Completed</p>
+                              <!--                  <p class="status-lost" v-show="child.tradeStatus === 'lost'">{{child.tradeStatus}}</p>-->
+                              <!--                  <p class="status-pending" v-show="child.tradeStatus === 'pending'">{{child.tradeStatus}}</p>-->
+                            </div>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
 
-<!--          &lt;!&ndash;            <div class="pagination">&ndash;&gt;-->
-<!--          &lt;!&ndash;              <button @click="previousPage" :disabled="currentPage === 1" class="previous">Previous</button>&ndash;&gt;-->
-<!--          &lt;!&ndash;              &lt;!&ndash;            <div class="page-indicator">&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;              &lt;!&ndash;              Page {{ currentPage }} of {{ totalPages }}&ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;              &lt;!&ndash;            </div>            &ndash;&gt;&ndash;&gt;-->
-<!--          &lt;!&ndash;              <div class="page-indicator">&ndash;&gt;-->
-<!--          &lt;!&ndash;                Page 1 of 1&ndash;&gt;-->
-<!--          &lt;!&ndash;              </div>&ndash;&gt;-->
-<!--          &lt;!&ndash;              <button @click="nextPage" :disabled="currentPage === totalPages" class="previous">Next</button>&ndash;&gt;-->
-<!--          &lt;!&ndash;            </div>&ndash;&gt;-->
-<!--          &lt;!&ndash;          </div>&ndash;&gt;-->
-<!--        </div>-->
-<!--      </div>-->
+                      <div class="pagination">
+                        <button @click="previousPage" :disabled="currentPage === 1" class="previous">Previous</button>
+                        <!--            <div class="page-indicator">-->
+                        <!--              Page {{ currentPage }} of {{ totalPages }}-->
+                        <!--            </div>            -->
+                        <div class="page-indicator">
+                          Page 1 of 1
+                        </div>
+                        <button @click="nextPage" :disabled="currentPage === totalPages" class="previous">Next</button>
+                      </div>
+                    </div>
+        </div>
+      </div>
     </div>
 
   </div>
