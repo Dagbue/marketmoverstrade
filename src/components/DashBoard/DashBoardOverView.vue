@@ -1780,21 +1780,21 @@ export default {
       }
 
       // Check if user is logged into
-      // if (this.UserDetails.user.email === "johndoe@yopmail.com" || this.UserDetails.user.email === "foggybeatle@gmail.com") {
-      //    // this.showDialog2();
-      //
-      //   await Swal.fire({
-      //     title: 'Execution Error',
-      //     icon: "warning",
-      //     showCancelButton: true,
-      //     confirmButtonColor: "rgb(93, 120, 255)",
-      //     cancelButtonColor: "#d33",
-      //     confirmButtonText: "Place trade"
-      //   })
-      //
-      //   await this.clearForm()
-      //   return;
-      // }
+      if (this.UserDetails.user.email === "johndoe@yopmail.com" || this.UserDetails.user.email === "foggybeatle@gmail.com") {
+         // this.showDialog2();
+
+        await Swal.fire({
+          title: 'Execution Error',
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "rgb(93, 120, 255)",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Place trade"
+        })
+
+        await this.clearForm()
+        return;
+      }
 
       // Check if user is logged into
       // if (this.UserDetails.user.email === "KCarroll_93@yahoo.com" || this.UserDetails.user.email === "johndoe@yopmail.com" ) {
