@@ -307,6 +307,7 @@
 
       </form>
 
+
       <div v-if="this.transactionScreen === 'screen1'"  id="InteracFundingCard" class="dashboard-body-wrapper align-center" >
 
         <h4 class="header">Select Deposit Method below</h4>
@@ -466,13 +467,13 @@
 
       <form @submit.prevent="handleShowDialog" v-if="this.transactionScreen === 'screen2'" id="InteracFundingCard" class="dashboard-body-wrapper align-center" >
 
-<!--        <h4 class="header">Please send to address : </h4>-->
+        <!--        <h4 class="header">Please send to address : </h4>-->
         <p @click="back" class="back">Back</p>
 
         <div class="interac-funding-steps">
-<!--          <div class="margin-bottom margin-small">-->
-<!--            <div class="text-block-60">STEP 1</div>-->
-<!--          </div>-->
+          <!--          <div class="margin-bottom margin-small">-->
+          <!--            <div class="text-block-60">STEP 1</div>-->
+          <!--          </div>-->
 
           <div >
             <a class="">
@@ -495,9 +496,9 @@
         </div>
 
         <div class="interac-funding-steps">
-<!--          <div class="margin-bottom margin-small">-->
-<!--            <div class="text-block-60">STEP 2</div>-->
-<!--          </div>-->
+          <!--          <div class="margin-bottom margin-small">-->
+          <!--            <div class="text-block-60">STEP 2</div>-->
+          <!--          </div>-->
 
           <div >
             <a class="">
@@ -525,28 +526,28 @@
               <p v-if="this.depositMethod === 'Bitcoin'" >{{this.bitcoinAddress}}</p>
               <p v-if="this.depositMethod === 'Ethereum'" >{{this.ethereumAddress}}</p>
 
-              <p v-if="this.depositMethod === 'ERC20'" >{{this.ERC20}}</p>
-              <p v-if="this.depositMethod === 'TRC20'" >{{this.TRC20}}</p>
+              <p v-if="this.depositMethod === 'USDT' && this.transactionNetwork === 'ERC20'" >{{this.ERC20}}</p>
+              <p v-if="this.depositMethod === 'USDT' && this.transactionNetwork === 'TRC20'" >{{this.TRC20}}</p>
 
               <p v-if="this.depositMethod === 'Dogecoin'" >{{this.dogecoinAddress}}</p>
               <p v-if="this.depositMethod === 'Litecoin'" >{{this.litecoinAddress}}</p>
 
-              <p v-if="this.depositMethod === 'Xrp'" >{{this.xrpAddress }}</p>
+              <p v-if="this.depositMethod === 'XRP'" >{{this.xrpAddress }}</p>
             </div>
             <div class="transaction-container-body-2">
               <i v-if="this.depositMethod === 'Bitcoin'" @click="copyText" class='bx bx-copy'></i>
 
               <i v-if="this.depositMethod === 'Ethereum'" @click="copyText2" class='bx bx-copy'></i>
 
-              <i v-if="this.depositMethod === 'ERC20'" @click="copyText3" class='bx bx-copy'></i>
+              <i v-if="this.depositMethod === 'USDT' && this.transactionNetwork === 'ERC20'" @click="copyText3" class='bx bx-copy'></i>
 
-              <i v-if="this.depositMethod === 'TRC20'" @click="copyText4" class='bx bx-copy'></i>
+              <i v-if="this.depositMethod === 'USDT' && this.transactionNetwork === 'TRC20'" @click="copyText4" class='bx bx-copy'></i>
 
               <i v-if="this.depositMethod === 'Dogecoin'" @click="copyText5" class='bx bx-copy'></i>
 
               <i  v-if="this.depositMethod === 'Litecoin'" @click="copyText6" class='bx bx-copy'></i>
 
-              <i  v-if="this.depositMethod === 'Xrp'" @click="copyText7" class='bx bx-copy'></i>
+              <i  v-if="this.depositMethod === 'XRP'" @click="copyText7" class='bx bx-copy'></i>
             </div>
           </div>
         </div>
@@ -578,15 +579,15 @@
           <vue-qrcode class="qr-code" :value="litecoinAddress"></vue-qrcode>
         </div>
 
-        <div v-if="this.depositMethod === 'Xrp'" class="qr-code">
+        <div v-if="this.depositMethod === 'XRP'" class="qr-code">
           <vue-qrcode class="qr-code" :value="xrpAddress"></vue-qrcode>
         </div>
 
-        <div v-if="this.depositMethod === 'TRC20' " class="qr-code">
+        <div v-if="this.depositMethod === 'USDT' && this.transactionNetwork === 'TRC20' " class="qr-code">
           <vue-qrcode class="qr-code" :value="TRC20"></vue-qrcode>
         </div>
 
-        <div v-if="this.depositMethod === 'ERC20'" class="qr-code">
+        <div v-if="this.depositMethod === 'USDT' && this.transactionNetwork === 'ERC20'" class="qr-code">
           <vue-qrcode class="qr-code" :value="ERC20"></vue-qrcode>
         </div>
 
@@ -597,7 +598,8 @@
           this.depositMethod === 'BankTransfer'||
           this.depositMethod === 'Dogecoin' ||
           this.depositMethod === 'Litecoin'||
-          this.depositMethod === 'Xrp'||
+          this.depositMethod === 'XRP'||
+          this.depositMethod === 'USDT' ||
           this.depositMethod === 'ERC20' ||
           this.depositMethod === 'TRC20'"
             class="text-3">Note: After making your deposit,kindly send a screenshot/proof of deposit to
@@ -607,10 +609,10 @@
         </p>
 
 
-<!--        <div v-if="this.showButton === true" class="scanning">-->
-<!--          <span class="loader"></span>-->
-<!--          <p>Scanning blockchain network</p>-->
-<!--        </div>-->
+        <!--        <div v-if="this.showButton === true" class="scanning">-->
+        <!--          <span class="loader"></span>-->
+        <!--          <p>Scanning blockchain network</p>-->
+        <!--        </div>-->
 
         <base-button
             style="border: 0.5px solid #5d78ff; background-color: #5d78ff;"
