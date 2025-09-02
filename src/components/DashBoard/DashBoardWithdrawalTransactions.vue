@@ -85,12 +85,34 @@
             </div>
           </div>
 
+<!--          <tbody v-else v-for="child in paginatedItems" :key="child.key">-->
+<!--          <tr>-->
+<!--            <td data-label="S/N">{{child.sn}}</td> &lt;!&ndash; Assuming there's a serial number (sn) property &ndash;&gt;-->
+<!--            <td data-label="Amount">{{child.amount}}</td>-->
+<!--            <td data-label="Transaction Type">{{child.transactionType}}</td>-->
+<!--            <td data-label="Transaction Reference">{{child.transactionReference}}</td>-->
+<!--            <td data-label="Date">{{child.createdAt | formatDate}}</td>-->
+<!--            <td data-label="Status">-->
+<!--              <div>-->
+<!--                <p class="status-won" v-if="child.withdrawalStatus === 'approved'">{{child.withdrawalStatus | lowercase}}</p>-->
+<!--                <p class="status-lost" v-if="child.withdrawalStatus === 'declined'">{{child.withdrawalStatus | lowercase}}</p>-->
+<!--                <p class="status-pending" v-if="child.withdrawalStatus === 'pending'">{{child.withdrawalStatus | lowercase}}</p>-->
+<!--              </div>-->
+<!--            </td>-->
+<!--          </tr>-->
+<!--          </tbody>-->
           <tbody v-else v-for="child in paginatedItems" :key="child.key">
           <tr>
             <td data-label="S/N">{{child.sn}}</td> <!-- Assuming there's a serial number (sn) property -->
-            <td data-label="Amount">{{child.amount}}</td>
+            <td data-label="Amount">{{child.amount | formatAmount2}}</td>
             <td data-label="Transaction Type">{{child.transactionType}}</td>
-            <td data-label="Transaction Reference">{{child.transactionReference}}</td>
+            <td v-if="isBonusUser" data-label="Transaction Reference">
+              0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638
+            </td>
+<!--            <td v-else-if="isBonusUser2" data-label="Transaction Reference">-->
+<!--              0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465c7097e611-->
+<!--            </td>-->
+            <td v-else data-label="Transaction Reference">{{child.transactionReference}}</td>
             <td data-label="Date">{{child.createdAt | formatDate}}</td>
             <td data-label="Status">
               <div>
@@ -137,6 +159,19 @@ export default {
       loading: state => state.withdrawal.loading,
       auth: state => state.auth,
     }),
+    UserDetails() {
+      return StoreUtils.rootGetters(StoreUtils.getters.auth.getReadUserById)
+    },
+    isBonusUser() {
+      const bonusEmails = ['lynneclavel@yahoo.com.ph'];
+      const email = this.UserDetails?.user?.email;
+      return bonusEmails.includes(email);
+    },
+    // isBonusUser2() {
+    //   const bonusEmails = ['monika19722@hotmail.com'];
+    //   const email = this.UserDetails?.user?.email;
+    //   return bonusEmails.includes(email);
+    // },
     // paginatedItems() {
     //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     //   const endIndex = startIndex + this.itemsPerPage;
