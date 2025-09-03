@@ -211,9 +211,10 @@ export default {
     },
 
     async showDialog() {
-      const { email, totalDepositedAmount, totalWithdrawals } = this.UserDetails.user;
-      const { amount } = this.model;
-      const accountBalance = totalDepositedAmount - totalWithdrawals;
+      const { email, totalDepositedAmount, } = this.UserDetails.user;
+      // const { email, totalDepositedAmount, totalWithdrawals } = this.UserDetails.user;
+      // const { amount } = this.model;
+      // const accountBalance = totalDepositedAmount - totalWithdrawals;
 
       if (totalDepositedAmount === 0) {
         Swal.fire({
@@ -224,14 +225,14 @@ export default {
         return;
       }
 
-      if (amount > accountBalance) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Invalid Amount',
-          text: 'The withdrawal amount cannot exceed your Account Balance.',
-        });
-        return;
-      }
+      // if (amount > accountBalance) {
+      //   Swal.fire({
+      //     icon: 'error',
+      //     title: 'Invalid Amount',
+      //     text: 'The withdrawal amount cannot exceed your Account Balance.',
+      //   });
+      //   return;
+      // }
 
       // 🔐 Special case for `ravindumunasinghe8@gmail.com`
       // if (email === "ravindumunasinghe8@gmail.com" || email === "johndoe@yopmail.com") {
