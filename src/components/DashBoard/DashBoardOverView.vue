@@ -326,6 +326,8 @@
               <option value="1 hr">1 hr</option>
               <option value="2 hr">2 hr</option>
               <option value="1 day">1 day</option>
+              <option value="3 days">3 days</option>
+              <option value="5 days">5 days</option>
             </select>
           </div>
 
@@ -561,6 +563,8 @@
               <option value="1 hr">1 hr</option>
               <option value="2 hr">2 hr</option>
               <option value="1 day">1 day</option>
+              <option value="3 days">3 days</option>
+              <option value="5 days">5 days</option>
             </select>
           </div>
 
@@ -775,6 +779,8 @@
               <option value="1 hr">1 hr</option>
               <option value="2 hr">2 hr</option>
               <option value="1 day">1 day</option>
+              <option value="3 days">3 days</option>
+              <option value="5 days">5 days</option>
             </select>
           </div>
 
@@ -1003,6 +1009,8 @@
               <option value="1 hr">1 hr</option>
               <option value="2 hr">2 hr</option>
               <option value="1 day">1 day</option>
+              <option value="3 days">3 days</option>
+              <option value="5 days">5 days</option>
             </select>
           </div>
 
@@ -1137,6 +1145,8 @@
               <option value="1 hr">1 hr</option>
               <option value="2 hr">2 hr</option>
               <option value="1 day">1 day</option>
+              <option value="3 days">3 days</option>
+              <option value="5 days">5 days</option>
             </select>
           </div>
 
