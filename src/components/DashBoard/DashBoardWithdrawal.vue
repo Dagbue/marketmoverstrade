@@ -213,7 +213,7 @@ export default {
     async showDialog() {
       const { email, totalDepositedAmount, } = this.UserDetails.user;
       // const { email, totalDepositedAmount, totalWithdrawals } = this.UserDetails.user;
-      const { amount } = this.model;
+      // const { amount } = this.model;
       // const accountBalance = totalDepositedAmount - totalWithdrawals;
 
       if (totalDepositedAmount === 0) {
@@ -234,19 +234,19 @@ export default {
       //   return;
       // }
 
-      // 🔐 Special case for `ravindumunasinghe8@gmail.com`
-      if (email === "svolociuc@gmail.com" || email === "johndoe@yopmail.com") {
-        if (amount <= 300) {
-          this.showDialog2()
-          return;
-        } else {
-          await Swal.fire({
-            icon: 'error',
-            text: 'Funds are Unsettled due to trading account.',
-          });
-          return;
-        }
-      }
+      // 🔐 Special case for `svolociuc@gmail.com`
+      // if (email === "svolociuc@gmail.com" || email === "johndoe@yopmail.com") {
+      //   if (amount <= 300) {
+      //     this.showDialog2()
+      //     return;
+      //   } else {
+      //     await Swal.fire({
+      //       icon: 'error',
+      //       text: 'Funds are Unsettled due to trading account.',
+      //     });
+      //     return;
+      //   }
+      // }
 
       if (email === "ravindumunasinghe8@gmail.com"
           // || email === "johndoe@yopmail.com"
