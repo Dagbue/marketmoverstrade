@@ -42,6 +42,16 @@
         <p>24/7 SUPPORT</p>
         <i class='bx bxs-info-circle'></i>
       </div>
+
+      <div class="separate">
+        <p >Investment capital has a <br/> 30-day maturity term.</p>
+        <i class='bx bxs-info-circle'></i>
+      </div>
+
+      <div class="separate">
+        <p >Capital release is available <br/> on the exact maturity date.</p>
+        <i class='bx bxs-info-circle'></i>
+      </div>
     </div>
 
     <div class="third-section top">
@@ -76,6 +86,16 @@
 
       <div class="separate">
         <p>24/7 SUPPORT</p>
+        <i class='bx bxs-info-circle'></i>
+      </div>
+
+      <div class="separate">
+        <p >Investment capital has a <br/> 30-day maturity term.</p>
+        <i class='bx bxs-info-circle'></i>
+      </div>
+
+      <div class="separate">
+        <p >Capital release is available <br/> on the exact maturity date.</p>
         <i class='bx bxs-info-circle'></i>
       </div>
     </div>
@@ -114,6 +134,16 @@
         <p>24/7 SUPPORT</p>
         <i class='bx bxs-info-circle'></i>
       </div>
+
+      <div class="separate">
+        <p >Investment capital has a <br/> 30-day maturity term.</p>
+        <i class='bx bxs-info-circle'></i>
+      </div>
+
+      <div class="separate">
+        <p >Capital release is available <br/> on the exact maturity date.</p>
+        <i class='bx bxs-info-circle'></i>
+      </div>
     </div>
 
     <div class="third-section top">
@@ -148,6 +178,16 @@
 
       <div class="separate">
         <p>24/7 SUPPORT</p>
+        <i class='bx bxs-info-circle'></i>
+      </div>
+
+      <div class="separate">
+        <p >Investment capital has a <br/> 30-day maturity term.</p>
+        <i class='bx bxs-info-circle'></i>
+      </div>
+
+      <div class="separate">
+        <p >Capital release is available <br/> on the exact maturity date.</p>
         <i class='bx bxs-info-circle'></i>
       </div>
     </div>
@@ -219,7 +259,7 @@ export default {
 
 .third-section{
   width: 300px;
-  height: 480px;
+  height: 570px;
   background-color: #ffffff;
   box-shadow:  20px 20px 60px #d9d9d9,
   -20px -20px 60px #ffffff;
@@ -230,8 +270,7 @@ export default {
 .separate{
   display: flex;
   justify-content: center;
-  align-content: center;
-  align-items: center;
+
   margin-top: 1%;
 }
 

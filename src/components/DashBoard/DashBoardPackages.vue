@@ -47,6 +47,16 @@
           <p>24/7 SUPPORT</p>
           <i class='bx bxs-info-circle'></i>
         </div>
+
+        <div class="separate">
+          <p >Investment capital has a <br/> 30-day maturity term.</p>
+          <i class='bx bxs-info-circle'></i>
+        </div>
+
+        <div class="separate">
+          <p >Capital release is available <br/> on the exact maturity date.</p>
+          <i class='bx bxs-info-circle'></i>
+        </div>
       </div>
 
       <div class="third-section top">
@@ -81,6 +91,16 @@
 
         <div class="separate">
           <p>24/7 SUPPORT</p>
+          <i class='bx bxs-info-circle'></i>
+        </div>
+
+        <div class="separate">
+          <p >Investment capital has a <br/> 30-day maturity term.</p>
+          <i class='bx bxs-info-circle'></i>
+        </div>
+
+        <div class="separate">
+          <p >Capital release is available <br/> on the exact maturity date.</p>
           <i class='bx bxs-info-circle'></i>
         </div>
       </div>
@@ -124,6 +144,16 @@
           <p>24/7 SUPPORT</p>
           <i class='bx bxs-info-circle'></i>
         </div>
+
+        <div class="separate">
+          <p >Investment capital has a <br/> 30-day maturity term.</p>
+          <i class='bx bxs-info-circle'></i>
+        </div>
+
+        <div class="separate">
+          <p >Capital release is available <br/> on the exact maturity date.</p>
+          <i class='bx bxs-info-circle'></i>
+        </div>
       </div>
 
       <div class="third-section top">
@@ -160,6 +190,16 @@
           <p>24/7 SUPPORT</p>
           <i class='bx bxs-info-circle'></i>
         </div>
+
+        <div class="separate">
+          <p >Investment capital has a <br/> 30-day maturity term.</p>
+          <i class='bx bxs-info-circle'></i>
+        </div>
+
+        <div class="separate">
+          <p >Capital release is available <br/> on the exact maturity date.</p>
+          <i class='bx bxs-info-circle'></i>
+        </div>v
       </div>
 
     </div>
@@ -233,7 +273,7 @@ export default {
 
 .third-section{
   width: 350px;
-  height: 480px;
+  height: 590px;
   background-color: #0f171c;
   border: 0.5px solid #3C4A57FF;
   border-radius: 8px;
