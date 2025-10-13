@@ -51,6 +51,7 @@
             <th>Payment Mode</th>
             <th>Date Applied</th>
             <th>Wallet Address</th>
+            <th>Transaction Reference</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -76,6 +77,7 @@
             <td data-label="Payment Mode">{{child.transactionMethod}}</td>
             <td data-label="Date Applied">{{child.createdAt | formatDate}}</td>
             <td data-label="Wallet Address">{{child.walletAddress}}</td>
+            <td data-label="Transaction Reference">{{child.transactionReference}}</td>
             <td data-label="Status">
               <div>
                 <p v-if="child.withdrawalStatus === 'approved'" class="status-approved">{{child.withdrawalStatus | lowercase}}</p>

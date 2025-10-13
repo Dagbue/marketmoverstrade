@@ -1,7 +1,6 @@
 <template>
   <div class="alpha">
     <div class="body">
-      <!--      <h2>Transactions</h2>-->
       <div class="row trans-mgt">
 
         <div class="form-group fg--search">
@@ -10,7 +9,6 @@
         </div>
 
         <div class="row filter_group">
-          <!--          <div class="blue">Download transactions</div>-->
           <div class="action-content">
             <img src="@/assets/Filterslines.svg"  alt="Export"/>
             <p>Filter</p>
@@ -25,41 +23,9 @@
         <img src="@/assets/empty.svg" alt="empty" class="empty-state">
         <p class="empty-state-text-1">You have nothing to see</p>
         <p class="empty-state-text-2">This is where your Withdrawals will appear</p>
-        <!--        <p class="empty-state-text-3">-->
-        <!--          <i class='bx bx-plus' ></i>-->
-        <!--          Transaction-->
-        <!--        </p>-->
       </div>
 
       <div class="table" v-if="this.UserWithdrawal.withdrawals.length >0">
-<!--        <table>-->
-<!--          <tr>-->
-<!--            <th>S/N</th>-->
-<!--            <th>Amount</th>-->
-<!--            <th>Transaction Type</th>-->
-<!--            <th>Transaction Reference</th>-->
-<!--            <th>Date</th>-->
-<!--            <th>Status</th>-->
-<!--          </tr>-->
-
-<!--          <tbody v-for="child in paginatedItems" :key="child.key">-->
-<!--          <tr>-->
-<!--            <td></td>-->
-<!--            <td>{{child.amount}}</td>-->
-<!--            <td>{{child.transactionType}}</td>-->
-<!--            <td>{{child.transactionReference}}</td>-->
-<!--            <td>{{child.createdAt | formatDate}}</td>-->
-<!--            <td>-->
-<!--              <div>-->
-<!--                <p class="status-won" v-if="child.withdrawalStatus === 'approved'">{{child.withdrawalStatus | lowercase}}</p>-->
-<!--                <p class="status-lost" v-if="child.withdrawalStatus === 'declined'">{{child.withdrawalStatus | lowercase}}</p>-->
-<!--                <p class="status-pending" v-if="child.withdrawalStatus === 'pending'">{{child.withdrawalStatus | lowercase}}</p>-->
-<!--              </div>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          </tbody>-->
-
-<!--        </table>-->
         <table>
           <tr>
             <th>S/N</th>
@@ -84,22 +50,6 @@
             </div>
           </div>
 
-<!--          <tbody v-else v-for="child in paginatedItems" :key="child.key">-->
-<!--          <tr>-->
-<!--            <td data-label="S/N">{{child.sn}}</td> &lt;!&ndash; Assuming there's a serial number (sn) property &ndash;&gt;-->
-<!--            <td data-label="Amount">{{child.amount}}</td>-->
-<!--            <td data-label="Transaction Type">{{child.transactionType}}</td>-->
-<!--            <td data-label="Transaction Reference">{{child.transactionReference}}</td>-->
-<!--            <td data-label="Date">{{child.createdAt | formatDate}}</td>-->
-<!--            <td data-label="Status">-->
-<!--              <div>-->
-<!--                <p class="status-won" v-if="child.withdrawalStatus === 'approved'">{{child.withdrawalStatus | lowercase}}</p>-->
-<!--                <p class="status-lost" v-if="child.withdrawalStatus === 'declined'">{{child.withdrawalStatus | lowercase}}</p>-->
-<!--                <p class="status-pending" v-if="child.withdrawalStatus === 'pending'">{{child.withdrawalStatus | lowercase}}</p>-->
-<!--              </div>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          </tbody>-->
           <tbody v-else v-for="child in paginatedItems" :key="child.key">
           <tr>
             <td data-label="S/N">{{child.sn}}</td> <!-- Assuming there's a serial number (sn) property -->
@@ -172,11 +122,7 @@ export default {
       const email = this.UserDetails?.user?.email;
       return bonusEmails.includes(email);
     },
-    isBonusUser3() {
-      const bonusEmails = ['tubhmoob50@gmail.com'];
-      const email = this.UserDetails?.user?.email;
-      return bonusEmails.includes(email);
-    },
+
 
     withdrawalId_1() {
       const withdrawalId =  this.UserWithdrawal.withdrawals[0].withdrawalId;
@@ -187,14 +133,7 @@ export default {
       const withdrawalId =  this.UserWithdrawal.withdrawals[1].withdrawalId;
       return withdrawalId
     },
-    // paginatedItems() {
-    //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    //   const endIndex = startIndex + this.itemsPerPage;
-    //   return this.UserWithdrawal.withdrawals.slice(startIndex, endIndex);
-    // },
-    // totalPages() {
-    //   return Math.ceil(this.UserWithdrawal.withdrawals.length / this.itemsPerPage);
-    // },
+
     paginatedItems() {
       const startIndex = (this.currentPage - 1) * this.itemsPerPage;
       const endIndex = startIndex + this.itemsPerPage;

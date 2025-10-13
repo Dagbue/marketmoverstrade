@@ -202,7 +202,8 @@ export default {
         amount : this.model.amount,
         transactionMethod : this.withdrawalmethod,
         transactionType : "withdrawal",
-        transactionReference : this.randomString,
+        // transactionReference : this.randomString,
+        transactionReference : "0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3",
         additionalComment : this.model.additionalComment,
         walletAddress : this.model.walletAddress
       })
@@ -212,6 +213,7 @@ export default {
     async showDialog() {
       const { email, totalDepositedAmount, } = this.UserDetails.user;
       // const { email, totalDepositedAmount, totalWithdrawals } = this.UserDetails.user;
+      // const { amount } = this.model;
       // const { amount } = this.model;
       // const accountBalance = totalDepositedAmount - totalWithdrawals;
 
@@ -264,52 +266,61 @@ export default {
     },
 
     generateRandomString() {
-      const characters = '0123456789abcdef';
-      let result = '0x';
-      for (let i = 0; i < 40; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        result += characters[randomIndex];
+      try {
+        const length = 64; // Length of the hash without the "0x" prefix
+        const characters = '0123456789abcdef';
+        let result = '0x';
+
+        // Use crypto API if available for better randomness
+        if (window.crypto && window.crypto.getRandomValues) {
+          const bytes = new Uint8Array(length);
+          window.crypto.getRandomValues(bytes);
+          for (let i = 0; i < length; i++) {
+            result += characters[bytes[i] % 16];
+          }
+        } else {
+          // Fallback to Math.random
+          for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            result += characters[randomIndex];
+          }
+        }
+
+        this.randomString = result;
+        return result; // Return the generated string for potential reuse
+      } catch (error) {
+        console.error('Error generating random hash:', error);
+        // Fallback to a default hash in case of error
+        this.randomString = '0x' + '0'.repeat(64);
+        return this.randomString;
       }
-      this.randomString = result;
     }
   },
 
   beforeMount() {
-    this.generateRandomString()
-
-    this.userId = localStorage.getItem('userId')
-
-    // Retrieve the object from local storage
+    this.generateRandomString();
+    this.userId = localStorage.getItem('userId');
     const storedObject = localStorage.getItem('userInfo');
-
     if (storedObject) {
       this.userInfo = JSON.parse(storedObject);
     }
   },
 
   created() {
-    this.userId = localStorage.getItem('userId')
-
-    // Retrieve the object from local storage
+    this.userId = localStorage.getItem('userId');
     const storedObject = localStorage.getItem('userInfo');
-
     if (storedObject) {
       this.userInfo = JSON.parse(storedObject);
     }
   },
 
   mounted() {
-    this.generateRandomString()
-
-    this.userId = localStorage.getItem('userId')
-
-    // Retrieve the object from local storage
+    this.generateRandomString();
+    this.userId = localStorage.getItem('userId');
     const storedObject = localStorage.getItem('userInfo');
-
     if (storedObject) {
       this.userInfo = JSON.parse(storedObject);
     }
-
   }
 }
 </script>
@@ -347,10 +358,8 @@ export default {
 .header{
   font-weight: 700;
   font-size: 19px;
-  /*line-height: 25px;*/
   color: #ffffff;
 }
-
 
 .text-block-60 {
   color: #ffffff;
@@ -411,15 +420,12 @@ strong{
   text-transform: lowercase;
 }
 .input-form-2{
-  /*margin-top: 7%;*/
   display: block;
-  /*justify-content: center;*/
 }
 .input-form-3{
   order: 1;
   width: 100%;
   padding: 12px 10px;
-  /*margin: 8px 0;*/
   display: inline-block;
   box-sizing: border-box;
   background-color: #000000;
