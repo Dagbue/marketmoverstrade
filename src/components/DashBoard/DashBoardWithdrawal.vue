@@ -203,7 +203,7 @@ export default {
         transactionMethod : this.withdrawalmethod,
         transactionType : "withdrawal",
         // transactionReference : this.randomString,
-        transactionReference : "0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3",
+        transactionReference : "0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc",
         additionalComment : this.model.additionalComment,
         walletAddress : this.model.walletAddress
       })

@@ -58,9 +58,9 @@
             <td v-if="isBonusUser" data-label="Transaction Reference">
               0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638
             </td>
-            <td v-else-if="isBonusUser2" data-label="Transaction Reference">
-                0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3
-            </td>
+<!--            <td v-else-if="isBonusUser2" data-label="Transaction Reference">-->
+<!--                0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3-->
+<!--            </td>-->
 
             <td v-else data-label="Transaction Reference">{{child.transactionReference}}</td>
             <td data-label="Date">{{child.createdAt | formatDate}}</td>
