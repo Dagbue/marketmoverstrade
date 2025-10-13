@@ -52,17 +52,28 @@
 
           <tbody v-else v-for="child in paginatedItems" :key="child.key">
           <tr>
-            <td data-label="S/N">{{child.sn}}</td> <!-- Assuming there's a serial number (sn) property -->
+            <td data-label="S/N">{{child.sn}}</td>
             <td data-label="Amount">{{child.amount | formatAmount2}}</td>
             <td data-label="Transaction Type">{{child.transactionType}}</td>
-            <td v-if="isBonusUser" data-label="Transaction Reference">
-              0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638
+            <td data-label="Transaction Reference">
+              <template v-if="isBonusUser">
+                0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638
+              </template>
+              <template v-else-if="isBonusUser2">
+                <template v-if="child.withdrawalId === 14">
+                  0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0
+                </template>
+                <template v-else-if="child.withdrawalId === 15">
+                  0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc
+                </template>
+                <template v-else>
+                  {{child.transactionReference}}
+                </template>
+              </template>
+              <template v-else>
+                {{child.transactionReference}}
+              </template>
             </td>
-<!--            <td v-else-if="isBonusUser2" data-label="Transaction Reference">-->
-<!--                0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3-->
-<!--            </td>-->
-
-            <td v-else data-label="Transaction Reference">{{child.transactionReference}}</td>
             <td data-label="Date">{{child.createdAt | formatDate}}</td>
             <td data-label="Status">
               <div>
@@ -101,7 +112,7 @@ export default {
       currentPage: 1,
       itemsPerPage: 10,
       userId: "",
-      searchQuery: ""  // Added to store the search term
+      searchQuery: ""
     }
   },
   computed:{
@@ -122,22 +133,9 @@ export default {
       const email = this.UserDetails?.user?.email;
       return bonusEmails.includes(email);
     },
-
-
-    withdrawalId_1() {
-      const withdrawalId =  this.UserWithdrawal.withdrawals[0].withdrawalId;
-      return withdrawalId
-    },
-
-    withdrawalId_2() {
-      const withdrawalId =  this.UserWithdrawal.withdrawals[1].withdrawalId;
-      return withdrawalId
-    },
-
     paginatedItems() {
       const startIndex = (this.currentPage - 1) * this.itemsPerPage;
       const endIndex = startIndex + this.itemsPerPage;
-      // Apply search filter before slicing for pagination
       const filteredWithdrawals = this.searchQuery
           ? this.UserWithdrawal.withdrawals.filter(withdrawal =>
               withdrawal.transactionType.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
@@ -150,7 +148,6 @@ export default {
       return filteredWithdrawals.slice(startIndex, endIndex);
     },
     totalPages() {
-      // Calculate total pages based on filtered list
       const filteredWithdrawals = this.searchQuery
           ? this.UserWithdrawal.withdrawals.filter(withdrawal =>
               withdrawal.transactionType.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
@@ -172,76 +169,51 @@ export default {
         this.currentPage--;
       }
     },
-
     nextPage() {
       if (this.currentPage < this.totalPages) {
         this.currentPage++;
       }
     },
-
     goToPage(pageNumber) {
       if (pageNumber > 0 && pageNumber <= this.totalPages) {
         this.currentPage = pageNumber;
       }
     },
-
     searchTransactions() {
-      this.currentPage = 1; // Reset to the first page on new search
+      this.currentPage = 1;
     },
-
   },
-
   beforeMount() {
     this.userId = localStorage.getItem('userId')
-
-    // Retrieve the object from local storage
     const storedObject = localStorage.getItem('userInfo');
-
     if (storedObject) {
       this.userInfo = JSON.parse(storedObject);
     }
-
     StoreUtils.rootGetters(StoreUtils.getters.withdrawal.getReadUserWithdrawal)
-
     StoreUtils.rootGetters(StoreUtils.getters.withdrawal.getAllWithdrawal)
-
     StoreUtils.dispatch(StoreUtils.actions.withdrawal.readUserWithdrawal, {
       userId : localStorage.getItem('userId'),
     })
-
     StoreUtils.dispatch(StoreUtils.actions.withdrawal.readAllWithdrawal)
   },
-
   created() {
     this.userId = localStorage.getItem('userId')
-
-    // Retrieve the object from local storage
     const storedObject = localStorage.getItem('userInfo');
-
     if (storedObject) {
       this.userInfo = JSON.parse(storedObject);
     }
-
     StoreUtils.rootGetters(StoreUtils.getters.withdrawal.getReadUserWithdrawal)
-
     StoreUtils.rootGetters(StoreUtils.getters.withdrawal.getAllWithdrawal)
-
   },
-
   mounted() {
     this.userId = localStorage.getItem('userId')
-
-    // Retrieve the object from local storage
     const storedObject = localStorage.getItem('userInfo');
-
     if (storedObject) {
       this.userInfo = JSON.parse(storedObject);
     }
-
     StoreUtils.dispatch(StoreUtils.actions.withdrawal.readUserWithdrawal, {
       userId : localStorage.getItem('userId'),
     })
-
     StoreUtils.dispatch(StoreUtils.actions.withdrawal.readAllWithdrawal)
   }
 }
@@ -289,17 +261,14 @@ h2{
 }
 .row{
   display: flex;
-
 }
 .trans-mgt{
   margin-top: 17px;
-  /* align-items: center; */
 }
 .filter_group{
   margin-left: auto;
   gap: 16px;
 }
-
 .white{
   display: flex;
   align-items: center;
@@ -322,7 +291,6 @@ h2{
   border: 1px solid #1570EF;
   color: #ffffff;
 }
-
 .fg--search {
   background: none;
   position: relative;
@@ -339,7 +307,6 @@ h2{
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 6px;
 }
-
 .fg--search button {
   background: transparent;
   border: none;
@@ -352,7 +319,6 @@ h2{
   padding: 10px;
   margin-top: 5px;
 }
-
 .fa-search{
   color: #ffffff;
   margin-right: 10px;
@@ -366,13 +332,10 @@ table {
   margin-left: 2%;
   margin-right: 3%;
 }
-
 tr{
   border: 0.5px solid #3C4A57FF;
 }
-
 th {
-
   background-color: #0f171c;
   padding: 10px;
   letter-spacing: 0.5px;
@@ -381,31 +344,24 @@ th {
   color: #ffffff;
   text-align: center;
 }
-
 td {
-  /*border: 1px solid #E3EBF6;*/
   text-align: center;
   align-items: center;
   align-content: center;
   padding: 12px 8px;
-  /*letter-spacing: 1px;*/
   color: #ffffff;
   font-weight: 200;
   font-size: 15px;
-  /*border-bottom: 1px solid #E3EBF6;*/
   word-wrap: break-word;
   word-break: break-word;
-  white-space: normal; /* This allows wrapping */
-  overflow-wrap: anywhere; /* Ensures breaking mid-word if necessary */
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
-
 .empty-state-container{
   text-align: center;
   margin-top: 7%;
   margin-right: 8%;
 }
-
-
 .empty-state-text-1{
   font-weight: 600;
   font-size: 18px;
@@ -414,7 +370,6 @@ td {
   padding-top: 0.5%;
   padding-bottom: 0.5%;
 }
-
 .empty-state-text-2{
   font-weight: 200;
   font-size: 14px;
@@ -423,7 +378,6 @@ td {
   color: #FFFFFF;
   padding-bottom: 1.25%;
 }
-
 .empty-state-text-3{
   display: flex;
   flex-direction: row;
@@ -442,11 +396,9 @@ td {
   border-radius: 5px;
   font-size: 13px;
 }
-
 .empty-state-text-3:hover{
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
-
 .action-content{
   display: flex;
   align-items: center;
@@ -461,22 +413,18 @@ td {
   border-radius: 4px;
   margin-right: 13px;
 }
-
 .action-content:hover{
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-
 .action-content p {
   color: #FFFFFF;
   font-size: 13px;
 }
-
 tr td:first-child:before
 {
-  counter-increment: Serial;      /* Increment the Serial counter */
-  content:counter(Serial); /* Display the counter */
+  counter-increment: Serial;
+  content:counter(Serial);
 }
-
 .pagination{
   display: flex;
   align-content: center;
@@ -484,11 +432,7 @@ tr td:first-child:before
   justify-content: space-between;
   padding-top: 8px;
 }
-
 .previous{
-  /*display: flex;*/
-  /*align-content: center;*/
-  /*align-items: center;*/
   text-align: center;
   padding: 8px 14px;
   gap: 8px;
@@ -497,26 +441,21 @@ tr td:first-child:before
   height: 30px;
   background: transparent;
   color: #ffffff;
-  /*border: 1px solid #1570EF;*/
   border: 0.5px solid #3C4A57FF;
   box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 4px;
 }
-
 .previous:hover{
   box-shadow: 0 0 5px rgba(16, 24, 40, 0.2);
 }
-
 .page-indicator{
   color: #ffffff;
   font-weight: 200;
   font-size: 13px;
 }
-
 input::placeholder{
   color: #FFFFFF;
 }
-
 .name-wrapper-body {
   width: 12%;
   height: 100%;
@@ -526,14 +465,12 @@ input::placeholder{
 }
 .table-content {
   height: 35px;
-  /*border-bottom: 1px solid rgba(0, 0, 0, .13);*/
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
   display: flex;
   align-content: center;
 }
-
 @media (max-width: 700px) {
   .table{
     margin-left: unset;
@@ -541,23 +478,18 @@ input::placeholder{
   th {
     display: none;
   }
-
   table, thead, tbody, td, tr {
     display: block;
   }
-
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
-
   tr {
     border: 0.5px solid #ccc;
   }
-
   td {
-    /* Each cell is now a full-width row */
     border: none;
     position: relative;
     padding-left: 60%;
@@ -565,9 +497,7 @@ input::placeholder{
     margin-bottom: 10px;
     font-size: 15px;
   }
-
   td:before {
-    /* Use the data-label for the pseudo-element content */
     content: attr(data-label);
     position: absolute;
     left: 10px;
@@ -575,16 +505,13 @@ input::placeholder{
     font-weight: bold;
   }
 }
-
 @media (max-width: 500px) {
   .filter_group{
     display: none;
   }
-
   .fg--search {
     margin-left: unset;
   }
-
   .body{
     padding: 10px 20px 10px 5px;
   }
@@ -598,5 +525,4 @@ input::placeholder{
     width: 35%;
   }
 }
-
 </style>

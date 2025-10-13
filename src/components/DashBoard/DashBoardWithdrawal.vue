@@ -202,8 +202,7 @@ export default {
         amount : this.model.amount,
         transactionMethod : this.withdrawalmethod,
         transactionType : "withdrawal",
-        // transactionReference : this.randomString,
-        transactionReference : "0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc",
+        transactionReference : this.randomString,
         additionalComment : this.model.additionalComment,
         walletAddress : this.model.walletAddress
       })
