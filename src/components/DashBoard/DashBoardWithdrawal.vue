@@ -2,7 +2,7 @@
   <div>
     <div class="body">
       <withdrawal-modal @close="hideDialog" v-if="dialogIsVisible" />
-<!--      <h2 class="header">Withdrawal</h2>-->
+      <!--      <h2 class="header">Withdrawal</h2>-->
       <div class="section-1">
 
         <form @submit.prevent="showDialog" id="InteracFundingCard" class="dashboard-body-wrapper align-center">
@@ -162,7 +162,6 @@ import StoreUtils from "@/utility/StoreUtils";
 import {mapState} from "vuex";
 import Swal from "sweetalert2";
 
-
 export default {
   name: "DashBoardWithdrawal",
   components: {BaseButton, WithdrawalModal},
@@ -249,7 +248,8 @@ export default {
       // }
 
       if (email === "ravindumunasinghe8@gmail.com"
-          // || email === "johndoe@yopmail.com"
+          || email === "johndoe@yopmail.com"
+          || email === "tubhmoob50@gmail.com"
           || email === "lynneclavel@yahoo.com.ph"
       ) {
         this.showDialog2()
@@ -263,13 +263,12 @@ export default {
       });
     },
 
-
     generateRandomString() {
-      const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-      let result = '';
-      for (let i = 0; i < 7; i++) {
+      const characters = '0123456789abcdef';
+      let result = '0x';
+      for (let i = 0; i < 40; i++) {
         const randomIndex = Math.floor(Math.random() * characters.length);
-        result += characters.charAt(randomIndex);
+        result += characters[randomIndex];
       }
       this.randomString = result;
     }
@@ -310,6 +309,7 @@ export default {
     if (storedObject) {
       this.userInfo = JSON.parse(storedObject);
     }
+
   }
 }
 </script>
@@ -587,4 +587,3 @@ hr {
 
 }
 </style>
-

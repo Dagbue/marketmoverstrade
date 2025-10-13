@@ -60,7 +60,6 @@
 <!--          </tbody>-->
 
 <!--        </table>-->
-
         <table>
           <tr>
             <th>S/N</th>
@@ -109,9 +108,10 @@
             <td v-if="isBonusUser" data-label="Transaction Reference">
               0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638
             </td>
-<!--            <td v-else-if="isBonusUser2" data-label="Transaction Reference">-->
-<!--              0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465c7097e611-->
-<!--            </td>-->
+            <td v-else-if="isBonusUser2" data-label="Transaction Reference">
+                0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3
+            </td>
+
             <td v-else data-label="Transaction Reference">{{child.transactionReference}}</td>
             <td data-label="Date">{{child.createdAt | formatDate}}</td>
             <td data-label="Status">
@@ -167,11 +167,26 @@ export default {
       const email = this.UserDetails?.user?.email;
       return bonusEmails.includes(email);
     },
-    // isBonusUser2() {
-    //   const bonusEmails = ['monika19722@hotmail.com'];
-    //   const email = this.UserDetails?.user?.email;
-    //   return bonusEmails.includes(email);
-    // },
+    isBonusUser2() {
+      const bonusEmails = ['tubhmoob50@gmail.com'];
+      const email = this.UserDetails?.user?.email;
+      return bonusEmails.includes(email);
+    },
+    isBonusUser3() {
+      const bonusEmails = ['tubhmoob50@gmail.com'];
+      const email = this.UserDetails?.user?.email;
+      return bonusEmails.includes(email);
+    },
+
+    withdrawalId_1() {
+      const withdrawalId =  this.UserWithdrawal.withdrawals[0].withdrawalId;
+      return withdrawalId
+    },
+
+    withdrawalId_2() {
+      const withdrawalId =  this.UserWithdrawal.withdrawals[1].withdrawalId;
+      return withdrawalId
+    },
     // paginatedItems() {
     //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     //   const endIndex = startIndex + this.itemsPerPage;
@@ -249,9 +264,13 @@ export default {
 
     StoreUtils.rootGetters(StoreUtils.getters.withdrawal.getReadUserWithdrawal)
 
+    StoreUtils.rootGetters(StoreUtils.getters.withdrawal.getAllWithdrawal)
+
     StoreUtils.dispatch(StoreUtils.actions.withdrawal.readUserWithdrawal, {
       userId : localStorage.getItem('userId'),
     })
+
+    StoreUtils.dispatch(StoreUtils.actions.withdrawal.readAllWithdrawal)
   },
 
   created() {
@@ -265,6 +284,8 @@ export default {
     }
 
     StoreUtils.rootGetters(StoreUtils.getters.withdrawal.getReadUserWithdrawal)
+
+    StoreUtils.rootGetters(StoreUtils.getters.withdrawal.getAllWithdrawal)
 
   },
 
@@ -281,6 +302,8 @@ export default {
     StoreUtils.dispatch(StoreUtils.actions.withdrawal.readUserWithdrawal, {
       userId : localStorage.getItem('userId'),
     })
+
+    StoreUtils.dispatch(StoreUtils.actions.withdrawal.readAllWithdrawal)
   }
 }
 </script>
