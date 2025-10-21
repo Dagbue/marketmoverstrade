@@ -27,6 +27,12 @@
         <p class="text-2">Withdrawals are protected by Anti-Money Laundering (AML) safeguards, ensuring platform security, fraud prevention, and traceable compliant transactions.</p>
       </div>
 
+      <div class="section-1">
+        <img class="image" src="https://img.icons8.com/ultraviolet/40/withdrawal.png" alt="withdrawal"/>
+        <p class="text-1">Withdrawal</p>
+        <p class="text-2">Early withdrawal before the maturity date is subject to a 10% tax on the deposit amount</p>
+      </div>
+
     </div>
 
   </div>
@@ -46,8 +52,8 @@ export default {
 
 .section-1{
   box-shadow: 1px 1px 12px rgba(0,0,0,.1);
-  max-width: 260px;
-  min-width: min(100% - 40px, 260px);
+  max-width: 250px;
+  min-width: min(100% - 40px, 250px);
   width: 100%;
   border-radius: 20px;
   margin: 0;
@@ -73,7 +79,8 @@ export default {
 .section-alpha{
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
+  margin-left: 1%;
 }
 
 .bx{
