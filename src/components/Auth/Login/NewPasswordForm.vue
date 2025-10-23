@@ -1,50 +1,37 @@
 <template>
-  <form>
+  <form @submit.prevent="onPostClick">
     <div class="wrapper">
       <div class="headline">
         <router-link to="/">
           <img src="@/assets/logo.png" alt="logo" class="company-logo">
         </router-link>
-<!--        <h2>-->
-<!--          <span class="header-span"></span>-->
-<!--        </h2>-->
         <h2>Password Reset</h2>
-        <p>Enter New Password</p>
+        <p>Enter New Password for {{ForgotPasswordFormData.email}}</p>
       </div>
       <div class="form">
         <div class="signup">
 
-<!--          <div class="form-group">-->
-<!--            <input type="password" placeholder="Password" required="" />-->
-<!--          </div>-->
-
-<!--          <div class="form-group">-->
-<!--            <input type="password" placeholder="New password" required="" />-->
-<!--          </div>-->
-<!--          <div class="form-group">-->
-<!--            <input type="password" placeholder="Confirm password" required="" />-->
-<!--          </div>-->
-
           <div class="has-addons">
-            <input v-if="showPassword2"  required="required" type="text"  class="input-form-1 password"   placeholder="Password"   />
-            <input v-else type="password" required="required"  class="input-form-1 password"   placeholder="Password"   >
+            <input v-if="showPassword2"  required="required" type="text"  class="input-form-1 password" v-model="newPassword"   placeholder="Enter New Password"   />
+            <input v-else type="password" required="required"  class="input-form-1 password" v-model="newPassword"   placeholder="Enter New Password"   >
             <div class="space" @click="toggleShow2">
               <i class="fas" :class="{ 'fa-eye-slash': showPassword2, 'fa-eye': !showPassword2 }" ></i>
             </div>
           </div>
 
           <div class="has-addons">
-            <input v-if="showPassword2"  required="required" type="text"  class="input-form-1 password"   placeholder="Password"   />
-            <input v-else type="password" required="required"  class="input-form-1 password"   placeholder="Password"   >
+            <input v-if="showPassword2"  required="required" type="text"  class="input-form-1 password" v-model="confirmPassword"   placeholder="Confirm New Password"   />
+            <input v-else type="password" required="required"  class="input-form-1 password" v-model="confirmPassword"   placeholder="Confirm New Password"   >
             <div class="space" @click="toggleShow2">
               <i class="fas" :class="{ 'fa-eye-slash': showPassword2, 'fa-eye': !showPassword2 }" ></i>
             </div>
           </div>
 
+          <p v-if="error" class="error">{{ error }}</p>
 
-          <br/>
-          <a @click="onPostClick" class="btn btn-white btn-animated"
-          >Login</a
+
+          <button class="btn btn-white btn-animated"
+          >Proceed</button
           >
         </div>
       </div>
@@ -54,22 +41,44 @@
 
 <script>
 
-import Swal from "sweetalert2";
+import {mapState} from "vuex";
+import StoreUtils from "@/utility/StoreUtils";
 
 export default {
   name: 'NewPasswordForm',
   data() {
     return {
       showPassword2: false,
+      newPassword: "",
+      confirmPassword: "",
+      error: "",
     };
+  },
+  computed:{
+    ...mapState({
+      loading: state => state.auth.loading,
+      auth: state => state.auth
+    }),
+    ForgotPasswordFormData() {
+      return StoreUtils.rootGetters(StoreUtils.getters.auth.getForgotPasswordFormData)
+    },
+
   },
   methods: {
     async onPostClick() {
-      await Swal.fire({
-        icon: 'success',
-        title: 'success',
-        text: 'Password Reset success',
-      });
+      this.error = "";
+      if (!this.newPassword || !this.confirmPassword) {
+        this.error = "Both passwords are required.";
+        return;
+      }
+      if (this.newPassword !== this.confirmPassword) {
+        this.error = "Passwords do not match.";
+        return;
+      }
+      await StoreUtils.dispatch(StoreUtils.actions.auth.resetPassword, {
+        userId : "46",
+        newPassword: this.newPassword
+      })
       await this.$router.push("/login");
     },
     toggleShow2() {
@@ -83,14 +92,12 @@ export default {
 form {
   margin: 0 auto;
   max-width: 40rem;
-  /*background-color: #232323;*/
-  padding: 5% 1% 7% 1%;
+
   margin-top: 5%;
 }
 
 .company-logo{
-  width: 30%;
-  /*margin-top: 8%;*/
+  width: 32%;
   margin-bottom: 1.5%;
 }
 
@@ -107,13 +114,8 @@ form {
   justify-content: center;
 }
 
-.header-span {
-  color: #124DA8;
-}
 
 .wrapper {
-//padding: 50px 25px 0;
-  max-width: 768px;
   width: 100%;
   margin: auto;
 }
@@ -158,9 +160,6 @@ p{
   margin: auto;
 }
 
-.wrapper .form-group {
-  margin-bottom: 15px;
-}
 
 .wrapper .form-group input {
   display: block;
@@ -207,15 +206,7 @@ p{
   transition: all 0.2s;
   position: relative;
 }
-/*.btn:hover {*/
-/*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
-/*  background-color: #D23535;*/
-/*  transition: 4ms ease-in;*/
-/*}*/
-/*.btn:active {*/
-/*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
-/*  transition: 4ms ease-in;*/
-/*}*/
+
 .btn-white {
   background: #000021;
   border: 1px solid #000021;
@@ -223,54 +214,6 @@ p{
   font-size: 15px;
 }
 
-.form-group-2 {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.checkbox-text {
-  padding-left: 8px;
-  font-size: 15px;
-}
-
-.forgot-password {
-  padding-left: 26%;
-  text-decoration: none;
-  color: #124DA8;
-  font-size: 15px;
-}
-
-.separator {
-  display: flex;
-  align-items: center;
-  padding-top: 10px;
-}
-
-.separator .line {
-  height: 1px;
-  flex: 0.5;
-  background-color: #676767;
-}
-
-.separator h2 {
-  padding: 0 1rem;
-  font-size: 12px;
-  color: #676767;
-}
-
-.create-acc {
-  padding-top: 40px;
-  font-size: 17px;
-  padding-bottom: 40px;
-}
-.create-text {
-  font-size: 15px;
-}
-.create-link {
-  padding-left: 10px;
-  text-decoration: none;
-  color: #124DA8;
-}
 
 .has-addons{
   display: flex;
@@ -287,8 +230,8 @@ button{
   margin-top: 10%;
 }
 .space{
-  padding-top: 10.8px;
-  padding-bottom: 10.8px;
+  padding-top: 13px;
+  padding-bottom: 13px;
   padding-right: 10px;
   border: 1px solid #d0d5dd;
   border-left-style: none;

@@ -15,10 +15,10 @@
         <div class="form" @submit.prevent>
           <div class="signup">
             <div class="form-group">
-              <input type="email" placeholder="Enter Email" required="" />
+              <input type="email" placeholder="Enter Email" required="" v-model="email" />
             </div>
-            <br/>
-            <a @click="onPostClick" class="btn btn-white btn-animated">continue</a>
+
+            <button class="btn btn-white btn-animated">continue</button>
           </div>
         </div>
       </div>
@@ -28,20 +28,21 @@
 
 <script>
 
+import StoreUtils from "@/utility/StoreUtils";
+
 export default {
   name: 'ForgotPasswordForm',
-  // data() {
-  //   return {
-  //   };
-  // },
+  data() {
+    return {
+      email: "",
+    };
+  },
   methods: {
     submitForm() {
-      console.log("Enter Code: " + this.enterCode);
-      this.enterCode = "";
-    },
-
-    onPostClick() {
-      this.$router.push("/forgot-password-otp");
+       StoreUtils.commit(StoreUtils.mutations.auth.updateForgotPasswordFormData, {
+        email: this.email,
+      })
+      this.$router.push("/new-password");
     },
   },
 }
@@ -51,14 +52,12 @@ export default {
 form {
   margin: 0 auto;
   max-width: 40rem;
-  padding: 3rem 0 5rem 0;
-  /*background-color: #232323;*/
   margin-top: 5%;
 }
 
 
 .company-logo{
-  width: 30%;
+  width: 33%;
   margin-top: 5%;
   margin-bottom: 1.5%;
 }
@@ -81,7 +80,6 @@ form {
 }
 
 .wrapper {
-  max-width: 800px;
   width: 100%;
   margin: auto;
 }

@@ -2,7 +2,6 @@ import AuthenticationRequest from "@/model/request/AuthenticationRequest";
 import StoreUtils from "@/utility/StoreUtils";
 import AuthenticationService from "@/service/AuthenticationService";
 import AuthenticationResponse from "@/model/response/AuthenticationResponse";
-// import RouterUtils from "@/utility/RouterUtils";
 import router from '@/router'
 import swal from "sweetalert";
 
